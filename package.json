@@ -1,0 +1,12 @@
+{
+  "name": "@trustpilot/react-localization",
+  "version": "1.0.0",
+  "description": "Components and utilities for translations and localization in React",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [],
+  "homepage": "https://github.com/trustpilot/react-localization#readme",
+  "publishConfig": {
+    "registry": "https://trustpilot.myget.org/F/npm/npm/"
+  }
+}

@@ -1,0 +1,26 @@
+language: node_js
+sudo: false
+
+cache:
+  npm: true
+  directories:
+    - node_modules
+
+before_install:
+  - git clone -b v1 --depth 1 https://$GITHUB_TOKEN@github.com/trustpilot/build-scripts.git
+  - build-scripts/travis/init
+
+script:
+  - yarn test
+  - VERSION=$(node -p -e "require('./package.json').version.replace(/\d+$/,$TRAVIS_BUILD_NUMBER)")
+  - yarn version --new-version $VERSION
+  - yarn run build
+  - build-scripts/travis/npm-package
+  - build-scripts/travis/build-zip dist
+  - build-scripts/travis/release $VERSION
+
+branches:
+  only: master
+
+notifications:
+  email: false

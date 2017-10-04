@@ -1,0 +1,5 @@
+node_modules
+/devConfig.json
+/dist/
+
+npm-debug.log
