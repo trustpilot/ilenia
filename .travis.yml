@@ -1,8 +1,8 @@
-language: node_js
 sudo: false
 
+language: node_js
+
 cache:
-  npm: true
   directories:
     - node_modules
 
@@ -11,12 +11,12 @@ before_install:
   - build-scripts/travis/init
 
 script:
-  - yarn test
   - VERSION=$(node -p -e "require('./package.json').version.replace(/\d+$/,$TRAVIS_BUILD_NUMBER)")
   - yarn version --new-version $VERSION
-  - yarn run build
+  - yarn lint
+  - yarn test
+  - yarn build
   - build-scripts/travis/npm-package
-  - build-scripts/travis/build-zip dist
   - build-scripts/travis/release $VERSION
 
 branches:

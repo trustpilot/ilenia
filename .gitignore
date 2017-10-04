@@ -1,5 +1,5 @@
 node_modules
 /devConfig.json
 /dist/
-
+lib
 npm-debug.log

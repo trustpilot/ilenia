@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "./node_modules/eslint-config-trustpilot/default.js",
+    "./node_modules/eslint-config-trustpilot/rules/react.js"
+  ],
+  "env": {
+    "browser": true,
+    "jest":    true
+  }
+}

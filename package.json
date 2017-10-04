@@ -2,11 +2,49 @@
   "name": "@trustpilot/react-localization",
   "version": "1.0.0",
   "description": "Components and utilities for translations and localization in React",
-  "main": "index.js",
+  "main": "lib/react-localization.js",
   "license": "MIT",
   "keywords": [],
-  "homepage": "https://github.com/trustpilot/react-localization#readme",
+  "homepage": "https://github.com/trustpilot/react-localization",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trustpilot/react-localization.git"
+  },
   "publishConfig": {
     "registry": "https://trustpilot.myget.org/F/npm/npm/"
+  },
+  "keywords": "react localization translate translation",
+  "author": "Trustpilot",
+  "dependencies": {
+    "diff-so-fancy": "^1.1.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0"
+  },
+  "scripts": {
+    "lint": "eslint src/**.js",
+    "test": "jest",
+    "build": "webpack -p",
+    "dev": "webpack -d --progress --colors --watch"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-react-require": "^3.0.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.8.0",
+    "eslint-config-trustpilot": "^1.8.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-react": "^7.4.0",
+    "jest": "^21.2.1",
+    "react-test-renderer": "^16.0.0",
+    "transform-runtime": "^0.0.0",
+    "webpack": "^3.6.0"
   }
 }
