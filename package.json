@@ -4,7 +4,7 @@
   "description": "Components and utilities for translations and localization in React",
   "main": "lib/react-localization.js",
   "license": "MIT",
-  "keywords": [],
+  "keywords": "react localization translate translation",
   "homepage": "https://github.com/trustpilot/react-localization",
   "repository": {
     "type": "git",
@@ -13,7 +13,6 @@
   "publishConfig": {
     "registry": "https://trustpilot.myget.org/F/npm/npm/"
   },
-  "keywords": "react localization translate translation",
   "author": "Trustpilot",
   "dependencies": {
     "diff-so-fancy": "^1.1.1",
@@ -44,6 +43,7 @@
     "eslint-plugin-react": "^7.4.0",
     "jest": "^21.2.1",
     "react-test-renderer": "^16.0.0",
+    "regenerator-runtime": "^0.11.0",
     "transform-runtime": "^0.0.0",
     "webpack": "^3.6.0"
   }
