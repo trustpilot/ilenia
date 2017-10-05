@@ -15,7 +15,6 @@
   },
   "author": "Trustpilot",
   "dependencies": {
-    "diff-so-fancy": "^1.1.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0"
   },
