@@ -44,7 +44,7 @@ Using following translations object:
   'footer': 'Please check out or [LINK-BEGIN]awesome blog[LINK-END]'
 }`
 
-... the `<LinkString` can be used like this:
+... the `<LinkString>` can be used like this:
 
 ```javascript
 import { LinkString } from '@trustpilot/react-localization'
@@ -54,3 +54,30 @@ const Footer = () => {
     <LinkString string="footer" links={[ { href: 'https://tech.trustpilot.com/' } ]}
   </div>
 }
+```
+
+4. Use the `<Text>` component to translate a string in place.
+
+Using following translations object:
+
+`const translations = {
+  'header': 'This is the header of our site',
+  'greeting': 'Hello [name]'
+}`
+
+and interpolations object:
+
+`const interpolations = {
+  'name': () => {return 'Trustpilot'}
+}`
+
+... the `<Text>` can be used like this:
+
+```javascript
+import { Text } from '@trustpilot/react-localization'
+
+const Header = (
+  <h1><Text id="header"/></h1>
+  <p><Text id="greeting"/></p>
+)
+})
