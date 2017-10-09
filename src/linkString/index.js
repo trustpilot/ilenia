@@ -1,5 +1,5 @@
 import React from 'react';
-import withTranslations from '../';
+import {withTranslations} from '../';
 
 const LinkString = (props) => {
   const { string, translations } = props;
