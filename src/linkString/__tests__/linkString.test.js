@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { LocalizationProvider, LinkString } from '../';
+import { LocalizationProvider, LinkString } from '../../';
 
 const translations = {
   'test1': 'No links in the string',

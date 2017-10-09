@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a plain string 1`] = `"Just a random string"`;
+
+exports[`Renders a string with HTML in it 1`] = `"A string that is sort of <b>bold</b>"`;
+
+exports[`Renders a string with an interpolations 1`] = `"A string but with a huge value in it"`;
