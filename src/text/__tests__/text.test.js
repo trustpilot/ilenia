@@ -13,7 +13,7 @@ const setupText = (string, interpolations) => (<LocalizationProvider locale="en-
 </LocalizationProvider>);
 
 test('Renders a plain string', () => {
-  const component = renderer.create(setupText('test1', []));
+  const component = renderer.create(setupText('test1'));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
