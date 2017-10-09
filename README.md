@@ -62,13 +62,13 @@ Using following translations object:
 
 `const translations = {
   'header': 'This is the header of our site',
-  'greeting': 'Hello [name]'
+  'greeting': 'Hello {name}'
 }`
 
 and interpolations object:
 
 `const interpolations = {
-  '[name]': () => {return 'Trustpilot'}
+  'name': () => {return 'Trustpilot'}
 }`
 
 ... the `<Text>` can be used like this:
