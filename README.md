@@ -68,7 +68,7 @@ Using following translations object:
 and interpolations object:
 
 `const interpolations = {
-  'name': () => {return 'Trustpilot'}
+  '[name]': () => {return 'Trustpilot'}
 }`
 
 ... the `<Text>` can be used like this:
@@ -78,6 +78,6 @@ import { Text } from '@trustpilot/react-localization'
 
 const Header = (
   <h1><Text id="header"/></h1>
-  <p><Text id="greeting"/></p>
+  <p><Text id="greeting" interpolations={interpolations}/></p>
 )
 })
