@@ -14,7 +14,7 @@ exports[`Renders a string with HTML marked with another key 1`] = `
 <span
   dangerouslySetInnerHTML={
     Object {
-      "__html": "A string that uses {smtg}another{smtg} key<b>",
+      "__html": "A string that uses <b>another</b> placeholder",
     }
   }
 />
@@ -44,7 +44,7 @@ exports[`Renders a string with one HTML part 1`] = `
 <span
   dangerouslySetInnerHTML={
     Object {
-      "__html": "A string but with a <span>hello</span> in it",
+      "__html": "A string but with <span>hello</span> in it",
     }
   }
 />
