@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a plain string 1`] = `
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "Just a random string",
+    }
+  }
+/>
+`;
+
+exports[`Renders a string with HTML marked with another key 1`] = `
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "A string that uses <b>another</b> placeholder",
+    }
+  }
+/>
+`;
+
+exports[`Renders a string with HTML parts in the end 1`] = `
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "A string that is sort of <em>italic</em>",
+    }
+  }
+/>
+`;
+
+exports[`Renders a string with multiple HTML parts in it 1`] = `
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "A string that is sort of <em>italic</em> and <b>bold</b> and such",
+    }
+  }
+/>
+`;
+
+exports[`Renders a string with one HTML part 1`] = `
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "A string but with <span>hello</span> in it",
+    }
+  }
+/>
+`;

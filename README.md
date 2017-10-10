@@ -81,3 +81,54 @@ const Header = (
   <p><Text id="greeting" interpolations={interpolations}/></p>
 )
 })
+```
+
+5. Use the `<HtmlText>` component to translate a string with html in it.
+
+Using following translations object:
+
+`const translations = {
+  'header': 'This is the {html1}header{html2} of our site',
+}`
+
+and interpolations object:
+
+`const interpolations = {
+  html1: '<b>',
+  html2: '</b>'
+}`
+
+... the `<HtmlText>` can be used like this:
+
+```javascript
+import { HtmlText } from '@trustpilot/react-localization'
+
+const Header = (
+  <h1><HtmlText id="header" interpolations={interpolations}/></h1>
+)
+})
+```
+
+If you use a different placeholder syntax in your translations object, you can use the optional argument `tag` in the `Text` and `HtmlText` components, like this:
+
+Using following translations object:
+
+`const translations = {
+  'header': 'This is the [[html1]]header[[html2]] of our site',
+}`
+
+and interpolations object:
+
+`const interpolations = {
+  html1: '<b>',
+  html2: '</b>'
+}`
+
+```javascript
+import { Text } from '@trustpilot/react-localization'
+
+const Header = (
+  <h1><Text id="header" interpolations={interpolations} tag={ {start:'[[', end:']]'} }/></h1>
+)
+})
+```
