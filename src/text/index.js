@@ -1,11 +1,10 @@
 import { withTranslations } from '../';
 
-const Text = ({ id, interpolations = {}, translations, tag = {start: '{', end: '}'} }) => {
+const Text = ({ id, interpolations = {}, translations }) => {
   let string = translations[id];
 
   for (const key in interpolations) {
-    const wrappedKey = `${tag.start}${key}${tag.end}`;
-    string = string.replace(wrappedKey, interpolations[key]);
+    string = string.replace(`{${key}}`, interpolations[key]);
   }
 
   return string;
