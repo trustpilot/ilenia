@@ -2,24 +2,21 @@ import React from 'react';
 import { withTranslations } from '../';
 import sanitizeHtml from 'sanitize-html';
 
-const HtmlText = ({ id, interpolations = [], translations, key = '[HTML]' }) => {
+const HtmlText = ({ id, interpolations = {}, translations, tag = {start: '[', end: ']'} }) => {
   let string = translations[id];
 
-  interpolations.forEach((html) => {
-    html = sanitizeHtml(html);
-  });
+  const escapeRegex = function (str) {
+    return str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
+  };
 
-  const stringArray = string.split(key);
-
-  if (stringArray.length <= 0) {
-    return string;
-  } else {
-    stringArray.forEach((part, index) => {
-      stringArray[index] += (interpolations[index] || '');
-    });
+  for (const key in interpolations) {
+    // NOTE: sanitize-html currently closes open tags, and deletes close tags if an open tag is not found, which breaks our use case. A new solution must be found...
+    // interpolations[key] = sanitizeHtml(interpolations[key]);
+    const wrappedKey = `${tag.start}${key}${tag.end}`;
+    const re = new RegExp(escapeRegex(wrappedKey), 'g');
+    string = string.replace(re, interpolations[key]);
   }
 
-  string = stringArray.join('');
   return (<span dangerouslySetInnerHTML={ {__html: string} }></span>);
 };
 
