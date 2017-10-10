@@ -2,6 +2,6 @@
 
 exports[`Renders a plain string 1`] = `"Just a random string"`;
 
-exports[`Renders a string with HTML in it 1`] = `"A string that is sort of <b>bold</b>"`;
+exports[`Renders a string which uses a different placeholder syntax 1`] = `"A string that uses another syntax"`;
 
 exports[`Renders a string with an interpolations 1`] = `"A string but with a huge value in it"`;
