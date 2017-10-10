@@ -19,7 +19,7 @@ const HtmlText = ({ id, interpolations = [], translations, key = '[HTML]' }) => 
     });
   }
 
-  string = ''.concat(...stringArray);
+  string = stringArray.join('');
   return (<span dangerouslySetInnerHTML={ {__html: string} }></span>);
 };
 
