@@ -2,7 +2,7 @@ import React from 'react';
 import { withTranslations } from '../';
 import sanitizeHtml from 'sanitize-html';
 
-const HtmlText = ({ id, interpolations = {}, translations, tag = {start: '[', end: ']'} }) => {
+const HtmlText = ({ id, interpolations = {}, translations, tag = {start: '{', end: '}'} }) => {
   let string = translations[id];
 
   const escapeRegex = function (str) {
