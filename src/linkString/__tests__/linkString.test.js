@@ -5,7 +5,8 @@ import { LocalizationProvider, LinkString } from '../../';
 const translations = {
   'test1': 'No links in the string',
   'test2': 'A link [LINK-BEGIN]in the[LINK-END] middle',
-  'test3': 'A link [LINK-BEGIN]in the[LINK-END] middle and one [LINK2-BEGIN]in the end[LINK2-END]'
+  'test3': 'A link [LINK-BEGIN]in the[LINK-END] middle and one [LINK2-BEGIN]in the end[LINK2-END]',
+  'test4': 'A link [LINK-BEGIN]in the[LINK-END] middle',
 };
 
 const setupLink = (string, links) => (<LocalizationProvider locale="en-US" translations={translations}>
@@ -38,6 +39,19 @@ test('Renders a string with multiple links in it', () => {
     }];
 
   const component = renderer.create(setupLink('test3', links));
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders a string with a link with arbitrary attributes', () => {
+  const links = [{
+      href: 'http://something1',
+      target: '_blank',
+      class: 'button'
+    }];
+
+  const component = renderer.create(setupLink('test4', links));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
