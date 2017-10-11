@@ -16,7 +16,10 @@ class LocalizationProvider extends Component {
 
 
 LocalizationProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]).isRequired,
   locale: PropTypes.string.isRequired,
   translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };

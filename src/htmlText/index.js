@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withTranslations } from '../';
 import sanitizeHtml from 'sanitize-html';
 
@@ -18,6 +19,15 @@ const HtmlText = ({ id, interpolations = {}, translations, tag = {start: '{', en
   }
 
   return (<span dangerouslySetInnerHTML={ {__html: string} }></span>);
+};
+
+HtmlText.propTypes = {
+  id: PropTypes.string.isRequired,
+  interpolations: PropTypes.object,
+  tag: PropTypes.shape({
+    start: PropTypes.string,
+    end: PropTypes.string,
+  }),
 };
 
 export default withTranslations(HtmlText);

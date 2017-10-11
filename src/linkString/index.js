@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {withTranslations} from '../';
 
 const LinkString = (props) => {
@@ -51,6 +52,15 @@ const LinkString = (props) => {
   return parts.map((part, index) => {
     return typeof(part) === 'string' ? <span key={index}>{part}</span> : part;
   });
+};
+
+LinkString.PropTypes = {
+  string: PropTypes.string.isRequired,
+  links: PropTypes.arrayOf(PropTypes.shape({
+    start: PropTypes.string,
+    end: PropTypes.string,
+    href: PropTypes.string,
+  })),
 };
 
 export default withTranslations(LinkString);
