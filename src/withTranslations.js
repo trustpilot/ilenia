@@ -7,7 +7,7 @@ const withTranslations = (WrappedComponent) => {
 
   contextConsumer.contextTypes = {
     locale: PropTypes.string.isRequired,
-    translations: PropTypes.object.isRequired
+    translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   };
 
   return contextConsumer;
