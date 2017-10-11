@@ -1544,9 +1544,9 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-trustpilot@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-trustpilot/-/eslint-config-trustpilot-1.8.0.tgz#cce92f5eb143324da040ef46c6494b1927587793"
+eslint-config-trustpilot@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-trustpilot/-/eslint-config-trustpilot-2.0.0.tgz#c6bc9e5ab11ce6e2a5dabf2d73fa6b7ffb1b261c"
 
 eslint-plugin-babel@^4.1.2:
   version "4.1.2"

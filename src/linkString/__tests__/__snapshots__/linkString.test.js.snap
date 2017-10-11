@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Renders a string with a link with arbitrary attributes 1`] = `
+Array [
+  <span>
+    A link 
+  </span>,
+  <a
+    class="button"
+    href="http://something1"
+    target="_blank"
+  >
+    in the
+  </a>,
+  <span>
+     middle
+  </span>,
+]
+`;
+
 exports[`Renders a string with multiple links in it 1`] = `
 Array [
   <span>

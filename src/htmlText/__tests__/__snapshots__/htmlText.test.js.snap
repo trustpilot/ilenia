@@ -10,6 +10,16 @@ exports[`Renders a plain string 1`] = `
 />
 `;
 
+exports[`Renders a string with HTML in it 1`] = `
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "A string that has <b>regular HTML</b> in it",
+    }
+  }
+/>
+`;
+
 exports[`Renders a string with HTML marked with another key 1`] = `
 <span
   dangerouslySetInnerHTML={

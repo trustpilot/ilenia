@@ -7,7 +7,8 @@ const translations = {
   'test2': 'A string but with {html} in it',
   'test3': 'A string that is sort of {html1}italic{html2} and {html3}bold{html4} and such',
   'test4': 'A string that is sort of {html1}italic{html2}',
-  'test5': 'A string that uses [smtg1]another[smtg2] placeholder'
+  'test5': 'A string that uses [smtg1]another[smtg2] placeholder',
+  'test6': 'A string that has <b>regular HTML</b> in it'
 };
 
 const setupText = (string, interpolations, tag) => (<LocalizationProvider locale="en-US" translations={translations}>
@@ -58,6 +59,14 @@ test('Renders a string with HTML marked with another key', () => {
     start: '[',
     end: ']'
   }));
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+
+test('Renders a string with HTML in it', () => {
+  const component = renderer.create(setupText('test6'));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
