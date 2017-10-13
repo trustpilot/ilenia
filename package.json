@@ -16,8 +16,7 @@
   "author": "Trustpilot",
   "dependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "sanitize-html": "^1.14.1"
+    "react": "^16.0.0"
   },
   "scripts": {
     "lint": "eslint src/**.js",
