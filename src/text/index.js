@@ -6,7 +6,7 @@ const Text = ({ id, interpolations = {}, translations, tag = {start: '{', end: '
   if(translations[id]) {
     string = translations[id];
   } else {
-    console.error('The id does\'t match a key in the translations table. \n Hint: Check if you misspelled it.);
+    console.error('The id does\'t match a key in the translations table. \n Hint: Check if you misspelled it.');
   };
 
   const escapeRegex = function (str) {
