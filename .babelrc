@@ -1,4 +1,20 @@
 {
-  "presets": ["es2015", "react"],
-  "plugins": ["react-require", "transform-async-to-generator", "transform-class-properties", "transform-object-rest-spread", "transform-react-jsx", "transform-runtime"]
+  "compact": true,
+  "presets": [
+    "babel-preset-env",
+    "babel-preset-react"
+  ],
+  "plugins": [
+    [
+      "transform-runtime", {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true
+      }
+    ],
+    "transform-async-to-generator",
+    "react-require",
+    "transform-object-rest-spread",
+    "transform-react-jsx",
+  ]
 }
