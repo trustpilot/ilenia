@@ -5,12 +5,13 @@ import { LocalizationProvider, Text } from '../../';
 const translations = {
   'test1': 'Just a random string',
   'test2': 'A string but with a {value} in it',
-  'test3': 'A string that uses another [placeholder]'
+  'test3': 'A string that uses another [placeholder]',
 };
 
-const setupText = (string, interpolations, tag) => (<LocalizationProvider locale="en-US" translations={translations}>
-  <Text id={string} interpolations={interpolations} tag={tag}/>
-</LocalizationProvider>);
+const setupText = (string, interpolations, tag) => (
+  <LocalizationProvider locale="en-US" translations={translations}>
+    <Text id={string} interpolations={interpolations} tag={tag}/>
+  </LocalizationProvider>);
 
 test('Renders a plain string', () => {
   const component = renderer.create(setupText('test1'));
@@ -31,4 +32,14 @@ test('Renders a string which uses a different placeholder syntax', () => {
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('Renders nothing if the string is not there', () => {
+  console.error = jest.fn(); // eslint-disable-line no-console
+
+  const component = renderer.create(setupText('test4'));
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+  expect(console.error).toHaveBeenCalled(); // eslint-disable-line no-console
 });

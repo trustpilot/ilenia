@@ -63,3 +63,5 @@ Array [
   </span>,
 ]
 `;
+
+exports[`Renders nothing when the string is not there 1`] = `<span />`;

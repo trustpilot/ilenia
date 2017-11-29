@@ -8,12 +8,13 @@ const translations = {
   'test3': 'A string that is sort of {html1}italic{html2} and {html3}bold{html4} and such',
   'test4': 'A string that is sort of {html1}italic{html2}',
   'test5': 'A string that uses [smtg1]another[smtg2] placeholder',
-  'test6': 'A string that has <b>regular HTML</b> in it'
+  'test6': 'A string that has <b>regular HTML</b> in it',
 };
 
-const setupText = (string, interpolations, tag) => (<LocalizationProvider locale="en-US" translations={translations}>
-  <HtmlText id={string} interpolations={interpolations} tag={tag} />
-</LocalizationProvider>);
+const setupText = (string, interpolations, tag) => (
+  <LocalizationProvider locale="en-US" translations={translations}>
+    <HtmlText id={string} interpolations={interpolations} tag={tag} />
+  </LocalizationProvider>);
 
 test('Renders a plain string', () => {
   const component = renderer.create(setupText('test1'));
@@ -34,7 +35,7 @@ test('Renders a string with multiple HTML parts in it', () => {
     html1: '<em>',
     html2: '</em>',
     html3: '<b>',
-    html4: '</b>'
+    html4: '</b>',
   }));
 
   const tree = component.toJSON();
@@ -44,7 +45,7 @@ test('Renders a string with multiple HTML parts in it', () => {
 test('Renders a string with HTML parts in the end', () => {
   const component = renderer.create(setupText('test4', {
     html1: '<em>',
-    html2: '</em>'
+    html2: '</em>',
   }));
 
   const tree = component.toJSON();
@@ -54,10 +55,10 @@ test('Renders a string with HTML parts in the end', () => {
 test('Renders a string with HTML marked with another key', () => {
   const component = renderer.create(setupText('test5', {
     smtg1: '<b>',
-    smtg2: '</b>'
+    smtg2: '</b>',
   }, {
     start: '[',
-    end: ']'
+    end: ']',
   }));
 
   const tree = component.toJSON();
@@ -70,4 +71,14 @@ test('Renders a string with HTML in it', () => {
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('Renders nothing if the string is not there', () => {
+  console.error = jest.fn(); // eslint-disable-line no-console
+
+  const component = renderer.create(setupText('test7'));
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+  expect(console.error).toHaveBeenCalled(); // eslint-disable-line no-console
 });
