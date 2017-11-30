@@ -5,10 +5,15 @@ import {withTranslations} from '../';
 const LinkString = (props) => {
   const { string, translations } = props;
 
+  if (!translations[string]) {
+    console.error(`Couldn't find '${string}' in the translations table`); // eslint-disable-line no-console
+    return <span/>;
+  }
+
   const links = props.links.map((link) => ({
     ...link,
     start: link.start || '[LINK-BEGIN]',
-    end: link.end || '[LINK-END]'
+    end: link.end || '[LINK-END]',
   }));
 
   function replace(inputString, links) {
@@ -44,17 +49,13 @@ const LinkString = (props) => {
     return [...replace(head, remainingLinks), linkComponent, ...replace(tail, remainingLinks)];
   }
 
-  if (!translations[string]) {
-    return string;
-  }
-
   const parts = replace(translations[string], links);
   return parts.map((part, index) => {
-    return typeof(part) === 'string' ? <span key={index}>{part}</span> : part;
+    return typeof(part) === 'string' ? <span key={index}>{part}</span> : part; // eslint-disable-line react/no-array-index-key
   });
 };
 
-LinkString.PropTypes = {
+LinkString.propTypes = {
   string: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(PropTypes.shape({
     start: PropTypes.string,

@@ -1,32 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslations } from '../';
+import { interpolate } from '../interpolations';
 
-const HtmlText = ({ id, interpolations = {}, translations, tag = {start: '{', end: '}'} }) => {
+const HtmlText = ({ id, interpolations = {}, translations = {}, tag = {start: '{', end: '}'} }) => {
   let string = translations[id];
-
-  const escapeRegex = function (str) {
-    return str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
-  };
-
-  for (const key in interpolations) {
-    // NOTE: sanitize-html currently closes open tags, and deletes close tags if an open tag is not found, which breaks our use case. A new solution must be found...
-    // interpolations[key] = sanitizeHtml(interpolations[key]);
-    const wrappedKey = `${tag.start}${key}${tag.end}`;
-    const re = new RegExp(escapeRegex(wrappedKey), 'g');
-    string = string.replace(re, interpolations[key]);
+  if (!string) {
+    console.error(`Couldn't find '${id}' in the translations table`); // eslint-disable-line no-console
+    return null;
   }
 
-  return (<span dangerouslySetInnerHTML={ {__html: string} }></span>);
+  string = interpolate(string, interpolations, tag);
+
+  return (<span dangerouslySetInnerHTML={{__html: string}}/>); // eslint-disable-line react/no-danger
 };
 
 HtmlText.propTypes = {
   id: PropTypes.string.isRequired,
-  interpolations: PropTypes.object,
+  interpolations: PropTypes.objectOf(PropTypes.string),
   tag: PropTypes.shape({
     start: PropTypes.string,
-    end: PropTypes.string
-  })
+    end: PropTypes.string,
+  }),
 };
 
 export default withTranslations(HtmlText);

@@ -59,3 +59,5 @@ exports[`Renders a string with one HTML part 1`] = `
   }
 />
 `;
+
+exports[`Renders nothing if the string is not there 1`] = `null`;

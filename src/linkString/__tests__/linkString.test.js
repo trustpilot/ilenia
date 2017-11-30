@@ -9,9 +9,10 @@ const translations = {
   'test4': 'A link [LINK-BEGIN]in the[LINK-END] middle',
 };
 
-const setupLink = (string, links) => (<LocalizationProvider locale="en-US" translations={translations}>
-  <LinkString string={string} links={links}></LinkString>
-</LocalizationProvider>);
+const setupLink = (string, links) => (
+  <LocalizationProvider locale="en-US" translations={translations}>
+    <LinkString string={string} links={links} />
+  </LocalizationProvider>);
 
 test('Renders a string with no links in it', () => {
   const component = renderer.create(setupLink('test1', []));
@@ -30,12 +31,12 @@ test('Renders a string with one link in the middle', () => {
 test('Renders a string with multiple links in it', () => {
   const links = [
     {
-      href: 'http://something1'
+      href: 'http://something1',
     },
     {
       start: '[LINK2-BEGIN]',
       end: '[LINK2-END]',
-      href: 'http://something2'
+      href: 'http://something2',
     }];
 
   const component = renderer.create(setupLink('test3', links));
@@ -46,13 +47,22 @@ test('Renders a string with multiple links in it', () => {
 
 test('Renders a string with a link with arbitrary attributes', () => {
   const links = [{
-      href: 'http://something1',
-      target: '_blank',
-      class: 'button'
-    }];
+    href: 'http://something1',
+    target: '_blank',
+    class: 'button',
+  }];
 
   const component = renderer.create(setupLink('test4', links));
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('Renders nothing when the string is not there', () => {
+  console.error = jest.fn(); // eslint-disable-line no-console
+  const component = renderer.create(setupLink('not-there'));
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+  expect(console.error).toHaveBeenCalled(); // eslint-disable-line no-console
 });
