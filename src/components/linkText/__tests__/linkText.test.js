@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import LocalizationProvider from '../../provider';
+import LocalizationProvider from '../../localizationProvider';
 import LinkText from '../';
 
 const translations = {
