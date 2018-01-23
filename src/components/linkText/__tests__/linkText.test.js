@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { LocalizationProvider, LinkString } from '../../';
+import LocalizationProvider from '../../provider';
+import LinkText from '../';
 
 const translations = {
   'test1': 'No links in the string',
@@ -11,8 +12,9 @@ const translations = {
 
 const setupLink = (string, links) => (
   <LocalizationProvider locale="en-US" translations={translations}>
-    <LinkString string={string} links={links} />
-  </LocalizationProvider>);
+    <LinkText string={string} links={links} translations={translations}/>
+  </LocalizationProvider>
+);
 
 test('Renders a string with no links in it', () => {
   const component = renderer.create(setupLink('test1', []));

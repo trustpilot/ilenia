@@ -36,7 +36,7 @@ const Header = withTranslations(({ locale, translations }) => {
 ```
 
 
-3. Use the `<LinkString>` component to render strings with links in them.
+3. Use the `<LinkText>` component to render strings with links in them.
 
 Using following translations object:
 
@@ -44,14 +44,14 @@ Using following translations object:
   'footer': 'Please check out or [LINK-BEGIN]awesome blog[LINK-END]'
 }`
 
-... the `<LinkString>` can be used like this:
+... the `<LinkText>` can be used like this:
 
 ```javascript
-import { LinkString } from '@trustpilot/react-localization'
+import { LinkText } from '@trustpilot/react-localization'
 
 const Footer = () => {
   return <div className="footer">
-    <LinkString string="footer" links={[ { href: 'https://tech.trustpilot.com/' } ]}
+    <LinkText string="footer" links={[ { href: 'https://tech.trustpilot.com/' } ]}
   </div>
 }
 ```

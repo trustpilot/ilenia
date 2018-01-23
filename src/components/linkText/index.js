@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withTranslations} from '../';
+import withTranslations from '../withTranslations';
 
-const LinkString = (props) => {
+const LinkText = (props) => {
   const { string, translations } = props;
 
   if (!translations[string]) {
@@ -55,7 +55,7 @@ const LinkString = (props) => {
   });
 };
 
-LinkString.propTypes = {
+LinkText.propTypes = {
   string: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(PropTypes.shape({
     start: PropTypes.string,
@@ -64,4 +64,4 @@ LinkString.propTypes = {
   })),
 };
 
-export default withTranslations(LinkString);
+export default withTranslations(LinkText);
