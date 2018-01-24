@@ -1,6 +1,6 @@
 {
   "name": "@trustpilot/react-localization",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Components and utilities for translations and localization in React",
   "main": "lib/react-localization.js",
   "license": "MIT",

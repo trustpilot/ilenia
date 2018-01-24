@@ -5,19 +5,22 @@
 
 ## Using the module
 
-1. Wrap your app with the `LocalizationProvider` and pass current `locale` and `translations`. Translations should be a flat object with key/value pairs.
+1. Wrap your app with the `LocalizationProvider` and pass current `locale`, `translations` and `fallbackTranslations`. Translations and fallbackTranslations are merged into one object for consumers of the components in this library and `withTranslations`.
 
 ```javascript
 import { LocalizationProvider } from '@trustpilot/react-localization'
 
-const locale = 'en-US'
-const translations = {
-  'header': 'Localized React app',
+const locale = 'en-GB'
+const enGB = {
+  'header': 'Localised React app',
   'welcomeMessage': 'Welcome to this website!'
+}
+const enUS = {
+  'body': 'Localization is fun!'
 }
 
 const App = () => ({
-  <LocalizationProvider locale={locale} translations={translations}>
+  <LocalizationProvider locale={locale} translations={enGB} fallbackTranslations={enUS}>
     <div className="app">
       ... Your app goes here
     </div>

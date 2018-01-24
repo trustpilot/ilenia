@@ -5,7 +5,7 @@ class LocalizationProvider extends Component {
   getChildContext() {
     return {
       locale: this.props.locale,
-      translations: this.props.translations,
+      translations: { ...this.props.translations, ...this.props.fallbackTranslations },
     };
   }
 
@@ -20,6 +20,7 @@ class LocalizationProvider extends Component {
     ]).isRequired,
     locale: PropTypes.string.isRequired,
     translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+    fallbackTranslations: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   };
 
   static childContextTypes = {
