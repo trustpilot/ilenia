@@ -1,4 +1,4 @@
-export { default as LocalizationProvider } from './components/provider';
+export { default as LocalizationProvider } from './components/localizationProvider';
 export { default as withTranslations } from './components/withTranslations';
 export { default as LinkText } from './components/linkText';
 export { default as Text } from './components/text';

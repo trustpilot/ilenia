@@ -12,21 +12,20 @@ class LocalizationProvider extends Component {
   render() {
     return this.props.children;
   }
+
+  static propTypes = {
+    children: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.arrayOf(PropTypes.node),
+    ]).isRequired,
+    locale: PropTypes.string.isRequired,
+    translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  };
+
+  static childContextTypes = {
+    locale: PropTypes.string.isRequired,
+    translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  };
 }
-
-
-LocalizationProvider.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]).isRequired,
-  locale: PropTypes.string.isRequired,
-  translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-};
-
-LocalizationProvider.childContextTypes = {
-  locale: PropTypes.string.isRequired,
-  translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-};
 
 export default LocalizationProvider;

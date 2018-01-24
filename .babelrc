@@ -12,9 +12,10 @@
         "regenerator": true
       }
     ],
-    "transform-async-to-generator",
     "react-require",
+    "transform-async-to-generator",
     "transform-object-rest-spread",
+    "transform-class-properties",
     "transform-react-jsx",
   ]
 }
