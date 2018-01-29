@@ -24,3 +24,11 @@ test('It uses a defined token tag', () => {
   const output = interpolate('This string has [number] token', { number: 'one' }, tags);
   expect(output).toBe('This string has one token');
 });
+
+test('Handles an empty input', () => {
+  let output = interpolate('');
+  expect(output).toBe('');
+
+  output = interpolate();
+  expect(output).toBe('');
+});
