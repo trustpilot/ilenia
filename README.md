@@ -6,11 +6,11 @@
 
 - [Using the module](#using-the-module)
 - [Components](#components)
- - [Text](#text)
- - [LinkText](#linktext)
- - [HtmlText](#htmltext)
- - [withTranslations](#withtranslations)
- - [Interpolate](#interpolate)
+  - [Text](#text)
+  - [LinkText](#linktext)
+  - [HtmlText](#htmltext)
+  - [withTranslations](#withtranslations)
+  - [Interpolate](#interpolate)
 
 
 ## Using the module
