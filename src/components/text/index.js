@@ -1,8 +1,8 @@
-import { withTranslations } from '../';
-import { interpolate } from '../interpolations';
+import withTranslations from '../withTranslations';
+import { interpolate } from '../../utils/interpolations';
 import PropTypes from 'prop-types';
 
-const Text = ({ id, interpolations = {}, translations = {}, tag = {start: '{', end: '}'} }) => {
+const Text = ({ id, interpolations = {}, translations = {}, tag }) => {
   const string = translations[id];
   if (!string) {
     console.error(`Couldn't find '${id}' in the translations table`); // eslint-disable-line no-console

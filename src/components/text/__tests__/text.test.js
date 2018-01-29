@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { LocalizationProvider, Text } from '../../';
+import LocalizationProvider from '../../localizationProvider';
+import Text from '../';
 
 const translations = {
   'test1': 'Just a random string',
@@ -10,8 +11,9 @@ const translations = {
 
 const setupText = (string, interpolations, tag) => (
   <LocalizationProvider locale="en-US" translations={translations}>
-    <Text id={string} interpolations={interpolations} tag={tag}/>
-  </LocalizationProvider>);
+    <Text id={string} interpolations={interpolations} tag={tag} translations={translations}/>
+  </LocalizationProvider>
+);
 
 test('Renders a plain string', () => {
   const component = renderer.create(setupText('test1'));
