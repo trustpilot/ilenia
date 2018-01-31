@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import 'raf/polyfill';
 import TestUtils from 'react-dom/test-utils';
 import LocalizationProvider from '../';
 
