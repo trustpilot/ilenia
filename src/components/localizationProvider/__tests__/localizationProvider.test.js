@@ -6,11 +6,11 @@ import LocalizationProvider from '../';
 const locale = 'da-DK';
 
 const translations = {
-  danish: 'Dansk',
+  myString: 'Dansk',
 };
 
 const fallbackTranslations = {
-  english: 'English (US)',
+  myString: 'English (US)',
 };
 
 class Child extends Component {
@@ -36,6 +36,5 @@ test('Provider merges translations and fallback translations correctly', () => {
     </LocalizationProvider>);
 
   const child = TestUtils.findRenderedComponentWithType(component, Child);
-  expect(child.context.translations.danish).toBe('Dansk');
-  expect(child.context.translations.english).toBe('English (US)');
+  expect(child.context.translations.myString).toBe('Dansk');
 });
