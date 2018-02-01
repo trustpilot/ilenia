@@ -5,7 +5,7 @@ class LocalizationProvider extends Component {
   getChildContext() {
     return {
       locale: this.props.locale,
-      translations: { ...this.props.translations, ...this.props.fallbackTranslations },
+      translations: { ...this.props.fallbackTranslations, ...this.props.translations },
     };
   }
 
