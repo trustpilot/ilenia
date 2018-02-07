@@ -3,8 +3,9 @@
   "version": "2.0.0",
   "description": "Components and utilities for translations and localization in React",
   "main": "lib/react-localization.js",
+  "typings": "lib/index.d.ts",
   "license": "MIT",
-  "keywords": "react localization translate translation",
+  "keywords": ["react", "localization", "translate", "translation"],
   "homepage": "https://github.com/trustpilot/react-localization",
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "4.3.1",
     "eslint": "^4.8.0",
     "eslint-config-trustpilot": "^3.1.1",
     "eslint-plugin-babel": "^4.1.2",
