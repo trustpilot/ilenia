@@ -77,7 +77,21 @@ const translations = {
 };
 
 const App = () => (
-  <LinkText id="welcomeMessage" links={[ { href: 'https://tech.trustpilot.com/' } ]} />
+  <LinkText string="welcomeMessage" links={[ { href: 'https://tech.trustpilot.com/' } ]} />
+);
+```
+
+Or if your link has different tokens:
+
+```javascript
+import { LinkText } from '@trustpilot/react-localization'
+
+const translations = {
+  'footer': 'Please check out or {mylink}awesome blog{/mylink}'
+};
+
+const App = () => (
+  <LinkText string="welcomeMessage" links={[ { href: 'https://tech.trustpilot.com/', start: '{mylink}', end: '{/mylink}' } ]} />
 );
 ```
 
