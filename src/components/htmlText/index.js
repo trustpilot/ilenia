@@ -1,7 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import ReactHtmlParser from 'react-html-parser';
 import withTranslations from '../withTranslations';
 import { interpolate } from '../../utils/interpolations';
+
 
 const HtmlText = ({ id, interpolations = {}, translations = {}, tag }) => {
   let string = translations[id];
@@ -11,8 +12,9 @@ const HtmlText = ({ id, interpolations = {}, translations = {}, tag }) => {
   }
 
   string = interpolate(string, interpolations, tag);
+  const react = ReactHtmlParser(string);
 
-  return (<span dangerouslySetInnerHTML={{__html: string}}/>); // eslint-disable-line react/no-danger
+  return react;
 };
 
 HtmlText.propTypes = {

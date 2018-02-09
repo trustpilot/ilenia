@@ -5,7 +5,12 @@
   "main": "lib/react-localization.js",
   "typings": "lib/index.d.ts",
   "license": "MIT",
-  "keywords": ["react", "localization", "translate", "translation"],
+  "keywords": [
+    "react",
+    "localization",
+    "translate",
+    "translation"
+  ],
   "homepage": "https://github.com/trustpilot/react-localization",
   "repository": {
     "type": "git",
@@ -17,7 +22,8 @@
   "author": "Trustpilot",
   "dependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "react-html-parser": "^2.0.2"
   },
   "scripts": {
     "lint": "eslint src/",
