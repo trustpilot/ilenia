@@ -22,7 +22,7 @@
   "scripts": {
     "lint": "eslint src/",
     "test": "jest",
-    "build": "webpack -p",
+    "build": "webpack",
     "dev": "webpack -d --progress --colors --watch"
   },
   "devDependencies": {
