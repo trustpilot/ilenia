@@ -12,9 +12,7 @@ const HtmlText = ({ id, interpolations = {}, translations = {}, tag }) => {
   }
 
   string = interpolate(string, interpolations, tag);
-  const react = ReactHtmlParser(string);
-
-  return react;
+  return ReactHtmlParser(string);
 };
 
 HtmlText.propTypes = {
