@@ -109,14 +109,15 @@ const Header = () => (
 
 ### withTranslations
 
-To get access to raw translations data in a component, use the `withTranslations` HOC:
+To get access to raw translations data or the current locale in a component, use the `withTranslations` HOC:
 
 
 ```javascript
 
-const TextRenderer = ({ locale, translations, isFirstVisit }) => {
+const TextRenderer = ({ locale, translations, isFirstVisit, visitorNumber }) => {
   const stringToRender = isFirstVisit ? translations['welcomeFirstVisit'] : translations['welcomeBack'];
-  return (<WelcomeMessage message={stringToRender}</HtmlText>);
+  const visitorNumberDisplay = visitorNumber.toLocaleString(locale);
+  return (<WelcomeMessage message={stringToRender} numberDisplay={visitorNumberDisplay} />);
 };
 
 export default withTranslations(TextRenderer);
