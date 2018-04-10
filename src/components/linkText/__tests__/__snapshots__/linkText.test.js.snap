@@ -14,6 +14,21 @@ Array [
 ]
 `;
 
+exports[`Renders a string with a working onClick callback 1`] = `
+Array [
+  "A link ",
+  <a
+    className="button"
+    href="http://something1"
+    onClick={[Function]}
+    target="_blank"
+  >
+    in the
+  </a>,
+  " middle",
+]
+`;
+
 exports[`Renders a string with multiple links in it 1`] = `
 Array [
   "A link ",
@@ -28,6 +43,7 @@ Array [
   >
     in the end
   </a>,
+  "",
 ]
 `;
 

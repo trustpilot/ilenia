@@ -1,4 +1,5 @@
 import React from 'react';
+import {render, Simulate} from 'react-testing-library';
 import renderer from 'react-test-renderer';
 import LocalizationProvider from '../../localizationProvider';
 import LinkText from '../';
@@ -56,6 +57,25 @@ test('Renders a string with a link with arbitrary attributes', () => {
 
   const component = renderer.create(setupLink('test4', links));
 
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Renders a string with a working onClick callback', () => {
+  const onClickSpy = jest.fn();
+
+  const links = [{
+    href: 'http://something1',
+    target: '_blank',
+    class: 'button',
+    onClick: onClickSpy,
+  }];
+
+  const {getByText} = render(setupLink('test4', links));
+  Simulate.click(getByText('in the'));
+  expect(onClickSpy.mock.calls.length).toBe(1);
+
+  const component = renderer.create(setupLink('test4', links));
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

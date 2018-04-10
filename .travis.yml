@@ -2,6 +2,7 @@ sudo: false
 
 language: node_js
 
+# Keep empty to use version from .nvmrc
 node_js:
 
 cache:

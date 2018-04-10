@@ -1,22 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withTranslations from '../withTranslations';
-import ReactHtmlParser from 'react-html-parser';
-
-const linkToAttributes = (link) =>
-  Object
-    .keys(link)
-    .filter((key) => key !== 'start' && key !== 'end')
-    .reduce((attributes, key) => `${attributes} ${key}=${link[key]}`, '');
+import reactStringReplace from 'react-string-replace';
 
 const escapeRegex = (str) => str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
 
 const linkRegex = (startTag, endTag) =>
   new RegExp(`${escapeRegex(startTag)}(.*)${escapeRegex(endTag)}`, 'g');
-
-const replaceWithLink = (string, link) =>
-  string.replace(linkRegex(link.start, link.end),
-    `<a ${linkToAttributes(link)}>$1</a>`);
 
 const addDefaultValues = (link) => ({
   ...link,
@@ -24,19 +14,36 @@ const addDefaultValues = (link) => ({
   end: link.end || '[LINK-END]',
 });
 
-
 const LinkText = ({ string, translations, links }) => {
   if (!translations[string]) {
     console.error(`Couldn't find '${string}' in the translations table`); // eslint-disable-line no-console
     return <span/>;
   }
 
-  const translated = translations[string];
-  const htmlString = links
-    .map(addDefaultValues)
-    .reduce(replaceWithLink, translated);
+  let translated = translations[string];
 
-  return ReactHtmlParser(htmlString);
+  links.map(addDefaultValues).map((link) => {
+    const regexp = linkRegex(link.start, link.end);
+
+    const linkProperties = {...link};
+    delete linkProperties.start;
+    delete linkProperties.end;
+    delete linkProperties.class;
+
+    if (link.class) {
+      linkProperties.className = link.class;
+    }
+
+    translated = reactStringReplace(translated, regexp, (match) => (
+      <a {...linkProperties} key={link.href}>
+        {match}
+      </a>
+    ));
+
+    return translated;
+  });
+
+  return translated;
 };
 
 LinkText.propTypes = {
@@ -45,6 +52,7 @@ LinkText.propTypes = {
     start: PropTypes.string,
     end: PropTypes.string,
     href: PropTypes.string,
+    onClick: PropTypes.func,
   })),
 };
 
