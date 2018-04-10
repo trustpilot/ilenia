@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, Simulate, wait} from 'react-testing-library';
+import {render, Simulate} from 'react-testing-library';
 import renderer from 'react-test-renderer';
 import LocalizationProvider from '../../localizationProvider';
 import LinkText from '../';
