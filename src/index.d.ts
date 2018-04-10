@@ -6,7 +6,7 @@ declare namespace Props {
         interpolations: {
             [key: string]: string;
         };
-        tag: {
+        tag?: {
             start: string;
             end: string;
         };
@@ -16,6 +16,7 @@ declare namespace Props {
         start: string;
         end: string;
         href: string;
+        onClick?: (event: React.EventHandler<HTMLAnchorElement>) => {};
     }
     export interface LinkText {
         string: string;

@@ -52,6 +52,7 @@ LinkText.propTypes = {
     start: PropTypes.string,
     end: PropTypes.string,
     href: PropTypes.string,
+    onClick: PropTypes.func,
   })),
 };
 
