@@ -1,18 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const withTranslations = (Component) => {
-  const wrapper = (props, context) =>
-    <Component {...props} translations={context.translations} locale={context.locale}/>;
+import LocalizationContext from '../Context';
 
-  wrapper.contextTypes = {
-    locale: PropTypes.string.isRequired,
-    translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  };
-
-  wrapper.displayName = `withTranslations(${Component.displayName || Component.name})`;
-
-  return wrapper;
-};
+const withTranslations = (Component) => (props) => (
+  <LocalizationContext.Consumer>
+    {(context) => <Component {...props} translations={context.translations} locale={context.locale}/>}
+  </LocalizationContext.Consumer>
+);
 
 export default withTranslations;

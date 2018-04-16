@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import 'raf/polyfill';
-import TestUtils from 'react-dom/test-utils';
+import renderer from 'react-test-renderer';
+
 import LocalizationProvider from '../';
+import LocalizationContext from '../../Context';
 
 const locale = 'da-DK';
 
@@ -14,28 +15,22 @@ const fallbackTranslations = {
   myString: 'English (US)',
 };
 
-class Child extends Component {
-  render() {
-    return <div/>;
-  }
-
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  static contextTypes = {
-    locale: PropTypes.string.isRequired,
-    translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  }
-}
+const Child = (props) => (
+  <div>
+    <span>{JSON.stringify(props.translations)}</span>
+    <span>{props.locale}</span>
+  </div>
+);
 
 test('Provider merges translations and fallback translations correctly', () => {
-
-  const component = TestUtils.renderIntoDocument(
+  const component = renderer.create(
     <LocalizationProvider locale={locale} translations={translations} fallbackTranslations={fallbackTranslations}>
-      <Child/>
-    </LocalizationProvider>);
+      <LocalizationContext.Consumer>
+        {(context) => <Child translations={context.translations} locale={context.locale} />}
+      </LocalizationContext.Consumer>
+    </LocalizationProvider>
+  );
 
-  const child = TestUtils.findRenderedComponentWithType(component, Child);
-  expect(child.context.translations.myString).toBe('Dansk');
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });

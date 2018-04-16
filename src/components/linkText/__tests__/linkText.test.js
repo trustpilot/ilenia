@@ -1,4 +1,5 @@
 import React from 'react';
+import 'raf/polyfill';
 import {render, Simulate} from 'react-testing-library';
 import renderer from 'react-test-renderer';
 import LocalizationProvider from '../../localizationProvider';

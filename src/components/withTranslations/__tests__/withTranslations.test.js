@@ -1,18 +1,34 @@
-import withTranslations from '../';
+import React from 'react';
+import 'raf/polyfill';
+import renderer from 'react-test-renderer';
 
-const locale = 'en-US';
+import withTranslations from '../';
+import LocalizationProvider from '../../localizationProvider';
+
+const locale = 'da-DK';
 const translations = {
-  'test1': 'Just a random string',
+  myString: 'Dansk',
+};
+const fallbackTranslations = {
+  myString: 'English (US)',
 };
 
-test('Wrapped component has access to locale and translations as props', () => {
-  const mockComponent = () => null;
-  const output = withTranslations(mockComponent)({}, {
-    locale,
-    translations,
-  });
+const Child = (props) => (
+  <div>
+    <span>{JSON.stringify(props.translations)}</span>
+    <span>{props.locale}</span>
+  </div>
+);
 
-  expect(output.props.locale).toBe(locale);
-  expect(output.props.translations).not.toBe(null);
-  expect(output.props.translations.test1).toBe(translations.test1);
+test('Wrapped component has access to locale and translations as props', () => {
+  const TranslatedChild = withTranslations(Child);
+
+  const component = renderer.create(
+    <LocalizationProvider locale={locale} translations={translations} fallbackTranslations={fallbackTranslations}>
+      <TranslatedChild />
+    </LocalizationProvider>
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
