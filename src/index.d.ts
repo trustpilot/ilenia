@@ -47,6 +47,10 @@ declare namespace Props {
             end: string;
         };
     }
+
+    export interface NumberText {
+        value: number;
+    }
 }
 
 export const HtmlText: React.SFC<Props.HtmlText>

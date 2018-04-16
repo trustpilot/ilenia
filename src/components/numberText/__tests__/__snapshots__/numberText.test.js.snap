@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a localized number with a correct locale 1`] = `"1,000,000"`;
+
+exports[`Renders a localized number with an incorrect locale 1`] = `"1000000"`;
