@@ -9,6 +9,7 @@
   - [Text](#text)
   - [LinkText](#linktext)
   - [HtmlText](#htmltext)
+  - [NumberText](#numbertext)
   - [withTranslations](#withtranslations)
   - [Interpolate](#interpolate)
 
@@ -120,6 +121,20 @@ const Header = () => (
 );
 ```
 
+
+### NumberText
+
+Use the `<NumberText>` component to localize a number.
+
+```javascript
+import { NumberText } from '@trustpilot/react-localization'
+
+const LocalizedNumber = () => (
+  <div>
+    <NumberText value={1000000} />
+  </div>
+);
+```
 
 ### withTranslations
 
