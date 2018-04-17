@@ -1,16 +1,16 @@
 import withTranslations from '../withTranslations';
 import PropTypes from 'prop-types';
 
-const NumberText = ({ value, locale }) => {
+const NumberText = ({ number, locale }) => {
   try {
-    return value.toLocaleString(locale);
+    return number.toLocaleString(locale);
   } catch (error) {
-    return value;
+    return number;
   }
 };
 
 Text.propTypes = {
-  value: PropTypes.number.isRequired,
+  number: PropTypes.number.isRequired,
 };
 
 export default withTranslations(NumberText);

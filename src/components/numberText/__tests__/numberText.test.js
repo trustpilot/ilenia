@@ -7,7 +7,7 @@ import NumberText from '../';
 test('Renders a localized number with a correct locale', () => {
   const component = renderer.create(
     <LocalizationProvider locale="en-US" translations={{}}>
-      <NumberText value={1000000} />
+      <NumberText number={1000000} />
     </LocalizationProvider>
   );
 
@@ -18,7 +18,7 @@ test('Renders a localized number with a correct locale', () => {
 test('Renders a localized number with an incorrect locale', () => {
   const component = renderer.create(
     <LocalizationProvider locale="abcdefghijklmnopqrstuvwxyz" translations={{}}>
-      <NumberText value={1000000} />
+      <NumberText number={1000000} />
     </LocalizationProvider>
   );
 

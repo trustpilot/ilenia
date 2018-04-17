@@ -131,7 +131,7 @@ import { NumberText } from '@trustpilot/react-localization'
 
 const LocalizedNumber = () => (
   <div>
-    <NumberText value={1000000} />
+    <NumberText number={1000000} />
   </div>
 );
 ```
