@@ -35,7 +35,7 @@ const LinkText = ({ string, translations, links }) => {
     }
 
     translated = reactStringReplace(translated, regexp, (match) => (
-      <a {...linkProperties} key={index}>
+      <a {...linkProperties} key={`link-text-${index}`}>
         {match}
       </a>
     ));
