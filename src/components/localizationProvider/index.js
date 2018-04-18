@@ -1,32 +1,26 @@
-import { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class LocalizationProvider extends Component {
-  getChildContext() {
-    return {
-      locale: this.props.locale,
-      translations: { ...this.props.fallbackTranslations, ...this.props.translations },
-    };
-  }
+import LocalizationContext from '../Context';
 
-  render() {
-    return this.props.children;
-  }
+const LocalizationProvider = ({children, fallbackTranslations, locale, translations}) => (
+  <LocalizationContext.Provider
+    value={{
+      locale,
+      translations: {...fallbackTranslations, ...translations},
+    }} >
+    {children}
+  </LocalizationContext.Provider>
+);
 
-  static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]).isRequired,
-    locale: PropTypes.string.isRequired,
-    translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-    fallbackTranslations: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  };
-
-  static childContextTypes = {
-    locale: PropTypes.string.isRequired,
-    translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  };
-}
+LocalizationProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]).isRequired,
+  locale: PropTypes.string.isRequired,
+  translations: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  fallbackTranslations: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+};
 
 export default LocalizationProvider;
