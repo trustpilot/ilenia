@@ -49,7 +49,7 @@ declare namespace Props {
     }
 
     export interface NumberText {
-        value: number;
+        number: number;
     }
 }
 
