@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, Simulate} from 'react-testing-library';
+import {render, Simulate, queryByAttribute} from 'react-testing-library';
 import renderer from 'react-test-renderer';
 import LocalizationProvider from '../../localizationProvider';
 import LinkText from '../';
@@ -9,6 +9,7 @@ const translations = {
   'test2': 'A link [LINK-BEGIN]in the[LINK-END] middle',
   'test3': 'A link [LINK-BEGIN]in the[LINK-END] middle and one [LINK2-BEGIN]in the end[LINK2-END]',
   'test4': 'A link [LINK-BEGIN]in the[LINK-END] middle',
+  'test5': 'A link [LINK-BEGIN]in the[LINK-END] middle',
 };
 
 const setupLink = (string, links) => (
