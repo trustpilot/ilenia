@@ -24,7 +24,7 @@ const LinkText = ({ string, translations, links }) => {
 
   links.map(addDefaultValues).map((link, index) => {
     const regexp = linkRegex(link.start, link.end);
-
+    const linkKey = `link-text-${index}`;
     const linkProperties = {...link};
     delete linkProperties.start;
     delete linkProperties.end;
@@ -35,7 +35,7 @@ const LinkText = ({ string, translations, links }) => {
     }
 
     translated = reactStringReplace(translated, regexp, (match) => (
-      <a {...linkProperties} key={`link-text-${index}`}>
+      <a {...linkProperties} key={linkKey}>
         {match}
       </a>
     ));
