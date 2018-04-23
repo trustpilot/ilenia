@@ -68,7 +68,7 @@ const Header = () => (
 
 ### LinkText
 
-Use `<LinkText>` to render a string with links in it.
+Use `<LinkText>` to render a string with links in it. Any properties added to the link object will be added to the link element that is created.
 
 ```javascript
 import { LinkText } from '@trustpilot/react-localization'
@@ -94,6 +94,25 @@ const translations = {
 const App = () => (
   <LinkText string="welcomeMessage" links={[ { href: 'https://tech.trustpilot.com/', start: '{mylink}', end: '{/mylink}' } ]} />
 );
+```
+
+It's possible to add click handlers to the created links as well (eg. a tracking event)
+
+```javascript
+import { LinkText } from '@trustpilot/react-localization'
+
+const translations = {
+  'bodyText': 'Click here to [LINK-BEGIN]read more[LINK-END]'
+}
+
+const link = {
+  href: 'https://tech.trustpilot.com/',
+  onClick: () => analytics.track()
+}
+
+const App = () => (
+  <LinkText string="bodyText" links={[ link ]} />
+)
 ```
 
 ### HtmlText
