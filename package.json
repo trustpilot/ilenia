@@ -1,6 +1,6 @@
 {
   "name": "@trustpilot/react-localization",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Components and utilities for translations and localization in React",
   "main": "lib/react-localization.js",
   "typings": "lib/index.d.ts",

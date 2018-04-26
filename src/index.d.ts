@@ -13,8 +13,8 @@ declare namespace Props {
     }
 
     export interface Link {
-        start: string;
-        end: string;
+        start?: string;
+        end?: string;
         href: string;
         onClick?: (event: React.EventHandler<HTMLAnchorElement>) => {};
     }
@@ -57,4 +57,4 @@ export const HtmlText: React.SFC<Props.HtmlText>
 export const LinkText: React.SFC<Props.LinkText>
 export const LocalizationProvider: React.SFC<Props.LocalizationProvider>
 export const Text: React.SFC<Props.Text>
-export function withTranslations (Component: React.Component): React.SFC<any>
+export function withTranslations (Component: React.ComponentType<any>): React.ComponentType<any>
