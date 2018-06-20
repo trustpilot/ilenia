@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import ReactHtmlParser from 'react-html-parser';
+import Parser from 'html-react-parser';
 import withTranslations from '../withTranslations';
 import { interpolate } from '../../utils/interpolations';
 
@@ -12,7 +12,7 @@ const HtmlText = ({ id, interpolations = {}, translations = {}, tag }) => {
   }
 
   string = interpolate(string, interpolations, tag);
-  return ReactHtmlParser(string);
+  return Parser(string);
 };
 
 HtmlText.propTypes = {
