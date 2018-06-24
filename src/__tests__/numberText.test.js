@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import LocalizationProvider from '../../localizationProvider';
-import NumberText from '../';
+import LocalizationProvider from '../LocalizationProvider';
+import NumberText from '../NumberText';
 
 test('Renders a localized number with a correct locale', () => {
   const component = renderer.create(

@@ -2,15 +2,13 @@ import React from 'react';
 import 'raf/polyfill';
 import renderer from 'react-test-renderer';
 
-import LocalizationProvider from '../';
-import LocalizationContext from '../../Context';
+import withTranslations from '../withTranslations';
+import LocalizationProvider from '../LocalizationProvider';
 
 const locale = 'da-DK';
-
 const translations = {
   myString: 'Dansk',
 };
-
 const fallbackTranslations = {
   myString: 'English (US)',
 };
@@ -22,12 +20,12 @@ const Child = (props) => (
   </div>
 );
 
-test('Provider merges translations and fallback translations correctly', () => {
+test('Wrapped component has access to locale and translations as props', () => {
+  const TranslatedChild = withTranslations(Child);
+
   const component = renderer.create(
     <LocalizationProvider locale={locale} translations={translations} fallbackTranslations={fallbackTranslations}>
-      <LocalizationContext.Consumer>
-        {(context) => <Child translations={context.translations} locale={context.locale} />}
-      </LocalizationContext.Consumer>
+      <TranslatedChild />
     </LocalizationProvider>
   );
 

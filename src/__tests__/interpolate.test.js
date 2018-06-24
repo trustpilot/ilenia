@@ -1,7 +1,7 @@
-import { interpolate } from '../interpolations';
+import interpolate from '../interpolate';
 
 test('It replaces a token in a string', () => {
-  const output = interpolate('This string has {number} token', { number: 'one'});
+  const output = interpolate('This string has {number} token', { number: 'one' });
   expect(output).toBe('This string has one token');
 });
 

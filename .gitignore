@@ -1,5 +1,8 @@
 node_modules
 /devConfig.json
 /dist/
-lib
 npm-debug.log
+es
+/*.js
+/*.ts
+yarn-error.log

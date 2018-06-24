@@ -2,8 +2,9 @@
   "name": "@trustpilot/react-localization",
   "version": "4.2.0",
   "description": "Components and utilities for translations and localization in React",
-  "main": "lib/react-localization.js",
-  "typings": "lib/index.d.ts",
+  "main": "index.js",
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
   "license": "MIT",
   "keywords": [
     "react",
@@ -20,6 +21,10 @@
     "registry": "https://trustpilot.myget.org/F/npm/npm/"
   },
   "author": "Trustpilot",
+  "peerDependencies": {
+    "prop-types": "15.x",
+    "react": "16.3.x"
+  },
   "dependencies": {
     "html-react-parser": "0.4.6",
     "prop-types": "15.6.1",
@@ -28,25 +33,18 @@
   },
   "scripts": {
     "lint": "eslint src/",
-    "test": "jest",
-    "test:update": "jest --updateSnapshot",
-    "build": "webpack",
-    "dev": "webpack -d --progress --colors --watch"
+    "test": "NODE_ENV=test jest",
+    "build": "babel src --out-dir . --copy-files --ignore __tests__"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "8.2.2",
     "babel-jest": "^21.2.0",
-    "babel-loader": "7.1.4",
-    "babel-plugin-react-require": "^3.0.0",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "copy-webpack-plugin": "4.5.1",
     "eslint": "4.19.1",
     "eslint-config-trustpilot": "3.2.1",
     "eslint-plugin-babel": "^4.1.2",
@@ -54,10 +52,10 @@
     "eslint-plugin-react": "7.7.0",
     "jest": "^21.2.1",
     "raf": "^3.4.0",
+    "react": "^16.4.1",
     "react-dom": "16.3.1",
     "react-test-renderer": "16.3.1",
     "react-testing-library": "2.0.0",
-    "transform-runtime": "^0.0.0",
-    "webpack": "^3.6.0"
+    "transform-runtime": "^0.0.0"
   }
 }

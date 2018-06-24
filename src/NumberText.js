@@ -1,4 +1,4 @@
-import withTranslations from '../withTranslations';
+import withTranslations from './withTranslations';
 import PropTypes from 'prop-types';
 
 const NumberText = ({ number, locale }) => {

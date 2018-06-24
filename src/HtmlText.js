@@ -3,7 +3,6 @@ import Parser from 'html-react-parser';
 import withTranslations from '../withTranslations';
 import { interpolate } from '../../utils/interpolations';
 
-
 const HtmlText = ({ id, interpolations = {}, translations = {}, tag }) => {
   let string = translations[id];
   if (!string) {
