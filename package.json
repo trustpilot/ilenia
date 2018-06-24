@@ -36,10 +36,18 @@
     "test": "NODE_ENV=test jest",
     "build": "babel src --out-dir . --copy-files --ignore __tests__"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "verbose": true,
+    "moduleDirectories": ["node_modules", "src"]
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "8.2.2",
     "babel-jest": "^21.2.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",

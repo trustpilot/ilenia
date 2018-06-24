@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Provider merges translations and fallback translations correctly 1`] = `
+<div>
+  <span>
+    {"myString":"Dansk"}
+  </span>
+  <span>
+    da-DK
+  </span>
+</div>
+`;
