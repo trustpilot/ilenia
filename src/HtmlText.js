@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Parser from 'html-react-parser';
-import withTranslations from '../withTranslations';
-import { interpolate } from '../../utils/interpolations';
+import withTranslations from './withTranslations';
+import interpolate from './interpolate';
 
 const HtmlText = ({ id, interpolations = {}, translations = {}, tag }) => {
   let string = translations[id];
