@@ -5,6 +5,7 @@
   "main": "index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
+  "sideEffects": false,
   "license": "MIT",
   "keywords": [
     "react",
