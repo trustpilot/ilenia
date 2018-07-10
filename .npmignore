@@ -4,3 +4,4 @@ build-scripts
 .babelrc
 .eslintrc
 .nvmrc
+src
