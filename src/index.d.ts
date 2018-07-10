@@ -12,9 +12,15 @@ declare namespace Props {
         };
     }
 
-    export interface Link extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>{
+    export interface Link{
         start?: string;
         end?: string;
+        target?: string;
+        id?: string;
+        class?: string;
+        className?: string;
+        href?: string;
+        onClick?: (event: React.MouseEvent<any>) => void;
     }
     export interface LinkText {
         id: string;

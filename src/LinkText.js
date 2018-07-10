@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withTranslations from './withTranslations';
-import reactStringReplace from 'react-string-replace';
+import { parse } from 'htmlstring-to-react';
 
 const escapeRegex = (str) => str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
 
@@ -20,29 +20,43 @@ const LinkText = ({ id, translations, links }) => {
   }
 
   let translated = translations[id];
-
+  const overrides = {};
+  
   links.map(addDefaultValues).map((link, index) => {
     const regexp = linkRegex(link.start, link.end);
-    const linkKey = `link-text-${index}`;
-    const linkProperties = { ...link };
-    delete linkProperties.start;
-    delete linkProperties.end;
-    delete linkProperties.class;
+    const key = `link-text-${index}`;
 
-    if (link.class) {
-      linkProperties.className = link.class;
+    const props = {
+      className: link.class || link.className,
+      href: link.href,
+      id: link.id,
+      key: key,
+      target: link.target,
+      onClick: link.onClick,
+    };
+    Object.keys(props).forEach((key) => (typeof props[key] === 'undefined') && delete props[key]);
+
+    overrides[`a[key="${key}"]`] = (_, textContent) => (
+      <a {...props}>
+        {textContent}
+      </a>
+    );
+
+    function insertTag(match) {
+      const textContent = match.substring(link.start.length, match.length - link.end.length);
+      return `<a key="${key}">${textContent}</a>`;
     }
 
-    translated = reactStringReplace(translated, regexp, (match) => (
-      <a {...linkProperties} key={linkKey}>
-        {match}
-      </a>
-    ));
-
+    translated = translated.replace(regexp, insertTag);
     return translated;
   });
 
-  return translated;
+  return parse(translated, {
+    dom: {
+      ADD_ATTR: ['target', 'key'],
+    },
+    overrides,
+  });
 };
 
 LinkText.propTypes = {

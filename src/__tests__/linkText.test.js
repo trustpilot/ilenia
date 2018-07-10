@@ -68,14 +68,12 @@ test('Renders a string with a link with arbitrary attributes', () => {
 test('Renders a string with a working onClick callback', () => {
   const onClickSpy = jest.fn();
 
-  const links = [
-    {
-      href: 'http://something1',
-      target: '_blank',
-      class: 'button',
-      onClick: onClickSpy,
-    },
-  ];
+  const links = [{
+    href: 'http://something1',
+    target: '_blank',
+    class: 'button',
+    onClick: onClickSpy,
+  }];
 
   const { getByText } = render(setupLink('test4', links));
   Simulate.click(getByText('in the'));

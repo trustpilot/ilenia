@@ -27,10 +27,9 @@
     "react": "16.3.x"
   },
   "dependencies": {
-    "html-react-parser": "0.4.6",
+    "htmlstring-to-react": "3.0.0",
     "prop-types": "15.6.1",
     "react": "16.3.1",
-    "react-string-replace": "0.4.1",
     "timeago.js": "3.0.2"
   },
   "scripts": {
