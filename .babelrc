@@ -1,21 +1,30 @@
 {
   "compact": true,
   "presets": [
-    "babel-preset-env",
+    [
+      "babel-preset-env",
+      {
+        "loose": false,
+        "modules": false
+      }
+    ],
     "babel-preset-react"
   ],
   "plugins": [
     [
-      "transform-runtime", {
+      "transform-runtime",
+      {
         "helpers": false,
         "polyfill": false,
         "regenerator": true
       }
     ],
-    "react-require",
-    "transform-async-to-generator",
     "transform-object-rest-spread",
-    "transform-class-properties",
-    "transform-react-jsx",
-  ]
+    "transform-react-jsx"
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
 }

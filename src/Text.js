@@ -1,5 +1,5 @@
-import withTranslations from '../withTranslations';
-import { interpolate } from '../../utils/interpolations';
+import withTranslations from './withTranslations';
+import interpolate from './interpolate';
 import PropTypes from 'prop-types';
 
 const Text = ({ id, interpolations = {}, translations = {}, tag }) => {
