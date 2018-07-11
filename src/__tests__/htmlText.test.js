@@ -12,9 +12,9 @@ const translations = {
   test6: 'A string that has <b>regular HTML</b> in it',
 };
 
-const setupText = (string, interpolations, tag) => (
+const setupText = (string, interpolations, tag, eventHandlers) => (
   <LocalizationProvider locale="en-US" translations={translations}>
-    <HtmlText id={string} interpolations={interpolations} tag={tag} />
+    <HtmlText id={string} interpolations={interpolations} tag={tag} eventHandlers={eventHandlers}/>
   </LocalizationProvider>
 );
 
