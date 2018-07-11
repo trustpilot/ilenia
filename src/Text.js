@@ -13,7 +13,7 @@ const Text = ({ id, interpolations = {}, translations = {}, tag }) => {
 };
 
 Text.propTypes = {
-  textKey: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   interpolations: PropTypes.objectOf(PropTypes.string),
   tag: PropTypes.shape({
     start: PropTypes.string,

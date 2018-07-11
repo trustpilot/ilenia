@@ -21,7 +21,7 @@ timeago.register('it-IT', it);
 timeago.register('nl-NL', nl);
 timeago.register('sv-SE', sv);
 
-const Timeago = ({ date, locale }) => {
+const TimeAgo = ({ date, locale }) => {
   const dateWrapper = new Date(date);
   const timeagoInstance = timeago();
 
@@ -33,7 +33,7 @@ const Timeago = ({ date, locale }) => {
   return timeagoInstance.format(date, locale);
 };
 
-Timeago.propTypes = {
+TimeAgo.propTypes = {
   date: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -41,4 +41,4 @@ Timeago.propTypes = {
   ]),
 };
 
-export default withTranslations(Timeago);
+export default withTranslations(TimeAgo);

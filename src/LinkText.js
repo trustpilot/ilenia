@@ -46,7 +46,7 @@ const LinkText = ({ id, translations, links }) => {
 };
 
 LinkText.propTypes = {
-  textKey: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       start: PropTypes.string,

@@ -62,7 +62,7 @@ test('Renders a localized date with an incorrect locale', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('REnders a localized date from UTC date string', () => {
+test('Renders a localized date from UTC date string', () => {
   const component = renderer.create(
     <LocalizationProvider locale="abcdefghijklmnopqrstuvwxyz" translations={{}}>
       <LocaleDate date="2018-07-10T12:38:37.713Z" />
