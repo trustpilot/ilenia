@@ -2,12 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import LocalizationProvider from '../LocalizationProvider';
-import TimeagoText from '../TimeagoText';
+import LocaleDate from '../LocaleDate';
 
 test('Renders a localized date from a number', () => {
   const component = renderer.create(
     <LocalizationProvider locale="en-US" translations={{}}>
-      <TimeagoText date={Date.now() - 11 * 1000 * 60 * 60} />
+      <LocaleDate date={0} />
     </LocalizationProvider>
   );
 
@@ -17,8 +17,8 @@ test('Renders a localized date from a number', () => {
 
 test('Renders a localized date from a string', () => {
   const component = renderer.create(
-    <LocalizationProvider locale="es-ES" translations={{}}>
-      <TimeagoText date={new Date(Date.now() - 11 * 1000 * 60 * 60).toString()} />
+    <LocalizationProvider locale="en-US" translations={{}}>
+      <LocaleDate date={'01 Jan 1970 00:00:00 GMT'} />
     </LocalizationProvider>
   );
 
@@ -28,8 +28,8 @@ test('Renders a localized date from a string', () => {
 
 test('Renders a localized date from a date', () => {
   const component = renderer.create(
-    <LocalizationProvider locale="fr-FR" translations={{}}>
-      <TimeagoText date={new Date(Date.now() - 11 * 1000 * 60 * 60)} />
+    <LocalizationProvider locale="en-US" translations={{}}>
+      <LocaleDate date={new Date(0)} />
     </LocalizationProvider>
   );
 
@@ -37,12 +37,12 @@ test('Renders a localized date from a date', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Throw an error if the date is invalid', () => {
+test('Renders null if the date is invalid', () => {
   console.error = jest.fn();
 
   const component = renderer.create(
     <LocalizationProvider locale="en-US" translations={{}}>
-      <TimeagoText date={'abcdefghijklmnopqrstuvwxyz'} />
+      <LocaleDate date={'abcdefghijklmnopqrstuvwxyz'} />
     </LocalizationProvider>
   );
 
@@ -54,7 +54,18 @@ test('Throw an error if the date is invalid', () => {
 test('Renders a localized date with an incorrect locale', () => {
   const component = renderer.create(
     <LocalizationProvider locale="abcdefghijklmnopqrstuvwxyz" translations={{}}>
-      <TimeagoText date={new Date(Date.now() - 11 * 1000 * 60 * 60)} />
+      <LocaleDate date={0} />
+    </LocalizationProvider>
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('REnders a localized date from UTC date string', () => {
+  const component = renderer.create(
+    <LocalizationProvider locale="abcdefghijklmnopqrstuvwxyz" translations={{}}>
+      <LocaleDate date="2018-07-10T12:38:37.713Z" />
     </LocalizationProvider>
   );
 

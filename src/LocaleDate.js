@@ -1,7 +1,7 @@
 import withTranslations from './withTranslations';
 import PropTypes from 'prop-types';
 
-const DateText = ({ date, locale }) => {
+const LocaleDate = ({ date, locale }) => {
   const dateWrapper = new Date(date);
 
   if (isNaN(dateWrapper)) {
@@ -17,7 +17,7 @@ const DateText = ({ date, locale }) => {
   }
 };
 
-DateText.propTypes = {
+LocaleDate.propTypes = {
   date: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -25,4 +25,4 @@ DateText.propTypes = {
   ]),
 };
 
-export default withTranslations(DateText);
+export default withTranslations(LocaleDate);
