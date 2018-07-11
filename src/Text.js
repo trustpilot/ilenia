@@ -2,10 +2,10 @@ import withTranslations from './withTranslations';
 import interpolate from './interpolate';
 import PropTypes from 'prop-types';
 
-const Text = ({ textKey, interpolations = {}, translations = {}, tag }) => {
-  const string = translations[textKey];
+const Text = ({ id, interpolations = {}, translations = {}, tag }) => {
+  const string = translations[id];
   if (!string) {
-    console.error(`Couldn't find '${textKey}' in the translations table`); // eslint-disable-line no-console
+    console.error(`Couldn't find '${id}' in the translations table`); // eslint-disable-line no-console
     return null;
   }
 
