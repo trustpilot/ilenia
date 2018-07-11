@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a localized date from a date 1`] = `"il y a 11 heures"`;
+
+exports[`Renders a localized date from a number 1`] = `"11 hours ago"`;
+
+exports[`Renders a localized date from a string 1`] = `"hace 11 horas"`;
+
+exports[`Renders a localized date with an incorrect locale 1`] = `"11 hours ago"`;
+
+exports[`Throw an error if the date is invalid 1`] = `null`;
