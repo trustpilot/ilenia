@@ -2,10 +2,19 @@ import React from 'react';
 
 import LocalizationContext from './Context';
 
-const withTranslations = (Component) => (props) => (
-  <LocalizationContext.Consumer>
-    {(context) => <Component {...props} translations={context.translations} locale={context.locale} />}
-  </LocalizationContext.Consumer>
-);
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
+
+const withTranslations = (Component) => {
+  const WithTranslations = (props) => (
+    <LocalizationContext.Consumer>
+      {(context) => <Component {...props} translations={context.translations} locale={context.locale} />}
+    </LocalizationContext.Consumer>
+  );
+
+  WithTranslations.displayName = `WithTranslations(${getDisplayName(Component)})`;
+  return WithTranslations;
+};
 
 export default withTranslations;
