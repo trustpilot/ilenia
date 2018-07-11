@@ -14,7 +14,7 @@ const translations = {
 
 const setupLink = (string, links) => (
   <LocalizationProvider locale="en-US" translations={translations}>
-    <LinkText string={string} links={links} translations={translations} />
+    <LinkText textKey={string} links={links} translations={translations} />
   </LocalizationProvider>
 );
 

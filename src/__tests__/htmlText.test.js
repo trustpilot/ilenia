@@ -14,7 +14,7 @@ const translations = {
 
 const setupText = (string, interpolations, tag) => (
   <LocalizationProvider locale="en-US" translations={translations}>
-    <HtmlText id={string} interpolations={interpolations} tag={tag} />
+    <HtmlText textKey={string} interpolations={interpolations} tag={tag} />
   </LocalizationProvider>
 );
 

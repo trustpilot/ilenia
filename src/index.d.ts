@@ -2,7 +2,7 @@
 
 declare namespace Props {
     export interface HtmlText {
-        id: string;
+        textKey: string;
         interpolations: {
             [key: string]: string;
         };
@@ -17,7 +17,7 @@ declare namespace Props {
         end?: string;
     }
     export interface LinkText {
-        string: string;
+        textKey: string;
         links: Link[];
     }
 
@@ -33,7 +33,7 @@ declare namespace Props {
     }
 
     export interface Text {
-        id: string;
+        textKey: string;
         interpolations?: {
             [key: string]: string | number;
         };
