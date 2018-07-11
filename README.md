@@ -1,6 +1,11 @@
-# React localization
+# React localization [![Build Status][travis-image]][travis-url] [![Trello board][trello-image]][trello-url] [![Slack channel][slack-image]][slack-url]
 
-*Trustpilot style*
+[travis-image]: https://travis-ci.com/trustpilot/react-localization.svg?token=31wEEtXqqxi38BDzGaqH&branch=master
+[travis-url]: https://travis-ci.com/trustpilot/react-localization
+[trello-image]: https://img.shields.io/badge/trello-tech_businessapp-blue.svg?style=flat
+[trello-url]: https://trello.com/b/rFlVmmQM/businessapp-platform
+[slack-image]: https://img.shields.io/badge/slack-tech_businessapp-blue.svg?style=flat
+[slack-url]: https://trustpilot.slack.com/messages/tech-businessapp/details/
 
 ## Table of contents
 
