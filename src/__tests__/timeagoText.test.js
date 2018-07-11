@@ -38,6 +38,8 @@ test('Renders a localized date from a date', () => {
 });
 
 test('Throw an error if the date is invalid', () => {
+  console.error = jest.fn();
+
   const component = renderer.create(
     <LocalizationProvider locale="en-US" translations={{}}>
       <TimeagoText date={'abcdefghijklmnopqrstuvwxyz'} />
@@ -46,6 +48,7 @@ test('Throw an error if the date is invalid', () => {
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+  expect(console.error).toHaveBeenCalled();
 });
 
 test('Renders a localized date with an incorrect locale', () => {

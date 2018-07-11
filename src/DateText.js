@@ -5,6 +5,7 @@ const DateText = ({ date, locale }) => {
   const dateWrapper = new Date(date);
 
   if (isNaN(dateWrapper)) {
+    console.error('Invalid date');
     return null;
   }
 

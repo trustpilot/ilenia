@@ -38,6 +38,8 @@ test('Renders a localized date from a date', () => {
 });
 
 test('Renders null if the date is invalid', () => {
+  console.error = jest.fn();
+
   const component = renderer.create(
     <LocalizationProvider locale="en-US" translations={{}}>
       <DateText date={'abcdefghijklmnopqrstuvwxyz'} />
@@ -46,12 +48,24 @@ test('Renders null if the date is invalid', () => {
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+  expect(console.error).toHaveBeenCalled();
 });
 
 test('Renders a localized date with an incorrect locale', () => {
   const component = renderer.create(
     <LocalizationProvider locale="abcdefghijklmnopqrstuvwxyz" translations={{}}>
       <DateText date={0} />
+    </LocalizationProvider>
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('REnders a localized date from UTC date string', () => {
+  const component = renderer.create(
+    <LocalizationProvider locale="abcdefghijklmnopqrstuvwxyz" translations={{}}>
+      <DateText date="2018-07-10T12:38:37.713Z" />
     </LocalizationProvider>
   );
 

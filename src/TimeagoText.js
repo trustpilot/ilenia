@@ -26,6 +26,7 @@ const TimeagoText = ({ date, locale }) => {
   const timeagoInstance = timeago();
 
   if (isNaN(dateWrapper)) {
+    console.error('Invalid date');
     return null;
   }
 
