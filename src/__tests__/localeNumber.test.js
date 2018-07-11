@@ -2,12 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import LocalizationProvider from '../LocalizationProvider';
-import NumberText from '../NumberText';
+import LocaleNumber from '../LocaleNumber';
 
 test('Renders a localized number with a correct locale', () => {
   const component = renderer.create(
     <LocalizationProvider locale="en-US" translations={{}}>
-      <NumberText number={1000000} />
+      <LocaleNumber number={1000000} />
     </LocalizationProvider>
   );
 
@@ -18,7 +18,7 @@ test('Renders a localized number with a correct locale', () => {
 test('Renders a localized number with an incorrect locale', () => {
   const component = renderer.create(
     <LocalizationProvider locale="abcdefghijklmnopqrstuvwxyz" translations={{}}>
-      <NumberText number={1000000} />
+      <LocaleNumber number={1000000} />
     </LocalizationProvider>
   );
 

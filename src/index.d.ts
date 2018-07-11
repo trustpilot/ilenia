@@ -17,7 +17,7 @@ declare namespace Props {
         end?: string;
     }
     export interface LinkText {
-        string: string;
+        id: string;
         links: Link[];
     }
 
@@ -46,15 +46,27 @@ declare namespace Props {
         };
     }
 
-    export interface NumberText {
+    export interface LocaleNumber {
         number: number;
+    }
+
+    export interface LocaleDate {
+        date: number | string | Date;
+    }
+
+    export interface TimeAgo {
+        date: number | string | Date;
     }
 }
 
 export const HtmlText: React.SFC<Props.HtmlText>
 export const LinkText: React.SFC<Props.LinkText>
-export const LocalizationProvider: React.SFC<Props.LocalizationProvider>
+export const LocaleDate: React.SFC<Props.LocaleDate>
+export const LocaleNumber: React.SFC<Props.LocaleNumber>
 export const Text: React.SFC<Props.Text>
+export const TimeAgo: React.SFC<Props.TimeAgo>
+
+export const LocalizationProvider: React.SFC<Props.LocalizationProvider>
 export function withTranslations (Component: React.ComponentType<any>): React.ComponentType<any>
 export function interpolate(
     text: string,

@@ -13,13 +13,13 @@ const addDefaultValues = (link) => ({
   end: link.end || '[LINK-END]',
 });
 
-const LinkText = ({ string, translations, links }) => {
-  if (!translations[string]) {
-    console.error(`Couldn't find '${string}' in the translations table`); // eslint-disable-line no-console
+const LinkText = ({ id, translations, links }) => {
+  if (!translations[id]) {
+    console.error(`Couldn't find '${id}' in the translations table`); // eslint-disable-line no-console
     return <span />;
   }
 
-  let translated = translations[string];
+  let translated = translations[id];
 
   links.map(addDefaultValues).map((link, index) => {
     const regexp = linkRegex(link.start, link.end);
@@ -46,7 +46,7 @@ const LinkText = ({ string, translations, links }) => {
 };
 
 LinkText.propTypes = {
-  string: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       start: PropTypes.string,

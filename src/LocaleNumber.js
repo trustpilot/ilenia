@@ -1,7 +1,7 @@
 import withTranslations from './withTranslations';
 import PropTypes from 'prop-types';
 
-const NumberText = ({ number, locale }) => {
+const LocaleNumber = ({ number, locale }) => {
   try {
     return number.toLocaleString(locale);
   } catch (error) {
@@ -9,8 +9,8 @@ const NumberText = ({ number, locale }) => {
   }
 };
 
-Text.propTypes = {
+LocaleNumber.propTypes = {
   number: PropTypes.number.isRequired,
 };
 
-export default withTranslations(NumberText);
+export default withTranslations(LocaleNumber);
