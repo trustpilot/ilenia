@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a localized date from a date 1`] = `"1/1/1970"`;
+
+exports[`Renders a localized date from a number 1`] = `"1/1/1970"`;
+
+exports[`Renders a localized date from a string 1`] = `"1/1/1970"`;
+
+exports[`Renders a localized date with an incorrect locale 1`] = `"1970-1-1"`;
