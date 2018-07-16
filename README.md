@@ -13,6 +13,32 @@
   - [withTranslations](#withtranslations)
   - [Interpolate](#interpolate)
 
+## How to contribute ?
+
+This repo enforce commit style so the release process is automatic. Commits must look like:
+
+    <SUBJECT>: Message starting with an uppercase
+
+Choose your SUBJECT according to this logic:
+
+- Fix: for a bug fix.
+- Update: for a backwards-compatible enhancement.
+- Breaking: for a backwards-incompatible enhancement.
+- Docs: changes to documentation only.
+- Build: changes to build process only.
+- New: implemented a new feature.
+- Upgrade: for a dependency upgrade.
+
+
+## Found a problem ?
+
+Please open an issue or submit a PR, we will be more than happy to help
+
+## How to install ?
+
+    npm install @trustpilot/react-localization
+    // or
+    yarn add @trustpilot/react-localization
 
 ## Using the module
 
