@@ -54,6 +54,7 @@ declare namespace Props {
 
     export interface LocaleNumber {
         number: number;
+        maxDecimals?: number | string;
     }
 
     export interface LocaleDate {
