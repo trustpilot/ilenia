@@ -9,18 +9,16 @@ cache:
   directories:
     - node_modules
 
-before_install:
-  - git clone -b v1 --depth 1 https://$GITHUB_TOKEN@github.com/trustpilot/build-scripts.git
-  - build-scripts/travis/init
+install:
+  - yarn
 
 script:
-  - VERSION=$(node -p -e "require('./package.json').version.replace(/\d+$/,$TRAVIS_BUILD_NUMBER)")
-  - yarn version --new-version $VERSION
   - yarn lint
   - yarn test
   - yarn build
-  - build-scripts/travis/npm-package
-  - build-scripts/travis/release $VERSION
+
+after_success:
+  - npx semantic-release
 
 branches:
   only: master
