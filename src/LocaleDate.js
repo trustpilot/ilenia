@@ -12,8 +12,7 @@ const LocaleDate = ({ date, locale }) => {
   try {
     return dateWrapper.toLocaleDateString(locale);
   } catch (err) {
-    // Use default locale. It depends on the browser implementation
-    return dateWrapper.toLocaleDateString();
+    return dateWrapper.toLocaleDateString('en-US');
   }
 };
 
