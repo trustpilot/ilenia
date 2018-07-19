@@ -9,7 +9,7 @@
   - [Text](#text)
   - [LinkText](#linktext)
   - [HtmlText](#htmltext)
-  - [NumberText](#numbertext)
+  - [LocaleNumber](#localeNumber)
   - [withTranslations](#withtranslations)
   - [Interpolate](#interpolate)
 
@@ -104,7 +104,7 @@ const translations = {
 };
 
 const App = () => (
-  <LinkText string="welcomeMessage" links={[ { href: 'https://tech.trustpilot.com/' } ]} />
+  <LinkText id="welcomeMessage" links={[ { href: 'https://tech.trustpilot.com/' } ]} />
 );
 ```
 
@@ -118,7 +118,7 @@ const translations = {
 };
 
 const App = () => (
-  <LinkText string="welcomeMessage" links={[ { href: 'https://tech.trustpilot.com/', start: '{mylink}', end: '{/mylink}' } ]} />
+  <LinkText id="welcomeMessage" links={[ { href: 'https://tech.trustpilot.com/', start: '{mylink}', end: '{/mylink}' } ]} />
 );
 ```
 
@@ -137,7 +137,7 @@ const link = {
 }
 
 const App = () => (
-  <LinkText string="bodyText" links={[ link ]} />
+  <LinkText id="bodyText" links={[ link ]} />
 )
 ```
 
@@ -167,16 +167,28 @@ const Header = () => (
 ```
 
 
-### NumberText
+### LocaleNumber
 
-Use the `<NumberText>` component to localize a number.
+Use the `<LocaleNumber>` component to localize a number.
 
 ```javascript
-import { NumberText } from '@trustpilot/react-localization'
+import { LocaleNumber } from '@trustpilot/react-localization'
 
 const LocalizedNumber = () => (
   <div>
-    <NumberText number={1000000} />
+    <LocaleNumber number={1000000} />
+  </div>
+);
+```
+
+Set the decimal places with `maxDecimals`, truncates zeros.
+
+```javascript
+import { LocaleNumber } from '@trustpilot/react-localization'
+
+const LocalizedNumber = () => (
+  <div>
+    <LocaleNumber number={42.069} maxDecimals={2} />
   </div>
 );
 ```
