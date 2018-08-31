@@ -1,3 +1,14 @@
+## [5.1.1](https://github.com/trustpilot/react-localization/compare/v5.1.0...v5.1.1) (2018-08-31)
+
+
+### Docs
+
+* Update LocaleNumber and LinkText description ([2bd939d453c027e76ca2a43fec885a076be78813](https://github.com/trustpilot/react-localization/commit/2bd939d453c027e76ca2a43fec885a076be78813))
+
+### Fix
+
+* Update broken dependency ([47c09f4f6491834ad3e0f14d850dcd9441797e5b](https://github.com/trustpilot/react-localization/commit/47c09f4f6491834ad3e0f14d850dcd9441797e5b))
+
 # [5.1.0](https://github.com/trustpilot/react-localization/compare/v5.0.113...v5.1.0) (2018-07-18)
 
 
