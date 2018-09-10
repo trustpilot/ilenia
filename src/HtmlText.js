@@ -10,8 +10,8 @@ const HtmlText = ({ id, interpolations = {}, translations = {}, tag }) => {
     return null;
   }
 
-  string = interpolate(string, interpolations, tag);
-  return parse(string);
+  const strings = interpolate(string, interpolations, tag);
+  return strings.map(parse);
 };
 
 HtmlText.propTypes = {

@@ -36,6 +36,13 @@ test('Renders a string which uses a different placeholder syntax', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Renders components if included as interpolations', () => {
+  const component = renderer.create(setupText('test2', { value: (<strong>huge value</strong>) }));
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Renders nothing if the string is not there', () => {
   console.error = jest.fn(); // eslint-disable-line no-console
 

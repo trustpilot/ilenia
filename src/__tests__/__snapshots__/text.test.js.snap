@@ -6,4 +6,14 @@ exports[`Renders a string which uses a different placeholder syntax 1`] = `"A st
 
 exports[`Renders a string with an interpolations 1`] = `"A string but with a huge value in it"`;
 
+exports[`Renders components if included as interpolations 1`] = `
+Array [
+  "A string but with a ",
+  <strong>
+    huge value
+  </strong>,
+  " in it",
+]
+`;
+
 exports[`Renders nothing if the string is not there 1`] = `null`;
