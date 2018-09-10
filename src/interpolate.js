@@ -26,15 +26,8 @@ export default (string = '', interpolations = {}, tag = { start: '{', end: '}' }
   }
 
   const keys = Object.keys(interpolations);
-  const result = Array.from(replace(keys, string))
+  const segments = replace(keys, string);
+  return Array.from(segments)
     .reduceRight(combineStrings, [''])
     .filter(isNotAnEmptyString);
-
-  if (result.length === 0) {
-    return '';
-  } else if (result.length === 1) {
-    return result[0];
-  } else {
-    return result;
-  }
 };

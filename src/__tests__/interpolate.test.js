@@ -2,17 +2,17 @@ import React from 'react';
 import interpolate from '../interpolate';
 
 test('It replaces a token in a string', () => {
-  const output = interpolate('This string has {number} token', { number: 'one' });
+  const [output] = interpolate('This string has {number} token', { number: 'one' });
   expect(output).toBe('This string has one token');
 });
 
 test('It replaces multiple tokens in a string', () => {
-  const output = interpolate('This string has {number} {things}', { number: 'two', things: 'tokens' });
+  const [output] = interpolate('This string has {number} {things}', { number: 'two', things: 'tokens' });
   expect(output).toBe('This string has two tokens');
 });
 
 test('It replaces the multiple occurences of a token', () => {
-  const output = interpolate('This string has {number} tokens, in {number} places', { number: 'two' });
+  const [output] = interpolate('This string has {number} tokens, in {number} places', { number: 'two' });
   expect(output).toBe('This string has two tokens, in two places');
 });
 
@@ -22,18 +22,18 @@ test('It uses a defined token tag', () => {
     end: ']',
   };
 
-  const output = interpolate('This string has [number] token', { number: 'one' }, tags);
+  const [output] = interpolate('This string has [number] token', { number: 'one' }, tags);
   expect(output).toBe('This string has one token');
 });
 
 test('Handles an empty input', () => {
   let output = interpolate('');
-  expect(output).toBe('');
+  expect(output).toEqual([]);
 
   output = interpolate();
-  expect(output).toBe('');
+  expect(output).toEqual([]);
 
-  output = interpolate('nothing to do');
+  [output] = interpolate('nothing to do');
   expect(output).toBe('nothing to do');
 });
 
@@ -80,7 +80,7 @@ test('Doesn\'t recursively substitute', () => {
     more: 'HAHA',
   };
 
-  const output = interpolate('{one} {two} {three} {more} {three} {two} {one}', interpolations);
+  const [output] = interpolate('{one} {two} {three} {more} {three} {two} {one}', interpolations);
 
   expect(output).toBe('{one} {one} {more} HAHA {more} {one} {one}');
 });

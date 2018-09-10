@@ -212,12 +212,12 @@ export default withTranslations(TextRenderer);
 
 ### Interpolate
 
-An `interpolate` function is exposed from this library. This function can be used to replace tokens in a translation string. The components in the library use this function internally. The interpolate function is meant to be used with the `withTranslations` HOC.
+An `interpolate` function is exposed from this library. This function can be used to replace tokens in a translation string. The components in the library use this function internally. The interpolate function is meant to be used with the `withTranslations` HOC. It returns an array of strings, there will only be one element in the result if your interpolation items are strings but it can have multiple elements if you are interpolating React components.
 
 ```js
 import { interpolate } from '@trustpilot/react-localization';
 
-const finishedString = interpolate('Value with a {token} in it', { token: 'cookie' });
+const [finishedString] = interpolate('Value with a {token} in it', { token: 'cookie' });
 console.log(finishedString); // logs 'Value with a cookie in it'
 ```
 
@@ -238,11 +238,25 @@ const tag = {
   end:']]'
 };
 
-const finishedString = interpolate(inputString, interpolations, tag);
+const [finishedString] = interpolate(inputString, interpolations, tag);
 
 console.log(finishedString); // logs 'This is the <b>header</b> of our site'
 ```
 
+You can also interpolate using components as well as simple strings.
+
+```javascript
+import { interpolate, LocaleNumber } from '@trustpilot/react-localization'
+
+const inputString = 'This is a big number: {n}!'
+const interpolations = {
+  n: (<LocaleNumber number={10043} />)
+};
+
+const finishedStrings = interpolate(inputString, interpolations);
+
+console.log(finishedStrings); // logs ['This is a big number: ', <LocaleNumber number={10043} />, '!']
+```
 
 The examples above describe <Text> and <HtmlText> as well. The difference is, that the variables are sent as props instead of function arguments:
 
