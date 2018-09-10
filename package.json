@@ -1,6 +1,6 @@
 {
   "name": "@trustpilot/react-localization",
-  "version": "5.1.1",
+  "version": "5.2.0",
   "description": "Components and utilities for translations and localization in React",
   "main": "index.js",
   "module": "es/index.js",

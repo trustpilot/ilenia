@@ -1,3 +1,11 @@
+# [5.2.0](https://github.com/trustpilot/react-localization/compare/v5.1.1...v5.2.0) (2018-09-10)
+
+
+### Update
+
+* Allow components as interpolation values ([6ab0778becbb17424a19353115e21193856669f4](https://github.com/trustpilot/react-localization/commit/6ab0778becbb17424a19353115e21193856669f4))
+* Make interpolate always return an array ([a01a8d7252d5d2f9f784d40431e8dfeb59e95947](https://github.com/trustpilot/react-localization/commit/a01a8d7252d5d2f9f784d40431e8dfeb59e95947))
+
 ## [5.1.1](https://github.com/trustpilot/react-localization/compare/v5.1.0...v5.1.1) (2018-08-31)
 
 
