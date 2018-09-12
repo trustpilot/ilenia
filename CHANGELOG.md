@@ -1,3 +1,10 @@
+## [5.2.1](https://github.com/trustpilot/react-localization/compare/v5.2.0...v5.2.1) (2018-09-12)
+
+
+### Fix
+
+* make interpolate concat strings and numbers ([611400f3afbb54e85aa7b3e483e0466a7ac61a10](https://github.com/trustpilot/react-localization/commit/611400f3afbb54e85aa7b3e483e0466a7ac61a10))
+
 # [5.2.0](https://github.com/trustpilot/react-localization/compare/v5.1.1...v5.2.0) (2018-09-10)
 
 
