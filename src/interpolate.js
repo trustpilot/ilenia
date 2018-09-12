@@ -2,7 +2,7 @@ const escapeRegex = (str) => str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
 const replaceRegex = (tag, key) => new RegExp(escapeRegex(`${tag.start}${key}${tag.end}`), 'g');
 
 const combineStrings = ([a, ...rest], s) =>
-  typeof s === 'string' && typeof a === 'string'
+  typeof s === 'string' && (typeof a === 'string' || typeof a === 'number')
     ? [s + a, ...rest]
     : [s, a, ...rest];
 
