@@ -7,8 +7,8 @@ test('It replaces a token in a string', () => {
 });
 
 test('It replaces multiple tokens in a string', () => {
-  const [output] = interpolate('This string has {number} {things}', { number: 'two', things: 'tokens' });
-  expect(output).toBe('This string has two tokens');
+  const [output] = interpolate('This string has {number} {things}', { number: 2, things: 'tokens' });
+  expect(output).toBe('This string has 2 tokens');
 });
 
 test('It replaces the multiple occurences of a token', () => {
