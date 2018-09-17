@@ -1,3 +1,10 @@
+## [5.2.2](https://github.com/trustpilot/react-localization/compare/v5.2.1...v5.2.2) (2018-09-17)
+
+
+### Fix
+
+* Support number within interpolations ([aa5d89b547778bad7bbb6316aa32f1f916c68262](https://github.com/trustpilot/react-localization/commit/aa5d89b547778bad7bbb6316aa32f1f916c68262))
+
 ## [5.2.1](https://github.com/trustpilot/react-localization/compare/v5.2.0...v5.2.1) (2018-09-12)
 
 
