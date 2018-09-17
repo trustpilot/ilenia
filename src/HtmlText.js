@@ -16,7 +16,7 @@ const HtmlText = ({ id, interpolations = {}, translations = {}, tag }) => {
 
 HtmlText.propTypes = {
   id: PropTypes.string.isRequired,
-  interpolations: PropTypes.objectOf(PropTypes.string),
+  interpolations: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
   tag: PropTypes.shape({
     start: PropTypes.string,
     end: PropTypes.string,

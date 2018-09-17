@@ -4,7 +4,7 @@ declare namespace Props {
     export interface HtmlText {
         id: string;
         interpolations: {
-            [key: string]: string;
+            [key: string]: string | number;
         };
         tag?: {
             start: string;
