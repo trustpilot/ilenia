@@ -10,8 +10,10 @@
   - [LinkText](#linktext)
   - [HtmlText](#htmltext)
   - [LocaleNumber](#localeNumber)
+  - [LocaleDate](#localeDate)
+  - [TimeAgo](#timeago)
   - [withTranslations](#withtranslations)
-  - [Interpolate](#interpolate)
+  - [interpolate](#interpolate)
 
 ## How to contribute ?
 
@@ -70,6 +72,7 @@ const App = () => ({
 ### Text
 
 Use the `<Text>` component to translate a string in place.
+See how to about interpolate [here](#interpolate)
 
 ```javascript
 import { Text } from '@trustpilot/react-localization'
@@ -144,6 +147,7 @@ const App = () => (
 ### HtmlText
 
 Use the `<HtmlText>` component to translate a string with html in it.
+See how to about interpolate [here](#interpolate)
 
 ```javascript
 import { HtmlText } from '@trustpilot/react-localization'
@@ -166,32 +170,40 @@ const Header = () => (
 );
 ```
 
-
 ### LocaleNumber
 
 Use the `<LocaleNumber>` component to localize a number.
-
-```javascript
-import { LocaleNumber } from '@trustpilot/react-localization'
-
-const LocalizedNumber = () => (
-  <div>
-    <LocaleNumber number={1000000} />
-  </div>
-);
-```
-
 Set the decimal places with `maxDecimals`, truncates zeros.
 
 ```javascript
 import { LocaleNumber } from '@trustpilot/react-localization'
 
-const LocalizedNumber = () => (
-  <div>
-    <LocaleNumber number={42.069} maxDecimals={2} />
-  </div>
-);
+<LocaleNumber number={1000000} />
+<LocaleNumber number={142.069} maxDecimals={2} />
 ```
+
+## LocaleDate
+
+Used for rendering a date in a localized format. Uses `toLocaleDateString` behind the scenes, using the `locale` from the provider.
+
+```javascript
+import { LocaleDate } from '@trustpilot/react-localization';
+
+<LocaleDate date={new Date()} /> // renders something like 15/2/2018 depending on the locale
+```
+
+
+### TimeAgo
+
+Use this component for relative dates (1 year ago, 2 minutes ago etc.)
+
+```javascript
+import { TimeAgo } from '@trustpilot/react-localization';
+
+const date = new Date(2018, 1, 15)
+<TimeAgo date={date}/> // renders someting like "6 months ago"
+```
+
 
 ### withTranslations
 
@@ -212,13 +224,16 @@ export default withTranslations(TextRenderer);
 
 ### Interpolate
 
-An `interpolate` function is exposed from this library. This function can be used to replace tokens in a translation string. The components in the library use this function internally. The interpolate function is meant to be used with the `withTranslations` HOC. It returns an array of strings, there will only be one element in the result if your interpolation items are strings but it can have multiple elements if you are interpolating React components.
+An `interpolate` function is exposed from this library. This function can be used to replace tokens in a translation string. The components in the library use this function internally. The interpolate function is meant to be used with the `withTranslations` HOC. It returns an array of React elements, there will only be one element in the result if your interpolation items are strings but it can have multiple elements if you are interpolating React components.
 
 ```js
 import { interpolate } from '@trustpilot/react-localization';
 
-const [finishedString] = interpolate('Value with a {token} in it', { token: 'cookie' });
-console.log(finishedString); // logs 'Value with a cookie in it'
+let output = interpolate('Value with a {token} in it', { token: 'cookie' });
+<p>{ output }</p>
+
+output = interpolate('Value with a {component} in it', { component: <LocaleNumber number={123.25}/> });
+<p>{ output }</p>
 ```
 
 If you use a different placeholder syntax in your translations object, you can use the optional argument `tag`:
@@ -243,20 +258,6 @@ const [finishedString] = interpolate(inputString, interpolations, tag);
 console.log(finishedString); // logs 'This is the <b>header</b> of our site'
 ```
 
-You can also interpolate using components as well as simple strings.
-
-```javascript
-import { interpolate, LocaleNumber } from '@trustpilot/react-localization'
-
-const inputString = 'This is a big number: {n}!'
-const interpolations = {
-  n: (<LocaleNumber number={10043} />)
-};
-
-const finishedStrings = interpolate(inputString, interpolations);
-
-console.log(finishedStrings); // logs ['This is a big number: ', <LocaleNumber number={10043} />, '!']
-```
 
 The examples above describe <Text> and <HtmlText> as well. The difference is, that the variables are sent as props instead of function arguments:
 
@@ -264,3 +265,4 @@ The examples above describe <Text> and <HtmlText> as well. The difference is, th
 <Text id="string" interpolations={interpolationsObject} tag={tags}/>
 <HtmlText id="string" interpolations={interpolationsObject} tag={tags}/>
 ```
+
