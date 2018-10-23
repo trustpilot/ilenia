@@ -189,9 +189,20 @@ Used for rendering a date in a localized format. Uses `toLocaleDateString` behin
 ```javascript
 import { LocaleDate } from '@trustpilot/react-localization';
 
-<LocaleDate date={new Date()} /> // renders something like 15/2/2018 depending on the locale
+<LocaleDate date={new Date()} /> // renders something like 21/9/2018 depending on the locale
 ```
 
+It is also possible to specify formating options
+
+```javascript
+import { LocaleDate } from '@trustpilot/react-localization';
+
+<LocaleDate date={new Date()} format={{
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric'
+}} /> // renders something like Sep 21, 2018 depending on the locale
+```
 
 ### TimeAgo
 
