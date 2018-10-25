@@ -1,3 +1,19 @@
+# [5.3.0](https://github.com/trustpilot/react-localization/compare/v5.2.2...v5.3.0) (2018-10-25)
+
+
+### Chore
+
+* Add some badges to the README ([a6b6e95da16175afd5d46c7a4a6af06a6e726033](https://github.com/trustpilot/react-localization/commit/a6b6e95da16175afd5d46c7a4a6af06a6e726033))
+
+### Docs
+
+* Extend documentation ([3087ed2b85f7fa25fff0b1c58a3a4ee8eefa1807](https://github.com/trustpilot/react-localization/commit/3087ed2b85f7fa25fff0b1c58a3a4ee8eefa1807))
+* Fix TOC links ([78f6f736fe58c3a9f7c38a2dc4ee1c2a3fd3ee7d](https://github.com/trustpilot/react-localization/commit/78f6f736fe58c3a9f7c38a2dc4ee1c2a3fd3ee7d))
+
+### New
+
+* Add format option to LocaleDate ([78f506b641c2c255d8864bed261be8421ffc453d](https://github.com/trustpilot/react-localization/commit/78f506b641c2c255d8864bed261be8421ffc453d))
+
 ## [5.2.2](https://github.com/trustpilot/react-localization/compare/v5.2.1...v5.2.2) (2018-09-17)
 
 
