@@ -72,3 +72,20 @@ test('Renders a localized date from UTC date string', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Renders a localized date with specific format', () => {
+  const component = renderer.create(
+    <LocalizationProvider locale="abcdefghijklmnopqrstuvwxyz" translations={{}}>
+      <LocaleDate
+        date="2018-07-10T12:38:37.713Z"
+        format={{
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+        }}/>
+    </LocalizationProvider>
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
