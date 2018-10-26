@@ -1,7 +1,7 @@
 # ilenia [![Build Status][travis-image]][travis-url]
 
-[travis-image]: https://travis-ci.com/trustpilot/react-localization.svg?token=31wEEtXqqxi38BDzGaqH&branch=master
-[travis-url]: https://travis-ci.com/trustpilot/react-localization
+[travis-image]: https://travis-ci.com/trustpilot/ilenia.svg?token=MLe2TyKzC4DTigBAm1hb&branch=master
+[travis-url]: https://travis-ci.com/trustpilot/ilenia
 
 A library for localization in React. Simple, declarative and focused on components..
 
@@ -116,10 +116,7 @@ const translations = {
 };
 
 const App = () => (
-  <LinkText
-    id="footer"
-    links={[{ href: "https://tech.trustpilot.com/" }]}
-  />
+  <LinkText id="footer" links={[{ href: "https://tech.trustpilot.com/" }]} />
 );
 ```
 
