@@ -1,3 +1,16 @@
+# [6.0.0](https://github.com/trustpilot/ilenia/compare/v5.3.0...v6.0.0) (2018-10-26)
+
+
+### Breaking
+
+* Open source it :tada: ([cc4a1ea12ac5711d5d8141a8a090336e8e01a254](https://github.com/trustpilot/ilenia/commit/cc4a1ea12ac5711d5d8141a8a090336e8e01a254))
+
+### Docs
+
+* Clear up wrong variable name use ([7fab6f15a5ff9d712587edd91e9447c84cd9ea67](https://github.com/trustpilot/ilenia/commit/7fab6f15a5ff9d712587edd91e9447c84cd9ea67))
+* Fix Travis badge to new name ([120ba0a25022c1993d36f2dbfe8925d6c144926b](https://github.com/trustpilot/ilenia/commit/120ba0a25022c1993d36f2dbfe8925d6c144926b))
+* Make the intro better English ([729eb52c29bac800daf34e6c32888d585a0bf7d9](https://github.com/trustpilot/ilenia/commit/729eb52c29bac800daf34e6c32888d585a0bf7d9))
+
 # [5.3.0](https://github.com/trustpilot/ilenia/compare/v5.2.2...v5.3.0) (2018-10-25)
 
 ### Chore
