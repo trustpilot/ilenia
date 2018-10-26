@@ -3,7 +3,7 @@
 [travis-image]: https://travis-ci.com/trustpilot/react-localization.svg?token=31wEEtXqqxi38BDzGaqH&branch=master
 [travis-url]: https://travis-ci.com/trustpilot/react-localization
 
-A library for localization in React. Component and simplicity focused.
+A library for localization in React. Simple, declarative and focused on components..
 
 Named after our dear and glorious Localization Coordinator at Trustpilot. But she made us come up with an acronym, so here goes: **i**ntentional **l**ibrary **e**xtending **n**atural **i**nternationalization **a**lgorithms
 
