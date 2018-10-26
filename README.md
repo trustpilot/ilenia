@@ -117,7 +117,7 @@ const translations = {
 
 const App = () => (
   <LinkText
-    id="welcomeMessage"
+    id="footer"
     links={[{ href: "https://tech.trustpilot.com/" }]}
   />
 );
@@ -134,7 +134,7 @@ const translations = {
 
 const App = () => (
   <LinkText
-    id="welcomeMessage"
+    id="footer"
     links={[
       {
         href: "https://tech.trustpilot.com/",
