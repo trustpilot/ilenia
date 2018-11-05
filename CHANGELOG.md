@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/trustpilot/ilenia/compare/v6.0.0...v6.0.1) (2018-11-05)
+
+
+### Fix
+
+* Point to the new correct main index file ([415214bc4cea3d764de6a58f323ca6e5031c34f1](https://github.com/trustpilot/ilenia/commit/415214bc4cea3d764de6a58f323ca6e5031c34f1))
+
 # [6.0.0](https://github.com/trustpilot/ilenia/compare/v5.3.0...v6.0.0) (2018-10-26)
 
 
