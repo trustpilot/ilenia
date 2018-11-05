@@ -207,7 +207,7 @@ import { LocaleNumber } from "ilenia";
 Used for rendering a date in a localized format. Uses `toLocaleDateString` behind the scenes, using the `locale` from the provider.
 
 ```javascript
-import { LocaleDate } from "@trustpilot/react-localization";
+import { LocaleDate } from "ilenia";
 
 <LocaleDate date={new Date()} />; // renders something like 21/9/2018 depending on the locale
 ```
@@ -215,7 +215,7 @@ import { LocaleDate } from "@trustpilot/react-localization";
 It is also possible to specify formating options
 
 ```javascript
-import { LocaleDate } from "@trustpilot/react-localization";
+import { LocaleDate } from "ilenia";
 
 <LocaleDate
   date={new Date()}
@@ -232,7 +232,7 @@ import { LocaleDate } from "@trustpilot/react-localization";
 Use this component for relative dates (1 year ago, 2 minutes ago etc.)
 
 ```javascript
-import { TimeAgo } from '@trustpilot/react-localization';
+import { TimeAgo } from 'ilenia';
 
 const date = new Date(2018, 1, 15)
 <TimeAgo date={date}/> // renders someting like "6 months ago"
