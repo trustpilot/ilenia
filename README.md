@@ -50,7 +50,7 @@ The library only builds es modules and has full tree shaking capability.
 
 ## Using the library
 
-1. Wrap your app with the `LocalizationProvider` and pass current `locale`, `translations` and `fallbackTranslations`. Translations and fallbackTranslations are merged into one object for consumers of the components in this library and `withTranslations`.
+1. Wrap your app with the `LocalizationProvider` and pass current `locale` and `translations`. In the example we're merging the default language translations and the active one as selected by the user.
 
 ```javascript
 import { LocalizationProvider, Text } from 'ilenia'
@@ -64,8 +64,10 @@ const enUS = {
   'body': 'Localization is fun!'
 }
 
+const mergedTranslations = { ...enUS, ...enGB, };
+
 const App = () => ({
-  <LocalizationProvider locale={locale} translations={enGB} fallbackTranslations={enUS}>
+  <LocalizationProvider locale={locale} translations={mergedTranslations}>
     <div className="app">
       <Text id="welcomeMessage"/>
     </div>

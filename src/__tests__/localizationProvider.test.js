@@ -24,7 +24,7 @@ const Child = (props) => (
 
 test('Provider merges translations and fallback translations correctly', () => {
   const component = renderer.create(
-    <LocalizationProvider locale={locale} translations={translations} fallbackTranslations={fallbackTranslations}>
+    <LocalizationProvider locale={locale} translations={{...fallbackTranslations, ...translations}}>
       <LocalizationContext.Consumer>
         {(context) => <Child translations={context.translations} locale={context.locale} />}
       </LocalizationContext.Consumer>
