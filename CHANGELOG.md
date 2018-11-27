@@ -1,3 +1,15 @@
+# [7.0.0](https://github.com/trustpilot/ilenia/compare/v6.0.1...v7.0.0) (2018-11-27)
+
+
+### Breaking
+
+* Remove fallbackTranslations ([3c3dcbee6048e7135e6e6e48fcddf2ca5ab2e529](https://github.com/trustpilot/ilenia/commit/3c3dcbee6048e7135e6e6e48fcddf2ca5ab2e529))
+
+### Docs
+
+* Leftover @react-localization switch to ilenia ([a383ad677ad0e63dfbc862939e93a67d2edb17a1](https://github.com/trustpilot/ilenia/commit/a383ad677ad0e63dfbc862939e93a67d2edb17a1))
+* Use a non-english language as an example ([921037d3ab1f7b5fc0fd12fb26a40a94e310a940](https://github.com/trustpilot/ilenia/commit/921037d3ab1f7b5fc0fd12fb26a40a94e310a940))
+
 ## [6.0.1](https://github.com/trustpilot/ilenia/compare/v6.0.0...v6.0.1) (2018-11-05)
 
 
