@@ -4,7 +4,7 @@
   "description": "Components and utilities for translations and localization in React",
   "main": "dist/index.js",
   "module": "es/index.js",
-  "typings": "es/index.d.ts",
+  "typings": "dist/index.d.ts",
   "sideEffects": false,
   "license": "MIT",
   "keywords": [
