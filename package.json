@@ -24,7 +24,7 @@
   "author": "Trustpilot",
   "peerDependencies": {
     "prop-types": "15.x",
-    "react": "16.3.x"
+    "react": "^16.3.2"
   },
   "dependencies": {
     "htmlstring-to-react": "4.0.1",
