@@ -1,3 +1,10 @@
+## [7.0.1](https://github.com/trustpilot/ilenia/compare/v7.0.0...v7.0.1) (2019-01-08)
+
+
+### Fix
+
+* Update typings to match real types location ([a49282df4c6240639ad9b1a26db9ac5416f7902a](https://github.com/trustpilot/ilenia/commit/a49282df4c6240639ad9b1a26db9ac5416f7902a))
+
 # [7.0.0](https://github.com/trustpilot/ilenia/compare/v6.0.1...v7.0.0) (2018-11-27)
 
 
