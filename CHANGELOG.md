@@ -1,3 +1,17 @@
+## [7.0.2](https://github.com/trustpilot/ilenia/compare/v7.0.1...v7.0.2) (2019-01-09)
+
+
+### Build
+
+* Bump peerDependency version for React ([c0505c7ef10ed5c78d81e105886d758018484aa4](https://github.com/trustpilot/ilenia/commit/c0505c7ef10ed5c78d81e105886d758018484aa4))
+* Switch to NPM ([912532d68bb8af0664c337c0e886b83d2153925b](https://github.com/trustpilot/ilenia/commit/912532d68bb8af0664c337c0e886b83d2153925b))
+* Update husky, node and minors ([7dff4a7c809ce553466b8fea15192b5b90b46314](https://github.com/trustpilot/ilenia/commit/7dff4a7c809ce553466b8fea15192b5b90b46314))
+
+### Fix
+
+* Automatically bump vulnerable version ([6a3398d33fff748f1d0c2a6bc3953bb98131976b](https://github.com/trustpilot/ilenia/commit/6a3398d33fff748f1d0c2a6bc3953bb98131976b))
+* Bump vulnerable versions, according to GH ([7056bd8ee55b2da03868c4a1bd1a224ea488213b](https://github.com/trustpilot/ilenia/commit/7056bd8ee55b2da03868c4a1bd1a224ea488213b))
+
 ## [7.0.1](https://github.com/trustpilot/ilenia/compare/v7.0.0...v7.0.1) (2019-01-08)
 
 
