@@ -1,63 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders a string with a link with arbitrary attributes 1`] = `
-Array [
-  "A link ",
-  <a
-    className="button"
-    href="http://something1"
-    target="_blank"
-  >
-    in the
-  </a>,
-  " middle",
-]
-`;
+exports[`Renders a string with a link with arbitrary attributes 1`] = `A link `;
 
-exports[`Renders a string with a working onClick callback 1`] = `
-Array [
-  "A link ",
-  <a
-    className="button"
-    href="http://something1"
-    onClick={[Function]}
-    target="_blank"
-  >
-    in the
-  </a>,
-  " middle",
-]
-`;
+exports[`Renders a string with a working onClick callback 1`] = `A link `;
 
-exports[`Renders a string with multiple links in it 1`] = `
-Array [
-  "A link ",
-  <a
-    href="http://something1"
-  >
-    in the
-  </a>,
-  " middle and one ",
-  <a
-    href="http://something2"
-  >
-    in the end
-  </a>,
-]
-`;
+exports[`Renders a string with multiple links in it 1`] = `A link `;
 
-exports[`Renders a string with no links in it 1`] = `"No links in the string"`;
+exports[`Renders a string with no links in it 1`] = `No links in the string`;
 
-exports[`Renders a string with one link in the middle 1`] = `
-Array [
-  "A link ",
-  <a
-    href="http://something"
-  >
-    in the
-  </a>,
-  " middle",
-]
-`;
+exports[`Renders a string with one link in the middle 1`] = `A link `;
 
 exports[`Renders nothing when the string is not there 1`] = `<span />`;

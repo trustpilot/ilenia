@@ -1,7 +1,6 @@
 import React from 'react';
 import 'raf/polyfill';
 import { render, Simulate } from 'react-testing-library';
-import renderer from 'react-test-renderer';
 import LocalizationProvider from '../LocalizationProvider';
 import LinkText from '../LinkText';
 
@@ -19,17 +18,13 @@ const setupLink = (string, links) => (
 );
 
 test('Renders a string with no links in it', () => {
-  const component = renderer.create(setupLink('test1', []));
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const { container } = render(setupLink('test1', []));
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders a string with one link in the middle', () => {
-  const component = renderer.create(setupLink('test2', [{ href: 'http://something' }]));
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const { container } = render(setupLink('test2', [{ href: 'http://something' }]));
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders a string with multiple links in it', () => {
@@ -44,10 +39,8 @@ test('Renders a string with multiple links in it', () => {
     },
   ];
 
-  const component = renderer.create(setupLink('test3', links));
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const { container } = render(setupLink('test3', links));
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders a string with a link with arbitrary attributes', () => {
@@ -59,36 +52,36 @@ test('Renders a string with a link with arbitrary attributes', () => {
     },
   ];
 
-  const component = renderer.create(setupLink('test4', links));
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const { container } = render(setupLink('test4', links));
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders a string with a working onClick callback', () => {
+  // console.error node_modules/fbjs/lib/warning.js:33
+  // Warning: Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported.
+
   const onClickSpy = jest.fn();
 
-  const links = [{
-    href: 'http://something1',
-    target: '_blank',
-    class: 'button',
-    onClick: onClickSpy,
-  }];
+  const links = [
+    {
+      href: 'http://something1',
+      target: '_blank',
+      class: 'button',
+      onClick: onClickSpy,
+    },
+  ];
 
-  const { getByText } = render(setupLink('test4', links));
+  const { getByText, container } = render(setupLink('test4', links));
   Simulate.click(getByText('in the'));
   expect(onClickSpy.mock.calls.length).toBe(1);
 
-  const component = renderer.create(setupLink('test4', links));
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders nothing when the string is not there', () => {
   console.error = jest.fn(); // eslint-disable-line no-console
-  const component = renderer.create(setupLink('not-there'));
+  const { container } = render(setupLink('not-there'));
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
   expect(console.error).toHaveBeenCalled(); // eslint-disable-line no-console
 });
