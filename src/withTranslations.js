@@ -14,6 +14,8 @@ const withTranslations = (Component) => {
   );
 
   WithTranslations.displayName = `WithTranslations(${getDisplayName(Component)})`;
+  WithTranslations.propTypes = Component.propTypes;
+  WithTranslations.defaultProps = Component.defaultProps;
   return WithTranslations;
 };
 
