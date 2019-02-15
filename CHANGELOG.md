@@ -1,3 +1,10 @@
+# [7.1.0](https://github.com/trustpilot/ilenia/compare/v7.0.2...v7.1.0) (2019-02-15)
+
+
+### Update
+
+* Pass inner propTypes and defaultProps to wrapped withTranslation ([f945c4885eef88d01716d97045bed00e4d2ba92b](https://github.com/trustpilot/ilenia/commit/f945c4885eef88d01716d97045bed00e4d2ba92b))
+
 ## [7.0.2](https://github.com/trustpilot/ilenia/compare/v7.0.1...v7.0.2) (2019-01-09)
 
 
