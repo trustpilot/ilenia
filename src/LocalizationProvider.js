@@ -8,7 +8,8 @@ const LocalizationProvider = ({ children, locale, translations }) => (
     value={{
       locale,
       translations,
-    }}>
+    }}
+  >
     {children}
   </LocalizationContext.Provider>
 );

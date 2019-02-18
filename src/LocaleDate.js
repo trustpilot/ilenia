@@ -5,6 +5,7 @@ const LocaleDate = ({ date, locale, format }) => {
   const dateWrapper = new Date(date);
 
   if (isNaN(dateWrapper)) {
+    // eslint-disable-next-line no-console
     console.error('Invalid date');
     return null;
   }

@@ -35,6 +35,7 @@ const LinkText = ({ id, translations, links }) => {
       target: link.target,
       onClick: link.onClick,
     };
+
     Object.keys(props).forEach((key) => typeof props[key] === 'undefined' && delete props[key]);
 
     overrides[`a[key="${key}"]`] = (_, textContent) => <a {...props}>{textContent}</a>;

@@ -51,7 +51,7 @@ test('Renders non decimal number when max decimal is set to zero', () => {
 test('Renders only none zero decimals when maxDecimals is set', () => {
   const component = renderer.create(
     <LocalizationProvider locale="en-US" translations={{}}>
-      <LocaleNumber number={3.200} maxDecimals={2} />
+      <LocaleNumber number={3.2} maxDecimals={2} />
     </LocalizationProvider>
   );
 

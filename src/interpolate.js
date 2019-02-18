@@ -13,9 +13,12 @@ const isNotAnEmptyString = (s) => typeof s !== 'string' || s.length > 0;
 
 const checkComponentForKey = (component) => {
   if (React.isValidElement(component) && !component.key) {
+    /* eslint-disable no-console */
+    /* eslint-disable max-len */
     console.error(
       'When you define a React component or HTML element as the value of an interpolation, you need to give it a unique `key` prop.'
     );
+    /* eslint-enable */
   }
 };
 

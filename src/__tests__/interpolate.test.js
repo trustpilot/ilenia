@@ -86,7 +86,7 @@ test('It uses a defined token tag with components', () => {
   expect(output).toEqual(['This string has ', <number key="one">1</number>, ' token']);
 });
 
-test('Doesn\'t recursively substitute', () => {
+test("Doesn't recursively substitute", () => {
   const interpolations = {
     one: '[one]',
     two: '[one]',

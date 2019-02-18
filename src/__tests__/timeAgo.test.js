@@ -38,6 +38,7 @@ test('Renders a localized date from a date', () => {
 });
 
 test('Throw an error if the date is invalid', () => {
+  //eslint-disable-next-line no-console
   console.error = jest.fn();
 
   const component = renderer.create(
@@ -48,6 +49,7 @@ test('Throw an error if the date is invalid', () => {
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+  //eslint-disable-next-line no-console
   expect(console.error).toHaveBeenCalled();
 });
 
