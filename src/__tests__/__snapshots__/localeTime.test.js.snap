@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a localized time from a date 1`] = `"12:38:37 PM"`;
+
+exports[`Renders a localized time from a string 1`] = `"12:38:37 PM"`;
+
+exports[`Renders a localized time with an incorrect locale 1`] = `"12:38:37 PM"`;
+
+exports[`Renders a localized time with specific format 1`] = `"12:38 PM"`;
+
+exports[`Renders null if the date is invalid 1`] = `null`;

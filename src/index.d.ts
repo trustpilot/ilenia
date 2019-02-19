@@ -72,6 +72,21 @@ declare namespace Props {
     };
   }
 
+  export interface LocaleTime {
+    date: number | string | Date;
+    format?: {
+      weekday?: "narrow" | "short" | "long";
+      era?: "narrow" | "short" | "long";
+      year?: "numeric" | "2-digit";
+      month?: "numeric" | "2-digit" | "narrow" | "short" | "long";
+      day?: "numeric" | "2-digit";
+      hour?: "numeric" | "2-digit";
+      minute?: "numeric" | "2-digit";
+      second?: "numeric" | "2-digit";
+      timeZoneName?: "short" | "long";
+    };
+  }
+
   export interface TimeAgo {
     date: number | string | Date;
   }
@@ -80,6 +95,7 @@ declare namespace Props {
 export const HtmlText: React.SFC<Props.HtmlText>;
 export const LinkText: React.SFC<Props.LinkText>;
 export const LocaleDate: React.SFC<Props.LocaleDate>;
+export const LocaleTime: React.SFC<Props.LocaleTime>;
 export const LocaleNumber: React.SFC<Props.LocaleNumber>;
 export const Text: React.SFC<Props.Text>;
 export const TimeAgo: React.SFC<Props.TimeAgo>;

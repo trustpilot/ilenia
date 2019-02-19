@@ -16,6 +16,7 @@ Named after our dear and glorious Localization Coordinator at Trustpilot. But sh
   - [HtmlText](#htmltext)
   - [LocaleNumber](#localenumber)
   - [LocaleDate](#localedate)
+  - [LocaleTime](#localetime)
   - [TimeAgo](#timeago)
   - [withTranslations](#withtranslations)
   - [interpolate](#interpolate)
@@ -215,7 +216,7 @@ import { LocaleDate } from "ilenia";
 <LocaleDate date={new Date()} />; // renders something like 21/9/2018 depending on the locale
 ```
 
-It is also possible to specify formating options
+It is also possible to specify formatting options:
 
 ```javascript
 import { LocaleDate } from "ilenia";
@@ -228,6 +229,30 @@ import { LocaleDate } from "ilenia";
     year: "numeric"
   }}
 />; // renders something like Sep 21, 2018 depending on the locale
+```
+
+## LocaleTime
+
+Like LocaleDate, but uses `toLocaleTimeString` behind the scenes. This allows for rendering only the time component of a date.
+
+```javascript
+import { LocaleTime } from "ilenia";
+
+<LocaleTime date={new Date()} />; // renders something like 10:37:33 AM depending on the locale
+```
+
+It is also possible to specify formatting options:
+
+```javascript
+import { LocaleTime } from "ilenia";
+
+<LocaleTime
+  date={new Date()}
+  format={{
+    hour: "numeric",
+    minute: "numeric"
+  }}
+/>; // renders something like 10:37 AM depending on the locale
 ```
 
 ### TimeAgo

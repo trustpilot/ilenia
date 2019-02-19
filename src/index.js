@@ -5,5 +5,6 @@ export { default as Text } from './Text';
 export { default as HtmlText } from './HtmlText';
 export { default as LocaleNumber } from './LocaleNumber';
 export { default as LocaleDate } from './LocaleDate';
+export { default as LocaleTime } from './LocaleTime';
 export { default as TimeAgo } from './TimeAgo';
 export { default as interpolate } from './interpolate';
