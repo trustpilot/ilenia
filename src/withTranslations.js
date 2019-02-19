@@ -9,7 +9,9 @@ function getDisplayName(WrappedComponent) {
 const withTranslations = (Component) => {
   const WithTranslations = (props) => (
     <LocalizationContext.Consumer>
-      {(context) => <Component {...props} translations={context.translations} locale={context.locale} />}
+      {(context) => (
+        <Component {...props} translations={context.translations} locale={context.locale} />
+      )}
     </LocalizationContext.Consumer>
   );
 

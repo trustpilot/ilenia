@@ -4,7 +4,7 @@ import withTranslations from './withTranslations';
 import interpolate from './interpolate';
 
 const HtmlText = ({ id, interpolations = {}, translations = {}, tag }) => {
-  let string = translations[id];
+  const string = translations[id];
   if (!string) {
     console.error(`Couldn't find '${id}' in the translations table`); // eslint-disable-line no-console
     return null;

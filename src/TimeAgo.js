@@ -26,6 +26,7 @@ const TimeAgo = ({ date, locale }) => {
   const timeagoInstance = timeago();
 
   if (isNaN(dateWrapper)) {
+    // eslint-disable-next-line no-console
     console.error('Invalid date');
     return null;
   }
@@ -34,11 +35,7 @@ const TimeAgo = ({ date, locale }) => {
 };
 
 TimeAgo.propTypes = {
-  date: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.instanceOf(Date),
-  ]),
+  date: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.instanceOf(Date)]),
 };
 
 export default withTranslations(TimeAgo);

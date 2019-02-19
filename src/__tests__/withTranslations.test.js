@@ -24,7 +24,10 @@ test('Wrapped component has access to locale and translations as props', () => {
   const TranslatedChild = withTranslations(Child);
 
   const component = renderer.create(
-    <LocalizationProvider locale={locale} translations={{...fallbackTranslations, ...translations}}>
+    <LocalizationProvider
+      locale={locale}
+      translations={{ ...fallbackTranslations, ...translations }}
+    >
       <TranslatedChild />
     </LocalizationProvider>
   );

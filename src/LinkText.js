@@ -5,7 +5,8 @@ import { parse } from 'htmlstring-to-react';
 
 const escapeRegex = (str) => str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
 
-const linkRegex = (startTag, endTag) => new RegExp(`${escapeRegex(startTag)}(.*)${escapeRegex(endTag)}`, 'g');
+const linkRegex = (startTag, endTag) =>
+  new RegExp(`${escapeRegex(startTag)}(.*)${escapeRegex(endTag)}`, 'g');
 
 const addDefaultValues = (link) => ({
   ...link,
@@ -21,7 +22,7 @@ const LinkText = ({ id, translations, links }) => {
 
   let translated = translations[id];
   const overrides = {};
-  
+
   links.map(addDefaultValues).map((link, index) => {
     const regexp = linkRegex(link.start, link.end);
     const key = `link-text-${index}`;
@@ -34,13 +35,10 @@ const LinkText = ({ id, translations, links }) => {
       target: link.target,
       onClick: link.onClick,
     };
-    Object.keys(props).forEach((key) => (typeof props[key] === 'undefined') && delete props[key]);
 
-    overrides[`a[key="${key}"]`] = (_, textContent) => (
-      <a {...props}>
-        {textContent}
-      </a>
-    );
+    Object.keys(props).forEach((key) => typeof props[key] === 'undefined' && delete props[key]);
+
+    overrides[`a[key="${key}"]`] = (_, textContent) => <a {...props}>{textContent}</a>;
 
     function insertTag(match) {
       const textContent = match.substring(link.start.length, match.length - link.end.length);

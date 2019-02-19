@@ -14,7 +14,9 @@ const Text = ({ id, interpolations = {}, translations = {}, tag }) => {
 
 Text.propTypes = {
   id: PropTypes.string.isRequired,
-  interpolations: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.number])),
+  interpolations: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.number])
+  ),
   tag: PropTypes.shape({
     start: PropTypes.string,
     end: PropTypes.string,

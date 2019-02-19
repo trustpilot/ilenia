@@ -5,8 +5,8 @@ import Text from '../Text';
 
 const translations = {
   test1: 'Just a random string',
-  test2: 'A string but with a {value} in it',
-  test3: 'A string that uses another [placeholder]',
+  test2: 'A string but with a [value] in it',
+  test3: 'A string that uses another {{placeholder}}',
 };
 
 const setupText = (string, interpolations, tag) => (
@@ -30,14 +30,18 @@ test('Renders a string with an interpolations', () => {
 });
 
 test('Renders a string which uses a different placeholder syntax', () => {
-  const component = renderer.create(setupText('test3', { placeholder: 'syntax' }, { start: '[', end: ']' }));
+  const component = renderer.create(
+    setupText('test3', { placeholder: 'syntax' }, { start: '{{', end: '}}' })
+  );
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('Renders components if included as interpolations', () => {
-  const component = renderer.create(setupText('test2', { value: (<strong>huge value</strong>) }));
+  const component = renderer.create(
+    setupText('test2', { value: <strong key="strong">huge value</strong> })
+  );
 
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
