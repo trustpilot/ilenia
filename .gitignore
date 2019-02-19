@@ -3,7 +3,6 @@ node_modules
 /dist/
 npm-debug.log
 es
-/*.js
 /*.ts
 yarn-error.log
 .DS_Store
