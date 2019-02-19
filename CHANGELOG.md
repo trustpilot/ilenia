@@ -1,3 +1,14 @@
+# [8.1.0](https://github.com/trustpilot/ilenia/compare/v8.0.0...v8.1.0) (2019-02-19)
+
+
+### Build
+
+* Remove the module field ([3ae0ee7cb35dbe4834808630c632a2bff5cf6638](https://github.com/trustpilot/ilenia/commit/3ae0ee7cb35dbe4834808630c632a2bff5cf6638))
+
+### New
+
+* Added the LocaleTime component ([ea0c3a954701e423f899d79f752307c9e05c8e95](https://github.com/trustpilot/ilenia/commit/ea0c3a954701e423f899d79f752307c9e05c8e95))
+
 # [8.0.0](https://github.com/trustpilot/ilenia/compare/v7.1.0...v8.0.0) (2019-02-19)
 
 
