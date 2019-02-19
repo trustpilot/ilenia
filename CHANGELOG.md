@@ -1,3 +1,27 @@
+# [8.0.0](https://github.com/trustpilot/ilenia/compare/v7.1.0...v8.0.0) (2019-02-19)
+
+
+### Breaking
+
+* Change default tags in interpolate ([041f07562c5bab47bf7ef50057ada93bc6846d6e](https://github.com/trustpilot/ilenia/commit/041f07562c5bab47bf7ef50057ada93bc6846d6e)), closes [#50](https://github.com/trustpilot/ilenia/issues/50)
+
+### Build
+
+* Add a prettier config ([d3bc9c5d1e04fcabcb5ee5e21bf7913380de4399](https://github.com/trustpilot/ilenia/commit/d3bc9c5d1e04fcabcb5ee5e21bf7913380de4399))
+* Commit missing files ([5d85dbd113f8d1a28c5a2971c55d4e20ce9f247c](https://github.com/trustpilot/ilenia/commit/5d85dbd113f8d1a28c5a2971c55d4e20ce9f247c))
+* Fix lint errors ([dc008dc830de5e7ac82ca929ab3525bef710c691](https://github.com/trustpilot/ilenia/commit/dc008dc830de5e7ac82ca929ab3525bef710c691))
+* Fix tests in linkText ([d73a1f08456c74271659058424eecb21d236dae9](https://github.com/trustpilot/ilenia/commit/d73a1f08456c74271659058424eecb21d236dae9))
+* Prettier ([47873a255deafb02379672868004346108b76cf3](https://github.com/trustpilot/ilenia/commit/47873a255deafb02379672868004346108b76cf3))
+* Use a single test renderer, and update snapshots ([4e08537885607e9f7d6e5d4c74fb01cfef1d0300](https://github.com/trustpilot/ilenia/commit/4e08537885607e9f7d6e5d4c74fb01cfef1d0300))
+
+### Fix
+
+* Emit error when key is missing ([2e8b3b754e6713d33afffa5928e572c40b778a17](https://github.com/trustpilot/ilenia/commit/2e8b3b754e6713d33afffa5928e572c40b778a17))
+
+### Upgrade
+
+* Jest, babel, eslint and prettier ([19bd18384fa0413fa325d618070263849d4b3d66](https://github.com/trustpilot/ilenia/commit/19bd18384fa0413fa325d618070263849d4b3d66))
+
 # [7.1.0](https://github.com/trustpilot/ilenia/compare/v7.0.2...v7.1.0) (2019-02-15)
 
 

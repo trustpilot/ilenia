@@ -1,6 +1,6 @@
 {
   "name": "ilenia",
-  "version": "7.1.0",
+  "version": "8.0.0",
   "description": "Components and utilities for translations and localization in React",
   "main": "dist/index.js",
   "module": "es/index.js",
