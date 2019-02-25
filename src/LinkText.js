@@ -69,6 +69,13 @@ LinkText.propTypes = {
       onClick: PropTypes.func,
     })
   ),
+  interpolations: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.number])
+  ),
+  tag: PropTypes.shape({
+    start: PropTypes.string,
+    end: PropTypes.string,
+  }),
 };
 
 export default withTranslations(LinkText);
