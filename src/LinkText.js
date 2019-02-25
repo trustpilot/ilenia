@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withTranslations from './withTranslations';
 import { parse } from 'htmlstring-to-react';
+import interpolate from './interpolate';
 
 const escapeRegex = (str) => str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
 
@@ -14,7 +15,7 @@ const addDefaultValues = (link) => ({
   end: link.end || '[LINK-END]',
 });
 
-const LinkText = ({ id, translations, links }) => {
+const LinkText = ({ id, translations, links, interpolations, tag }) => {
   if (!translations[id]) {
     console.error(`Couldn't find '${id}' in the translations table`); // eslint-disable-line no-console
     return <span />;
@@ -22,6 +23,7 @@ const LinkText = ({ id, translations, links }) => {
 
   let translated = translations[id];
   const overrides = {};
+  translated = interpolate(translated, interpolations, tag).join('');
 
   links.map(addDefaultValues).map((link, index) => {
     const regexp = linkRegex(link.start, link.end);

@@ -8,6 +8,7 @@ const translations = {
   test2: 'A link [LINK-BEGIN]in the[LINK-END] middle',
   test3: 'A link [LINK-BEGIN]in the[LINK-END] middle and one [LINK2-BEGIN]in the end[LINK2-END]',
   test4: 'A link [LINK-BEGIN]in the[LINK-END] middle',
+  test5: 'A link [LINK-BEGIN]in the[LINK-END] middle and a date: [fromDate]',
 };
 
 test('Renders a string with no links in it', () => {
@@ -101,4 +102,28 @@ test('Renders nothing when the string is not there', () => {
 
   expect(asFragment()).toMatchSnapshot();
   expect(console.error).toHaveBeenCalled(); // eslint-disable-line no-console
+});
+
+test('Renders a string with a links and an interpolated value', () => {
+  const links = [
+    {
+      href: 'http://something1',
+    },
+  ];
+
+  const interpolations = {
+    fromDate: 'from date',
+  };
+
+  const { asFragment } = render(
+    <LocalizationProvider locale="en-US" translations={translations}>
+      <LinkText
+        id="test5"
+        links={links}
+        translations={translations}
+        interpolations={interpolations}
+      />
+    </LocalizationProvider>
+  );
+  expect(asFragment()).toMatchSnapshot();
 });

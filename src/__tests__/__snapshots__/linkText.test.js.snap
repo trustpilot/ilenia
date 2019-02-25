@@ -14,6 +14,18 @@ exports[`Renders a string with a link with arbitrary attributes 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Renders a string with a links and an interpolated value 1`] = `
+<DocumentFragment>
+  A link 
+  <a
+    href="http://something1"
+  >
+    in the
+  </a>
+   middle and a date: from date
+</DocumentFragment>
+`;
+
 exports[`Renders a string with a working onClick callback 1`] = `
 <DocumentFragment>
   A link 
