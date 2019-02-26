@@ -164,6 +164,20 @@ const link = {
 const App = () => <LinkText id="bodyText" links={[link]} />;
 ```
 
+Add interpolation to your link text.
+
+```javascript
+import { LinkText } from "ilenia";
+
+const translations = {
+  footer: "Please check out or [LINK-BEGIN]awesome blog[LINK-END]. Latest post: [date]"
+};
+
+const App = () => (
+  <LinkText id="footer" links={[{ href: "https://tech.trustpilot.com/" }]} interpolations={{ date: new Date() }} />
+);
+```
+
 ### HtmlText
 
 Use the `<HtmlText>` component to translate a string with html in it.

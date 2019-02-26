@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withTranslations from './withTranslations';
 import { parse } from 'htmlstring-to-react';
+import interpolate from './interpolate';
 
 const escapeRegex = (str) => str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
 
@@ -14,7 +15,7 @@ const addDefaultValues = (link) => ({
   end: link.end || '[LINK-END]',
 });
 
-const LinkText = ({ id, translations, links }) => {
+const LinkText = ({ id, translations, links, interpolations, tag }) => {
   if (!translations[id]) {
     console.error(`Couldn't find '${id}' in the translations table`); // eslint-disable-line no-console
     return <span />;
@@ -38,7 +39,11 @@ const LinkText = ({ id, translations, links }) => {
 
     Object.keys(props).forEach((key) => typeof props[key] === 'undefined' && delete props[key]);
 
-    overrides[`a[key="${key}"]`] = (_, textContent) => <a {...props}>{textContent}</a>;
+    overrides[`a[key="${key}"]`] = (_, textContent) => (
+      <a {...props}>
+        {interpolations ? interpolate(textContent, interpolations, tag) : textContent}
+      </a>
+    );
 
     function insertTag(match) {
       const textContent = match.substring(link.start.length, match.length - link.end.length);
@@ -54,7 +59,13 @@ const LinkText = ({ id, translations, links }) => {
       ADD_ATTR: ['target', 'key'],
     },
     overrides,
-  });
+  }).reduce(
+    (arr, item) =>
+      arr.concat(
+        typeof item === 'string' && interpolations ? interpolate(item, interpolations, tag) : [item]
+      ),
+    []
+  );
 };
 
 LinkText.propTypes = {
@@ -67,6 +78,13 @@ LinkText.propTypes = {
       onClick: PropTypes.func,
     })
   ),
+  interpolations: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.element, PropTypes.string, PropTypes.number])
+  ),
+  tag: PropTypes.shape({
+    start: PropTypes.string,
+    end: PropTypes.string,
+  }),
 };
 
 export default withTranslations(LinkText);

@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Renders a string with a link and an interpolated value inside, plus an interpolated value 1`] = `
+<DocumentFragment>
+  From 
+  <a
+    href="http://something1"
+  >
+    2/1/2019
+  </a>
+   to 2/28/2019
+</DocumentFragment>
+`;
+
 exports[`Renders a string with a link with arbitrary attributes 1`] = `
 <DocumentFragment>
   A link 
@@ -11,6 +23,18 @@ exports[`Renders a string with a link with arbitrary attributes 1`] = `
     in the
   </a>
    middle
+</DocumentFragment>
+`;
+
+exports[`Renders a string with a links and an interpolated value 1`] = `
+<DocumentFragment>
+  A link 
+  <a
+    href="http://something1"
+  >
+    in the
+  </a>
+   middle and a date: 2/1/2019
 </DocumentFragment>
 `;
 
