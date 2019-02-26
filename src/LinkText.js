@@ -39,7 +39,11 @@ const LinkText = ({ id, translations, links, interpolations, tag }) => {
 
     Object.keys(props).forEach((key) => typeof props[key] === 'undefined' && delete props[key]);
 
-    overrides[`a[key="${key}"]`] = (_, textContent) => <a {...props}>{textContent}</a>;
+    overrides[`a[key="${key}"]`] = (_, textContent) => (
+      <a {...props}>
+        {interpolations ? interpolate(textContent, interpolations, tag) : textContent}
+      </a>
+    );
 
     function insertTag(match) {
       const textContent = match.substring(link.start.length, match.length - link.end.length);

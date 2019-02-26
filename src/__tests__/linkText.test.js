@@ -10,6 +10,7 @@ const translations = {
   test3: 'A link [LINK-BEGIN]in the[LINK-END] middle and one [LINK2-BEGIN]in the end[LINK2-END]',
   test4: 'A link [LINK-BEGIN]in the[LINK-END] middle',
   test5: 'A link [LINK-BEGIN]in the[LINK-END] middle and a date: [fromDate]',
+  test6: 'From [LINK-BEGIN][fromDate][LINK-END] to [toDate]',
 };
 
 test('Renders a string with no links in it', () => {
@@ -120,6 +121,31 @@ test('Renders a string with a links and an interpolated value', () => {
     <LocalizationProvider locale="en-US" translations={translations}>
       <LinkText
         id="test5"
+        links={links}
+        translations={translations}
+        interpolations={interpolations}
+      />
+    </LocalizationProvider>
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('Renders a string with a link and an interpolated value inside, plus an interpolated value', () => {
+  const links = [
+    {
+      href: 'http://something1',
+    },
+  ];
+
+  const interpolations = {
+    fromDate: <LocaleDate date={new Date(2019, 1, 1)} />,
+    toDate: <LocaleDate date={new Date(2019, 1, 28)} />,
+  };
+
+  const { asFragment } = render(
+    <LocalizationProvider locale="en-US" translations={translations}>
+      <LinkText
+        id="test6"
         links={links}
         translations={translations}
         interpolations={interpolations}
