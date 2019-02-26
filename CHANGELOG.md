@@ -1,3 +1,16 @@
+# [8.2.0](https://github.com/trustpilot/ilenia/compare/v8.1.0...v8.2.0) (2019-02-26)
+
+
+### Docs
+
+* Add documentation + props for updated LinkText ([fec6ca80c31368d56ed37707650c713071263a1d](https://github.com/trustpilot/ilenia/commit/fec6ca80c31368d56ed37707650c713071263a1d))
+
+### Update
+
+* Allow interpolations in the LinkText comp ([0f3849c4a1b0589c1138cfdadc2532ea2ce9f4eb](https://github.com/trustpilot/ilenia/commit/0f3849c4a1b0589c1138cfdadc2532ea2ce9f4eb))
+* Allow interpolations inside the linked text ([f071dbde65753cf9b6dc845ce108658da732b669](https://github.com/trustpilot/ilenia/commit/f071dbde65753cf9b6dc845ce108658da732b669))
+* Enable component interpolation in LinkText ([9c3ffdef8c76f914537c4e2a28bb9d38e69a8fba](https://github.com/trustpilot/ilenia/commit/9c3ffdef8c76f914537c4e2a28bb9d38e69a8fba))
+
 # [8.1.0](https://github.com/trustpilot/ilenia/compare/v8.0.0...v8.1.0) (2019-02-19)
 
 
