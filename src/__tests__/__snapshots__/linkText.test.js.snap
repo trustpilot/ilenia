@@ -22,7 +22,7 @@ exports[`Renders a string with a links and an interpolated value 1`] = `
   >
     in the
   </a>
-   middle and a date: from date
+   middle and a date: 2/1/2019
 </DocumentFragment>
 `;
 

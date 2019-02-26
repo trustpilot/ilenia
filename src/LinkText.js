@@ -23,7 +23,6 @@ const LinkText = ({ id, translations, links, interpolations, tag }) => {
 
   let translated = translations[id];
   const overrides = {};
-  translated = interpolate(translated, interpolations, tag).join('');
 
   links.map(addDefaultValues).map((link, index) => {
     const regexp = linkRegex(link.start, link.end);
@@ -56,7 +55,13 @@ const LinkText = ({ id, translations, links, interpolations, tag }) => {
       ADD_ATTR: ['target', 'key'],
     },
     overrides,
-  });
+  }).reduce(
+    (arr, item) =>
+      arr.concat(
+        typeof item === 'string' && interpolations ? interpolate(item, interpolations, tag) : [item]
+      ),
+    []
+  );
 };
 
 LinkText.propTypes = {

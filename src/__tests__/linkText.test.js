@@ -2,6 +2,7 @@ import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
 import LocalizationProvider from '../LocalizationProvider';
 import LinkText from '../LinkText';
+import LocaleDate from '../LocaleDate';
 
 const translations = {
   test1: 'No links in the string',
@@ -112,7 +113,7 @@ test('Renders a string with a links and an interpolated value', () => {
   ];
 
   const interpolations = {
-    fromDate: 'from date',
+    fromDate: <LocaleDate date={new Date(2019, 1, 1)} />,
   };
 
   const { asFragment } = render(
