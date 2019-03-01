@@ -18,6 +18,7 @@ Named after our dear and glorious Localization Coordinator at Trustpilot. But sh
   - [LocaleDate](#localedate)
   - [LocaleTime](#localetime)
   - [TimeAgo](#timeago)
+  - [useTranslations](#usetranslations)
   - [withTranslations](#withtranslations)
   - [interpolate](#interpolate)
 
@@ -278,6 +279,24 @@ import { TimeAgo } from 'ilenia';
 
 const date = new Date(2018, 1, 15)
 <TimeAgo date={date}/> // renders someting like "6 months ago"
+```
+
+### useTranslations
+
+That's right, hooks! Get access to the raw translations data from the context with the `useTranslations` custom hook:
+
+```javascript
+function App() {
+  const [translations, locale] = useTranslations();
+
+  return (
+    <div>
+      <h1>
+        {translations.welcome} in {locale}
+      </h1>
+    </div>
+  );
+}
 ```
 
 ### withTranslations

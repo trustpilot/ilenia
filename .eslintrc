@@ -1,11 +1,6 @@
 {
-  "extends": [
-    "eslint-config-trustpilot/react"
-  ],
+  "extends": ["trustpilot/react"],
   "env": {
     "jest": true
-  },
-  "rules": {
-    "react/require-default-props": "0"
   }
 }

@@ -8,3 +8,4 @@ export { default as LocaleDate } from './LocaleDate';
 export { default as LocaleTime } from './LocaleTime';
 export { default as TimeAgo } from './TimeAgo';
 export { default as interpolate } from './interpolate';
+export { default as useTranslations } from './useTranslations';
