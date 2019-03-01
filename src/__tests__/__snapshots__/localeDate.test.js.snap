@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders a localized date from UTC date string 1`] = `"7/10/2018"`;
+exports[`Renders a localized date from UTC date string 1`] = `7/10/2018`;
 
-exports[`Renders a localized date from a date 1`] = `"1/1/1970"`;
+exports[`Renders a localized date from a date 1`] = `1/1/1970`;
 
-exports[`Renders a localized date from a number 1`] = `"1/1/1970"`;
+exports[`Renders a localized date from a number 1`] = `1/1/1970`;
 
-exports[`Renders a localized date from a string 1`] = `"1/1/1970"`;
+exports[`Renders a localized date from a string 1`] = `1/1/1970`;
 
-exports[`Renders a localized date with an incorrect locale 1`] = `"1/1/1970"`;
+exports[`Renders a localized date with an incorrect locale 1`] = `1/1/1970`;
 
-exports[`Renders a localized date with specific format 1`] = `"Jul 10, 2018"`;
+exports[`Renders a localized date with specific format 1`] = `Jul 10, 2018`;
 
 exports[`Renders null if the date is invalid 1`] = `null`;

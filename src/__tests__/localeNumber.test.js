@@ -1,60 +1,55 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 
 import LocalizationProvider from '../LocalizationProvider';
 import LocaleNumber from '../LocaleNumber';
 
 test('Renders a localized number with a correct locale', () => {
-  const component = renderer.create(
+  const { container } = render(
     <LocalizationProvider locale="en-US" translations={{}}>
       <LocaleNumber number={1000000} />
     </LocalizationProvider>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders a localized number with an incorrect locale', () => {
-  const component = renderer.create(
+  const { container } = render(
     <LocalizationProvider locale="abcdefghijklmnopqrstuvwxyz" translations={{}}>
       <LocaleNumber number={1000000} />
     </LocalizationProvider>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders truncated and localized number when max decimal is set', () => {
-  const component = renderer.create(
+  const { container } = render(
     <LocalizationProvider locale="en-US" translations={{}}>
       <LocaleNumber number={9.392} maxDecimals={2} />
     </LocalizationProvider>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders non decimal number when max decimal is set to zero', () => {
-  const component = renderer.create(
+  const { container } = render(
     <LocalizationProvider locale="en-US" translations={{}}>
       <LocaleNumber number={13.2452} maxDecimals={0} />
     </LocalizationProvider>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders only none zero decimals when maxDecimals is set', () => {
-  const component = renderer.create(
+  const { container } = render(
     <LocalizationProvider locale="en-US" translations={{}}>
       <LocaleNumber number={3.2} maxDecimals={2} />
     </LocalizationProvider>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

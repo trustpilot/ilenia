@@ -1,6 +1,6 @@
 import React from 'react';
 import 'raf/polyfill';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 
 import withTranslations from '../withTranslations';
 import LocalizationProvider from '../LocalizationProvider';
@@ -23,7 +23,7 @@ const Child = (props) => (
 test('Wrapped component has access to locale and translations as props', () => {
   const TranslatedChild = withTranslations(Child);
 
-  const component = renderer.create(
+  const { container } = render(
     <LocalizationProvider
       locale={locale}
       translations={{ ...fallbackTranslations, ...translations }}
@@ -32,6 +32,5 @@ test('Wrapped component has access to locale and translations as props', () => {
     </LocalizationProvider>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
