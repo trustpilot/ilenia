@@ -1,3 +1,11 @@
+# [8.3.0](https://github.com/trustpilot/ilenia/compare/v8.2.0...v8.3.0) (2019-04-01)
+
+
+### Update
+
+* Component to use new time ago library ([91f03cf79055753902aa16509e73406b681f3460](https://github.com/trustpilot/ilenia/commit/91f03cf79055753902aa16509e73406b681f3460))
+* Replaces timeago.js with javascript-time-ago ([df3d3810913f3c32c38167354c5a756cdecdc548](https://github.com/trustpilot/ilenia/commit/df3d3810913f3c32c38167354c5a756cdecdc548))
+
 # [8.2.0](https://github.com/trustpilot/ilenia/compare/v8.1.0...v8.2.0) (2019-02-26)
 
 
