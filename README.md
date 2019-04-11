@@ -89,7 +89,7 @@ import { Text } from "ilenia";
 
 const translations = {
   header: "This is the header of our site",
-  greeting: "Welcome to {name}"
+  greeting: "Welcome to [name]"
 };
 
 const interpolations = {
