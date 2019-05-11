@@ -35,6 +35,9 @@
     "test": "NODE_ENV=test jest"
   },
   "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist/"
+    ],
     "transform": {
       "^.+\\.js$": "babel-jest"
     },
