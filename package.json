@@ -83,7 +83,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-testing-library": "^6.0.0",
-    "semantic-release": "^15.7.2",
+    "semantic-release": "^15.13.13",
     "transform-runtime": "^0.0.0"
   },
   "husky": {
