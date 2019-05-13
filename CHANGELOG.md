@@ -1,3 +1,25 @@
+# [8.4.0](https://github.com/trustpilot/ilenia/compare/v8.3.0...v8.4.0) (2019-05-13)
+
+
+### Build
+
+* Small test tweaks ([e538a786c6a79ed1465058fea92fc52aefef9d70](https://github.com/trustpilot/ilenia/commit/e538a786c6a79ed1465058fea92fc52aefef9d70))
+* Update libs to fix some vulnerabilities ([4be8698c004ae81f3f0ba689bc2b824f51fc6e16](https://github.com/trustpilot/ilenia/commit/4be8698c004ae81f3f0ba689bc2b824f51fc6e16))
+* Use react-testing-library everywhere ([9601e2d3fc99994058bca740eed84989c5cfb2ec](https://github.com/trustpilot/ilenia/commit/9601e2d3fc99994058bca740eed84989c5cfb2ec))
+
+### Docs
+
+* Formatting js in the readme ([9775482000b17135b8eaf425a32fba3f4975d3db](https://github.com/trustpilot/ilenia/commit/9775482000b17135b8eaf425a32fba3f4975d3db))
+* Update interpolation example ([55af1bac26d60e6a08b0c1e1174d7a0b232dd530](https://github.com/trustpilot/ilenia/commit/55af1bac26d60e6a08b0c1e1174d7a0b232dd530))
+
+### Fix
+
+* Loosen the React peer dependency ([7a8c0464639e93141e5408ac21352dfd7ffedaa5](https://github.com/trustpilot/ilenia/commit/7a8c0464639e93141e5408ac21352dfd7ffedaa5))
+
+### New
+
+* Introduce useTranslations ([7abbd578074d2da420293e5f3d119d2e23060a0c](https://github.com/trustpilot/ilenia/commit/7abbd578074d2da420293e5f3d119d2e23060a0c))
+
 # [8.3.0](https://github.com/trustpilot/ilenia/compare/v8.2.0...v8.3.0) (2019-04-01)
 
 
