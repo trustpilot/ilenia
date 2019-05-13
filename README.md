@@ -285,7 +285,7 @@ const date = new Date(2018, 1, 15)
 
 ### useTranslations
 
-That's right, hooks! Get access to the raw translations data from the context with the `useTranslations` custom hook:
+Get access to the raw translations data from the context with the `useTranslations` custom hook:
 
 ```javascript
 function App() {
