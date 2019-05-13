@@ -138,8 +138,8 @@ test('Renders a string with a link and an interpolated value inside, plus an int
   ];
 
   const interpolations = {
-    fromDate: <LocaleDate date={new Date(2019, 1, 1)} />,
-    toDate: <LocaleDate date={new Date(2019, 1, 28)} />,
+    fromDate: <LocaleDate key="from-date" date={new Date(2019, 1, 1)} />,
+    toDate: <LocaleDate key="to-date" date={new Date(2019, 1, 28)} />,
   };
 
   const { asFragment } = render(

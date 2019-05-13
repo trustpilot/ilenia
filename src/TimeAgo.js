@@ -1,6 +1,6 @@
-import withTranslations from './withTranslations';
 import PropTypes from 'prop-types';
 import { default as JsTimeAgo } from 'javascript-time-ago';
+import { useTranslations } from './';
 
 import da from 'javascript-time-ago/locale/da';
 import de from 'javascript-time-ago/locale/de';
@@ -21,8 +21,9 @@ JsTimeAgo.addLocale(it);
 JsTimeAgo.addLocale(nl);
 JsTimeAgo.addLocale(sv);
 
-const TimeAgo = ({ date, locale }) => {
+const TimeAgo = ({ date }) => {
   const dateObject = new Date(date);
+  const [, locale] = useTranslations();
 
   if (isNaN(dateObject)) {
     // eslint-disable-next-line no-console
@@ -38,4 +39,4 @@ TimeAgo.propTypes = {
   date: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.instanceOf(Date)]),
 };
 
-export default withTranslations(TimeAgo);
+export default TimeAgo;

@@ -1,7 +1,9 @@
-import withTranslations from './withTranslations';
 import PropTypes from 'prop-types';
+import { useTranslations } from './';
 
-const LocaleNumber = ({ number, locale = 'en-US', maxDecimals }) => {
+const LocaleNumber = ({ number, maxDecimals }) => {
+  const [, locale] = useTranslations();
+
   try {
     const options = typeof maxDecimals === 'number' ? { maximumFractionDigits: maxDecimals } : {};
     return number.toLocaleString(locale, options);
@@ -15,4 +17,4 @@ LocaleNumber.propTypes = {
   maxDecimals: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-export default withTranslations(LocaleNumber);
+export default LocaleNumber;

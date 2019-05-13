@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A component using the hook prints the right values 1`] = `Language: da-DK`;

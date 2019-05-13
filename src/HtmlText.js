@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import { parse } from 'htmlstring-to-react';
-import withTranslations from './withTranslations';
-import interpolate from './interpolate';
+import { interpolate } from './';
+import { useTranslations } from './';
 
-const HtmlText = ({ id, interpolations = {}, translations = {}, tag }) => {
+const HtmlText = ({ id, interpolations = {}, tag }) => {
+  const [translations] = useTranslations();
   const string = translations[id];
   if (!string) {
     console.error(`Couldn't find '${id}' in the translations table`); // eslint-disable-line no-console
@@ -23,4 +24,4 @@ HtmlText.propTypes = {
   }),
 };
 
-export default withTranslations(HtmlText);
+export default HtmlText;

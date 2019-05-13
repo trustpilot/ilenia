@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withTranslations from './withTranslations';
 import { parse } from 'htmlstring-to-react';
-import interpolate from './interpolate';
+import { interpolate } from './';
+import { useTranslations } from './';
 
 const escapeRegex = (str) => str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
 
@@ -15,7 +15,8 @@ const addDefaultValues = (link) => ({
   end: link.end || '[LINK-END]',
 });
 
-const LinkText = ({ id, translations, links, interpolations, tag }) => {
+const LinkText = ({ id, links, interpolations, tag }) => {
+  const [translations] = useTranslations();
   if (!translations[id]) {
     console.error(`Couldn't find '${id}' in the translations table`); // eslint-disable-line no-console
     return <span />;
@@ -87,4 +88,4 @@ LinkText.propTypes = {
   }),
 };
 
-export default withTranslations(LinkText);
+export default LinkText;

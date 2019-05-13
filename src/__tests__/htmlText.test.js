@@ -1,7 +1,7 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import LocalizationProvider from '../LocalizationProvider';
-import HtmlText from '../HtmlText';
+import { HtmlText } from '../';
 
 const translations = {
   test1: 'Just a random string',
@@ -19,21 +19,17 @@ const setupText = (string, interpolations, tag, eventHandlers) => (
 );
 
 test('Renders a plain string', () => {
-  const component = renderer.create(setupText('test1'));
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const { asFragment } = render(setupText('test1'));
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Renders a string with one HTML part', () => {
-  const component = renderer.create(setupText('test2', { html: '<span key="hello">hello</span>' }));
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const { asFragment } = render(setupText('test2', { html: '<span key="hello">hello</span>' }));
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Renders a string with multiple HTML parts in it', () => {
-  const component = renderer.create(
+  const { asFragment } = render(
     setupText('test3', {
       html1: '<em key="em">',
       html2: '</em>',
@@ -41,25 +37,22 @@ test('Renders a string with multiple HTML parts in it', () => {
       html4: '</b>',
     })
   );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Renders a string with HTML parts in the end', () => {
-  const component = renderer.create(
+  const { asFragment } = render(
     setupText('test4', {
       html1: '<em key="em">',
       html2: '</em>',
     })
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Renders a string with HTML marked with another key', () => {
-  const component = renderer.create(
+  const { asFragment } = render(
     setupText(
       'test5',
       {
@@ -73,23 +66,19 @@ test('Renders a string with HTML marked with another key', () => {
     )
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Renders a string with HTML in it', () => {
-  const component = renderer.create(setupText('test6'));
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const { asFragment } = render(setupText('test6'));
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Renders nothing if the string is not there', () => {
   console.error = jest.fn(); // eslint-disable-line no-console
 
-  const component = renderer.create(setupText('test7'));
+  const { asFragment } = render(setupText('test7'));
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
   expect(console.error).toHaveBeenCalled(); // eslint-disable-line no-console
 });

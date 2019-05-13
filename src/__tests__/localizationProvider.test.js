@@ -1,6 +1,6 @@
 import React from 'react';
 import 'raf/polyfill';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 
 import LocalizationProvider from '../LocalizationProvider';
 import LocalizationContext from '../Context';
@@ -23,7 +23,7 @@ const Child = (props) => (
 );
 
 test('Provider merges translations and fallback translations correctly', () => {
-  const component = renderer.create(
+  const { container } = render(
     <LocalizationProvider
       locale={locale}
       translations={{ ...fallbackTranslations, ...translations }}
@@ -34,6 +34,5 @@ test('Provider merges translations and fallback translations correctly', () => {
     </LocalizationProvider>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

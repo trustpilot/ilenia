@@ -18,6 +18,7 @@ Named after our dear and glorious Localization Coordinator at Trustpilot. But sh
   - [LocaleDate](#localedate)
   - [LocaleTime](#localetime)
   - [TimeAgo](#timeago)
+  - [useTranslations](#usetranslations)
   - [withTranslations](#withtranslations)
   - [interpolate](#interpolate)
 
@@ -85,15 +86,15 @@ Use the `<Text>` component to translate a string in place.
 See how to about interpolate [here](#interpolate)
 
 ```javascript
-import { Text } from "ilenia";
+import { Text } from 'ilenia';
 
 const translations = {
-  header: "This is the header of our site",
-  greeting: "Welcome to [name]"
+  header: 'This is the header of our site',
+  greeting: 'Welcome to [name]',
 };
 
 const interpolations = {
-  name: "Trustpilot"
+  name: 'Trustpilot',
 };
 
 const Header = () => (
@@ -113,24 +114,22 @@ const Header = () => (
 Use `<LinkText>` to render a string with links in it. Any properties added to the link object will be added to the link element that is created.
 
 ```javascript
-import { LinkText } from "ilenia";
+import { LinkText } from 'ilenia';
 
 const translations = {
-  footer: "Please check out or [LINK-BEGIN]awesome blog[LINK-END]"
+  footer: 'Please check out or [LINK-BEGIN]awesome blog[LINK-END]',
 };
 
-const App = () => (
-  <LinkText id="footer" links={[{ href: "https://tech.trustpilot.com/" }]} />
-);
+const App = () => <LinkText id="footer" links={[{ href: 'https://tech.trustpilot.com/' }]} />;
 ```
 
 Or if your link has different tokens:
 
 ```javascript
-import { LinkText } from "ilenia";
+import { LinkText } from 'ilenia';
 
 const translations = {
-  footer: "Please check out or {mylink}awesome blog{/mylink}"
+  footer: 'Please check out or {mylink}awesome blog{/mylink}',
 };
 
 const App = () => (
@@ -138,10 +137,10 @@ const App = () => (
     id="footer"
     links={[
       {
-        href: "https://tech.trustpilot.com/",
-        start: "{mylink}",
-        end: "{/mylink}"
-      }
+        href: 'https://tech.trustpilot.com/',
+        start: '{mylink}',
+        end: '{/mylink}',
+      },
     ]}
   />
 );
@@ -150,15 +149,15 @@ const App = () => (
 It's possible to add click handlers to the created links as well (eg. a tracking event)
 
 ```javascript
-import { LinkText } from "ilenia";
+import { LinkText } from 'ilenia';
 
 const translations = {
-  bodyText: "Click here to [LINK-BEGIN]read more[LINK-END]"
+  bodyText: 'Click here to [LINK-BEGIN]read more[LINK-END]',
 };
 
 const link = {
-  href: "https://tech.trustpilot.com/",
-  onClick: () => analytics.track()
+  href: 'https://tech.trustpilot.com/',
+  onClick: () => analytics.track(),
 };
 
 const App = () => <LinkText id="bodyText" links={[link]} />;
@@ -167,14 +166,18 @@ const App = () => <LinkText id="bodyText" links={[link]} />;
 Add interpolation to your link text.
 
 ```javascript
-import { LinkText } from "ilenia";
+import { LinkText } from 'ilenia';
 
 const translations = {
-  footer: "Please check out or [LINK-BEGIN]awesome blog[LINK-END]. Latest post: [date]"
+  footer: 'Please check out or [LINK-BEGIN]awesome blog[LINK-END]. Latest post: [date]',
 };
 
 const App = () => (
-  <LinkText id="footer" links={[{ href: "https://tech.trustpilot.com/" }]} interpolations={{ date: new Date() }} />
+  <LinkText
+    id="footer"
+    links={[{ href: 'https://tech.trustpilot.com/' }]}
+    interpolations={{ date: new Date() }}
+  />
 );
 ```
 
@@ -184,16 +187,16 @@ Use the `<HtmlText>` component to translate a string with html in it.
 See how to about interpolate [here](#interpolate)
 
 ```javascript
-import { HtmlText } from "ilenia";
+import { HtmlText } from 'ilenia';
 
 const translations = {
-  header: "This is the {html1}header{html2} of our site",
-  footer: "The HTML can also be kept <em>in the string</em>."
+  header: 'This is the {html1}header{html2} of our site',
+  footer: 'The HTML can also be kept <em>in the string</em>.',
 };
 
 const interpolations = {
-  html1: "<b>",
-  html2: "</b>"
+  html1: '<b>',
+  html2: '</b>',
 };
 
 const Header = () => (
@@ -225,7 +228,7 @@ import { LocaleNumber } from "ilenia";
 Used for rendering a date in a localized format. Uses `toLocaleDateString` behind the scenes, using the `locale` from the provider.
 
 ```javascript
-import { LocaleDate } from "ilenia";
+import { LocaleDate } from 'ilenia';
 
 <LocaleDate date={new Date()} />; // renders something like 21/9/2018 depending on the locale
 ```
@@ -233,14 +236,14 @@ import { LocaleDate } from "ilenia";
 It is also possible to specify formatting options:
 
 ```javascript
-import { LocaleDate } from "ilenia";
+import { LocaleDate } from 'ilenia';
 
 <LocaleDate
   date={new Date()}
   format={{
-    day: "numeric",
-    month: "short",
-    year: "numeric"
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
   }}
 />; // renders something like Sep 21, 2018 depending on the locale
 ```
@@ -250,7 +253,7 @@ import { LocaleDate } from "ilenia";
 Like LocaleDate, but uses `toLocaleTimeString` behind the scenes. This allows for rendering only the time component of a date.
 
 ```javascript
-import { LocaleTime } from "ilenia";
+import { LocaleTime } from 'ilenia';
 
 <LocaleTime date={new Date()} />; // renders something like 10:37:33 AM depending on the locale
 ```
@@ -258,13 +261,13 @@ import { LocaleTime } from "ilenia";
 It is also possible to specify formatting options:
 
 ```javascript
-import { LocaleTime } from "ilenia";
+import { LocaleTime } from 'ilenia';
 
 <LocaleTime
   date={new Date()}
   format={{
-    hour: "numeric",
-    minute: "numeric"
+    hour: 'numeric',
+    minute: 'numeric',
   }}
 />; // renders something like 10:37 AM depending on the locale
 ```
@@ -280,27 +283,35 @@ const date = new Date(2018, 1, 15)
 <TimeAgo date={date}/> // renders someting like "6 months ago"
 ```
 
+### useTranslations
+
+Get access to the raw translations data from the context with the `useTranslations` custom hook:
+
+```javascript
+function App() {
+  const [translations, locale] = useTranslations();
+
+  return (
+    <div>
+      <h1>
+        {translations.welcome} in {locale}
+      </h1>
+    </div>
+  );
+}
+```
+
 ### withTranslations
 
 To get access to raw translations data or the current locale in a component, use the `withTranslations` HOC:
 
 ```javascript
-const TextRenderer = ({
-  locale,
-  translations,
-  isFirstVisit,
-  visitorNumber
-}) => {
+const TextRenderer = ({ locale, translations, isFirstVisit, visitorNumber }) => {
   const stringToRender = isFirstVisit
-    ? translations["welcomeFirstVisit"]
-    : translations["welcomeBack"];
+    ? translations['welcomeFirstVisit']
+    : translations['welcomeBack'];
   const visitorNumberDisplay = visitorNumber.toLocaleString(locale);
-  return (
-    <WelcomeMessage
-      message={stringToRender}
-      numberDisplay={visitorNumberDisplay}
-    />
-  );
+  return <WelcomeMessage message={stringToRender} numberDisplay={visitorNumberDisplay} />;
 };
 
 export default withTranslations(TextRenderer);
@@ -311,13 +322,13 @@ export default withTranslations(TextRenderer);
 An `interpolate` function is exposed from this library. This function can be used to replace tokens in a translation string. The components in the library use this function internally. The interpolate function is meant to be used with the `withTranslations` HOC. It returns an array of React elements, there will only be one element in the result if your interpolation items are strings but it can have multiple elements if you are interpolating React components.
 
 ```js
-import { interpolate } from "ilenia";
+import { interpolate } from 'ilenia';
 
-let output = interpolate("Value with a {token} in it", { token: "cookie" });
+let output = interpolate('Value with a {token} in it', { token: 'cookie' });
 <p>{output}</p>;
 
-output = interpolate("Value with a {component} in it", {
-  component: <LocaleNumber number={123.25} />
+output = interpolate('Value with a {component} in it', {
+  component: <LocaleNumber number={123.25} />,
 });
 <p>{output}</p>;
 ```
@@ -325,18 +336,18 @@ output = interpolate("Value with a {component} in it", {
 If you use a different placeholder syntax in your translations object, you can use the optional argument `tag`:
 
 ```javascript
-import { interpolate } from "ilenia";
+import { interpolate } from 'ilenia';
 
-const inputString = "This is the [[html1]]header[[html2]] of our site";
+const inputString = 'This is the [[html1]]header[[html2]] of our site';
 
 const interpolations = {
-  html1: "<b>",
-  html2: "</b>"
+  html1: '<b>',
+  html2: '</b>',
 };
 
 const tag = {
-  start: "[[",
-  end: "]]"
+  start: '[[',
+  end: ']]',
 };
 
 const [finishedString] = interpolate(inputString, interpolations, tag);

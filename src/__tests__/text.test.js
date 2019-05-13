@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from 'react-testing-library';
 import LocalizationProvider from '../LocalizationProvider';
 import Text from '../Text';
 
@@ -16,43 +16,38 @@ const setupText = (string, interpolations, tag) => (
 );
 
 test('Renders a plain string', () => {
-  const component = renderer.create(setupText('test1'));
+  const { container } = render(setupText('test1'));
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders a string with an interpolations', () => {
-  const component = renderer.create(setupText('test2', { value: 'huge value' }));
+  const { container } = render(setupText('test2', { value: 'huge value' }));
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders a string which uses a different placeholder syntax', () => {
-  const component = renderer.create(
+  const { container } = render(
     setupText('test3', { placeholder: 'syntax' }, { start: '{{', end: '}}' })
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders components if included as interpolations', () => {
-  const component = renderer.create(
+  const { container } = render(
     setupText('test2', { value: <strong key="strong">huge value</strong> })
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('Renders nothing if the string is not there', () => {
   console.error = jest.fn(); // eslint-disable-line no-console
 
-  const component = renderer.create(setupText('test4'));
+  const { container } = render(setupText('test4'));
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
   expect(console.error).toHaveBeenCalled(); // eslint-disable-line no-console
 });
