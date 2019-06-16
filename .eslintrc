@@ -1,6 +1,7 @@
 {
-  "extends": ["trustpilot/react"],
+  "extends": ["trustpilot/react", "trustpilot/typescript"],
   "env": {
-    "jest": true
+    "jest": true,
+    "node": true
   }
 }
