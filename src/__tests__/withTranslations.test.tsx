@@ -1,9 +1,7 @@
 import React from 'react';
-import 'raf/polyfill';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
-import withTranslations from '../withTranslations';
-import LocalizationProvider from '../LocalizationProvider';
+import { LocalizationProvider, withTranslations } from '..';
 
 const locale = 'da-DK';
 const translations = {
@@ -13,7 +11,7 @@ const fallbackTranslations = {
   myString: 'English (US)',
 };
 
-const Child = (props) => (
+const Child = (props: any) => (
   <div>
     <span>{JSON.stringify(props.translations)}</span>
     <span>{props.locale}</span>

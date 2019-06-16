@@ -1,9 +1,7 @@
 import { useContext } from 'react';
-import LocalizationContext from './Context';
+import { LocalizationContext, Translations } from './context';
 
-function useTranslations() {
+export function useTranslations(): [Translations, string] {
   const context = useContext(LocalizationContext);
   return [context.translations, context.locale];
 }
-
-export default useTranslations;
