@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, fireEvent } from 'react-testing-library';
-import LocalizationProvider from '../LocalizationProvider';
-import LinkText from '../LinkText';
-import LocaleDate from '../LocaleDate';
+import { render, fireEvent } from '@testing-library/react';
+import { LocalizationProvider, LinkText, LocaleDate } from '..';
 
 const translations = {
   test1: 'No links in the string',
@@ -16,7 +14,7 @@ const translations = {
 test('Renders a string with no links in it', () => {
   const { asFragment } = render(
     <LocalizationProvider locale="en-US" translations={translations}>
-      <LinkText id="test1" links={[]} translations={translations} />
+      <LinkText id="test1" links={[]} />
     </LocalizationProvider>
   );
 
@@ -26,7 +24,7 @@ test('Renders a string with no links in it', () => {
 test('Renders a string with one link in the middle', () => {
   const { asFragment } = render(
     <LocalizationProvider locale="en-US" translations={translations}>
-      <LinkText id="test2" links={[{ href: 'http://something' }]} translations={translations} />
+      <LinkText id="test2" links={[{ href: 'http://something' }]} />
     </LocalizationProvider>
   );
 
@@ -47,7 +45,7 @@ test('Renders a string with multiple links in it', () => {
 
   const { asFragment } = render(
     <LocalizationProvider locale="en-US" translations={translations}>
-      <LinkText id="test3" links={links} translations={translations} />
+      <LinkText id="test3" links={links} />
     </LocalizationProvider>
   );
   expect(asFragment()).toMatchSnapshot();
@@ -64,7 +62,7 @@ test('Renders a string with a link with arbitrary attributes', () => {
 
   const { asFragment } = render(
     <LocalizationProvider locale="en-US" translations={translations}>
-      <LinkText id="test4" links={links} translations={translations} />
+      <LinkText id="test4" links={links} />
     </LocalizationProvider>
   );
   expect(asFragment()).toMatchSnapshot();
@@ -84,7 +82,7 @@ test('Renders a string with a working onClick callback', () => {
 
   const { getByText, asFragment } = render(
     <LocalizationProvider locale="en-US" translations={translations}>
-      <LinkText id="test4" links={links} translations={translations} />
+      <LinkText id="test4" links={links} />
     </LocalizationProvider>
   );
 
@@ -98,7 +96,7 @@ test('Renders nothing when the string is not there', () => {
   console.error = jest.fn(); // eslint-disable-line no-console
   const { asFragment } = render(
     <LocalizationProvider locale="en-US" translations={translations}>
-      <LinkText id="not-there" translations={translations} />
+      <LinkText id="not-there" links={[]} />
     </LocalizationProvider>
   );
 
@@ -119,12 +117,7 @@ test('Renders a string with a links and an interpolated value', () => {
 
   const { asFragment } = render(
     <LocalizationProvider locale="en-US" translations={translations}>
-      <LinkText
-        id="test5"
-        links={links}
-        translations={translations}
-        interpolations={interpolations}
-      />
+      <LinkText id="test5" links={links} interpolations={interpolations} />
     </LocalizationProvider>
   );
   expect(asFragment()).toMatchSnapshot();
@@ -144,12 +137,7 @@ test('Renders a string with a link and an interpolated value inside, plus an int
 
   const { asFragment } = render(
     <LocalizationProvider locale="en-US" translations={translations}>
-      <LinkText
-        id="test6"
-        links={links}
-        translations={translations}
-        interpolations={interpolations}
-      />
+      <LinkText id="test6" links={links} interpolations={interpolations} />
     </LocalizationProvider>
   );
   expect(asFragment()).toMatchSnapshot();
