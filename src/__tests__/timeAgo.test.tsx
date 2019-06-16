@@ -1,8 +1,7 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
-import LocalizationProvider from '../LocalizationProvider';
-import TimeAgo from '../TimeAgo';
+import { LocalizationProvider, TimeAgo } from '..';
 
 test('Renders a localized date from a number', () => {
   const { container } = render(
@@ -35,7 +34,6 @@ test('Renders a localized date from a date', () => {
 });
 
 test('Throw an error if the date is invalid', () => {
-  //eslint-disable-next-line no-console
   console.error = jest.fn();
 
   const { container } = render(
@@ -45,7 +43,6 @@ test('Throw an error if the date is invalid', () => {
   );
 
   expect(container.firstChild).toMatchSnapshot();
-  //eslint-disable-next-line no-console
   expect(console.error).toHaveBeenCalled();
 });
 
