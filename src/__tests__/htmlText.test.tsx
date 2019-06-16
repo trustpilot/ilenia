@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from 'react-testing-library';
-import LocalizationProvider from '../LocalizationProvider';
-import { HtmlText } from '../';
+import { render } from '@testing-library/react';
+
+import { HtmlText, LocalizationProvider, Interpolations, Tag } from '..';
 
 const translations = {
   test1: 'Just a random string',
@@ -12,9 +12,9 @@ const translations = {
   test6: 'A string that has <b key="b">regular HTML</b> in it',
 };
 
-const setupText = (string, interpolations, tag, eventHandlers) => (
+const setupText = (string: string, interpolations?: Interpolations, tag?: Tag) => (
   <LocalizationProvider locale="en-US" translations={translations}>
-    <HtmlText id={string} interpolations={interpolations} tag={tag} eventHandlers={eventHandlers} />
+    <HtmlText id={string} interpolations={interpolations} tag={tag} />
   </LocalizationProvider>
 );
 
@@ -75,10 +75,10 @@ test('Renders a string with HTML in it', () => {
 });
 
 test('Renders nothing if the string is not there', () => {
-  console.error = jest.fn(); // eslint-disable-line no-console
+  console.error = jest.fn();
 
   const { asFragment } = render(setupText('test7'));
 
   expect(asFragment()).toMatchSnapshot();
-  expect(console.error).toHaveBeenCalled(); // eslint-disable-line no-console
+  expect(console.error).toHaveBeenCalled();
 });
