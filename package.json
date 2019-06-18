@@ -40,6 +40,9 @@
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
       "<rootDir>/jestSetup.js"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist"
     ]
   },
   "devDependencies": {
