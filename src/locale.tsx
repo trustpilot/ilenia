@@ -22,7 +22,7 @@ interface LocaleDateProps {
 }
 
 export const LocaleNumber = ({ number, maxDecimals }: LocaleNumberProps) => {
-  const [_, locale] = useTranslations();
+  const [, locale] = useTranslations();
 
   try {
     const options = typeof maxDecimals === 'number' ? { maximumFractionDigits: maxDecimals } : {};
@@ -33,7 +33,7 @@ export const LocaleNumber = ({ number, maxDecimals }: LocaleNumberProps) => {
 };
 
 export const LocaleDate = ({ date, format }: LocaleDateProps) => {
-  const [_, locale] = useTranslations();
+  const [, locale] = useTranslations();
   const dateWrapper = new Date(date);
 
   if (dateWrapper.getTime && isNaN(dateWrapper.getTime())) {
@@ -49,7 +49,7 @@ export const LocaleDate = ({ date, format }: LocaleDateProps) => {
 };
 
 export const LocaleTime = ({ date, format }: LocaleDateProps) => {
-  const [_, locale] = useTranslations();
+  const [, locale] = useTranslations();
   const dateWrapper = new Date(date);
 
   if (dateWrapper.getTime && isNaN(dateWrapper.getTime())) {

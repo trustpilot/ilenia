@@ -34,12 +34,14 @@
     "lint": "eslint --ext .ts --ext .tsx .",
     "lint:fix": "npm run lint -- --fix",
     "start": "jest --watch",
-    "test": "jest"
+    "test": "is-ci \"test:ci\" \"test:watch\"",
+    "test:ci": "jest",
+    "test:watch": "jest --watch"
   },
   "jest": {
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
-      "<rootDir>/jestSetup.js"
+      "@testing-library/react/cleanup-after-each"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist"
@@ -68,6 +70,7 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.3.0",
     "husky": "^2.4.1",
+    "is-ci-cli": "1.1.1",
     "jest": "^24.8.0",
     "prettier": "^1.18.2",
     "prop-types": "^15.6.1",

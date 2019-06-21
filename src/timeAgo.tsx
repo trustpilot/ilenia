@@ -27,7 +27,7 @@ interface TimeAgoProps {
 
 export const TimeAgo = ({ date }: TimeAgoProps) => {
   const dateWrapper = new Date(date);
-  const [_, locale] = useTranslations();
+  const [, locale] = useTranslations();
 
   if (dateWrapper.getTime && isNaN(dateWrapper.getTime())) {
     console.error('Invalid date');
