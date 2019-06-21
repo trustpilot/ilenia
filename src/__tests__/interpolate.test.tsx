@@ -1,7 +1,5 @@
-/* global global */
-
 import React from 'react';
-import interpolate from '../interpolate';
+import { interpolate } from '..';
 
 test('It replaces a token in a string', () => {
   const [output] = interpolate('This string has [number] token', {
@@ -42,37 +40,37 @@ test('Handles an empty input', () => {
   output = interpolate();
   expect(output).toEqual([]);
 
-  [output] = interpolate('nothing to do');
-  expect(output).toBe('nothing to do');
+  output = interpolate('nothing to do');
+  expect(output).toEqual(['nothing to do']);
 });
 
 test('It replaces a token in a string with a component', () => {
-  const tag = <number key="one">1</number>;
+  const tag = <span key="one">1</span>;
   const output = interpolate('This string has [number] token', { number: tag });
 
-  expect(output).toEqual(['This string has ', <number key="one">1</number>, ' token']);
+  expect(output).toEqual(['This string has ', <span key="one">1</span>, ' token']);
 });
 
 test('It replaces multiple tokens in a string with components', () => {
   const interpolations = {
-    number: <number key="two">2</number>,
+    number: <span key="two">2</span>,
     things: <strong key="strong">things</strong>,
   };
   const output = interpolate('This string has [number] [things]', interpolations);
 
   expect(output).toEqual([
     'This string has ',
-    <number key="two">2</number>,
+    <span key="two">2</span>,
     ' ',
     <strong key="strong">things</strong>,
   ]);
 });
 
 test('It collapses text interpolations when there are also components', () => {
-  const interpolations = { review: 'hahaha', number: <number key="two">2</number> };
+  const interpolations = { review: 'hahaha', number: <span key="two">2</span> };
   const output = interpolate('This [review] has [number] tokens', interpolations);
 
-  expect(output).toEqual(['This hahaha has ', <number key="two">2</number>, ' tokens']);
+  expect(output).toEqual(['This hahaha has ', <span key="two">2</span>, ' tokens']);
 });
 
 test('It uses a defined token tag with components', () => {
@@ -81,9 +79,9 @@ test('It uses a defined token tag with components', () => {
     end: '}}',
   };
 
-  const number = <number key="one">1</number>;
+  const number = <span key="one">1</span>;
   const output = interpolate('This string has {{number}} token', { number: number }, tags);
-  expect(output).toEqual(['This string has ', <number key="one">1</number>, ' token']);
+  expect(output).toEqual(['This string has ', <span key="one">1</span>, ' token']);
 });
 
 test("Doesn't recursively substitute", () => {
@@ -100,18 +98,18 @@ test("Doesn't recursively substitute", () => {
 });
 
 test('Emits error when component has no key prop', () => {
-  const errorLogger = jest.spyOn(global.console, 'error');
+  const mockedConsole = global.console as jest.Mocked<typeof global.console>;
+  const errorLogger = jest.spyOn(mockedConsole, 'error');
 
   const interpolations = {
-    number: <number>2</number>,
+    number: <span>2</span>,
   };
 
   interpolate('Hello [number]', interpolations);
 
   expect(errorLogger).toHaveBeenCalledWith(
-    // eslint-disable-next-line max-len
     'When you define a React component or HTML element as the value of an interpolation, you need to give it a unique `key` prop.'
   );
 
-  global.console.error.mockClear();
+  mockedConsole.error.mockClear();
 });

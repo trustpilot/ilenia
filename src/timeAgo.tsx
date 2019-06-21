@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import { default as JsTimeAgo } from 'javascript-time-ago';
-import { useTranslations } from './';
+import JsTimeAgo from 'javascript-time-ago';
+
+import { useTranslations } from '.';
 
 import da from 'javascript-time-ago/locale/da';
 import de from 'javascript-time-ago/locale/de';
@@ -21,22 +21,19 @@ JsTimeAgo.addLocale(it);
 JsTimeAgo.addLocale(nl);
 JsTimeAgo.addLocale(sv);
 
-const TimeAgo = ({ date }) => {
-  const dateObject = new Date(date);
+interface TimeAgoProps {
+  date: Date | string | number;
+}
+
+export const TimeAgo = ({ date }: TimeAgoProps) => {
+  const dateWrapper = new Date(date);
   const [, locale] = useTranslations();
 
-  if (isNaN(dateObject)) {
-    // eslint-disable-next-line no-console
+  if (dateWrapper.getTime && isNaN(dateWrapper.getTime())) {
     console.error('Invalid date');
     return null;
   }
 
   const timeAgo = new JsTimeAgo(locale);
-  return timeAgo.format(dateObject);
+  return timeAgo.format(dateWrapper);
 };
-
-TimeAgo.propTypes = {
-  date: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.instanceOf(Date)]),
-};
-
-export default TimeAgo;

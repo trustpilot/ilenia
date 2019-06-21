@@ -1,8 +1,7 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
-import LocalizationProvider from '../LocalizationProvider';
-import LocaleNumber from '../LocaleNumber';
+import { LocalizationProvider, LocaleNumber } from '..';
 
 test('Renders a localized number with a correct locale', () => {
   const { container } = render(

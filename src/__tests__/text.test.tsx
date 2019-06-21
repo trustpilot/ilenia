@@ -1,7 +1,8 @@
 import React from 'react';
-import { render } from 'react-testing-library';
-import LocalizationProvider from '../LocalizationProvider';
-import Text from '../Text';
+import { render } from '@testing-library/react';
+
+import { LocalizationProvider, Text } from '..';
+import { Interpolations, Tag } from '../text';
 
 const translations = {
   test1: 'Just a random string',
@@ -9,9 +10,9 @@ const translations = {
   test3: 'A string that uses another {{placeholder}}',
 };
 
-const setupText = (string, interpolations, tag) => (
+const setupText = (string: string, interpolations?: Interpolations, tag?: Tag) => (
   <LocalizationProvider locale="en-US" translations={translations}>
-    <Text id={string} interpolations={interpolations} tag={tag} translations={translations} />
+    <Text id={string} interpolations={interpolations} tag={tag} />
   </LocalizationProvider>
 );
 
@@ -44,10 +45,10 @@ test('Renders components if included as interpolations', () => {
 });
 
 test('Renders nothing if the string is not there', () => {
-  console.error = jest.fn(); // eslint-disable-line no-console
+  console.error = jest.fn();
 
   const { container } = render(setupText('test4'));
 
   expect(container.firstChild).toMatchSnapshot();
-  expect(console.error).toHaveBeenCalled(); // eslint-disable-line no-console
+  expect(console.error).toHaveBeenCalled();
 });

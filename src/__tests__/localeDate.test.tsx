@@ -1,7 +1,6 @@
 import React from 'react';
-import { render } from 'react-testing-library';
-import LocalizationProvider from '../LocalizationProvider';
-import LocaleDate from '../LocaleDate';
+import { render } from '@testing-library/react';
+import { LocalizationProvider, LocaleDate } from '..';
 
 test('Renders a localized date from a number', () => {
   const { container } = render(
@@ -34,7 +33,6 @@ test('Renders a localized date from a date', () => {
 });
 
 test('Renders null if the date is invalid', () => {
-  // eslint-disable-next-line no-console
   console.error = jest.fn();
 
   const { container } = render(
@@ -44,7 +42,6 @@ test('Renders null if the date is invalid', () => {
   );
 
   expect(container.firstChild).toMatchSnapshot();
-  // eslint-disable-next-line no-console
   expect(console.error).toHaveBeenCalled();
 });
 

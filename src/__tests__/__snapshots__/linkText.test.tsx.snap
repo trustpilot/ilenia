@@ -87,8 +87,4 @@ exports[`Renders a string with one link in the middle 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Renders nothing when the string is not there 1`] = `
-<DocumentFragment>
-  <span />
-</DocumentFragment>
-`;
+exports[`Renders nothing when the string is not there 1`] = `<DocumentFragment />`;

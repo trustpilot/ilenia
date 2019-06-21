@@ -1,8 +1,7 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
-import LocalizationProvider from '../LocalizationProvider';
-import LocaleTime from '../LocaleTime';
+import { LocalizationProvider, LocaleTime } from '..';
 
 test('Renders a localized time from a string', () => {
   const { container } = render(
@@ -25,7 +24,6 @@ test('Renders a localized time from a date', () => {
 });
 
 test('Renders null if the date is invalid', () => {
-  // eslint-disable-next-line no-console
   console.error = jest.fn();
 
   const { container } = render(

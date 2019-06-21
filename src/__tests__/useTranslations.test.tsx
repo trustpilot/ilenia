@@ -1,10 +1,10 @@
 import React from 'react';
-import { render } from 'react-testing-library';
-import { LocalizationProvider, useTranslations } from '../';
+import { render } from '@testing-library/react';
+import { LocalizationProvider, useTranslations } from '..';
 
 const TestComponent = () => {
   const [translations, locale] = useTranslations();
-  return `${translations.test}: ${locale}`;
+  return <React.Fragment>{`${translations.test}: ${locale}`}</React.Fragment>;
 };
 
 test('A component using the hook prints the right values', () => {

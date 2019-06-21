@@ -1,36 +1,32 @@
 import React from 'react';
-import 'raf/polyfill';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
-import LocalizationProvider from '../LocalizationProvider';
-import LocalizationContext from '../Context';
+import { LocalizationProvider, withTranslations } from '..';
 
 const locale = 'da-DK';
-
 const translations = {
   myString: 'Dansk',
 };
-
 const fallbackTranslations = {
   myString: 'English (US)',
 };
 
-const Child = (props) => (
+const Child = (props: any) => (
   <div>
     <span>{JSON.stringify(props.translations)}</span>
     <span>{props.locale}</span>
   </div>
 );
 
-test('Provider merges translations and fallback translations correctly', () => {
+test('Wrapped component has access to locale and translations as props', () => {
+  const TranslatedChild = withTranslations(Child);
+
   const { container } = render(
     <LocalizationProvider
       locale={locale}
       translations={{ ...fallbackTranslations, ...translations }}
     >
-      <LocalizationContext.Consumer>
-        {(context) => <Child translations={context.translations} locale={context.locale} />}
-      </LocalizationContext.Consumer>
+      <TranslatedChild />
     </LocalizationProvider>
   );
 
