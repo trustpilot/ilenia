@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { parse } from 'htmlstring-to-react';
 import { SelectorsToElement } from 'htmlstring-to-react/lib/override';
 
