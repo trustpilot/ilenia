@@ -1,3 +1,10 @@
+## [9.0.1](https://github.com/trustpilot/ilenia/compare/v9.0.0...v9.0.1) (2019-06-24)
+
+
+### Fix
+
+* Use esModuleInterop ([dd6b986a967e33f0ed1bd841f09ee941a9e19fc9](https://github.com/trustpilot/ilenia/commit/dd6b986a967e33f0ed1bd841f09ee941a9e19fc9))
+
 # [9.0.0](https://github.com/trustpilot/ilenia/compare/v8.4.0...v9.0.0) (2019-06-21)
 
 
