@@ -1,3 +1,10 @@
+## [9.0.2](https://github.com/trustpilot/ilenia/compare/v9.0.1...v9.0.2) (2019-06-26)
+
+
+### Fix
+
+* Exports for es6 modules for better backwards compatibility ([60f4ef9d0b3ab22379777193c39c665227c38d16](https://github.com/trustpilot/ilenia/commit/60f4ef9d0b3ab22379777193c39c665227c38d16))
+
 ## [9.0.1](https://github.com/trustpilot/ilenia/compare/v9.0.0...v9.0.1) (2019-06-24)
 
 
