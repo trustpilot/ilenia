@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es6",
     "jsx": "react",
     "declaration": true,
     "declarationMap": true,
@@ -16,6 +16,6 @@
     "dist",
     "node_modules",
     "src/**/__tests__/**",
-    "src/**/__mocks__/**",
+    "src/**/__mocks__/**"
   ]
 }
