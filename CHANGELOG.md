@@ -1,3 +1,14 @@
+## [9.0.3](https://github.com/trustpilot/ilenia/compare/v9.0.2...v9.0.3) (2019-07-11)
+
+
+### Fix
+
+* Update dependencies to fix security alerts ([d9c9b3d701333ed0f3b3734bd7ec776a07cb62b6](https://github.com/trustpilot/ilenia/commit/d9c9b3d701333ed0f3b3734bd7ec776a07cb62b6))
+
+### Upgrade
+
+* Bump lodash.template from 4.4.0 to 4.5.0 ([a728af2a13cec4b28e0153cf88a94c7f2d9c5b7b](https://github.com/trustpilot/ilenia/commit/a728af2a13cec4b28e0153cf88a94c7f2d9c5b7b))
+
 ## [9.0.2](https://github.com/trustpilot/ilenia/compare/v9.0.1...v9.0.2) (2019-06-26)
 
 
