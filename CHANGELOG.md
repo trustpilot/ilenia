@@ -1,3 +1,10 @@
+## [9.0.4](https://github.com/trustpilot/ilenia/compare/v9.0.3...v9.0.4) (2019-07-16)
+
+
+### Fix
+
+* Audit and fix vulnerabilities ([f5373b5e638bf0810555646bf1cbf5d04b624252](https://github.com/trustpilot/ilenia/commit/f5373b5e638bf0810555646bf1cbf5d04b624252))
+
 ## [9.0.3](https://github.com/trustpilot/ilenia/compare/v9.0.2...v9.0.3) (2019-07-11)
 
 
