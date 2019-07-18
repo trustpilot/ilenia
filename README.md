@@ -5,7 +5,7 @@
 
 A library for localization in React. Simple, declarative and focused on components.
 
-Named after our dear and glorious Localization Coordinator at Trustpilot. But she made us come up with an acronym, so here goes: **i**ntentional **l**ibrary **e**xtending **n**atural **i**nternationalization **a**lgorithms
+Named after our dear and glorious Localization Coordinator at Trustpilot. But she made us come up with an acronym, so here goes: **i**ntentional **l**ibrary **e**xtending **n**atural **i**nternationalization **a**lgorithms.
 
 ## Table of contents
 
@@ -40,7 +40,7 @@ Choose your SUBJECT according to this logic:
 
 ## Found a problem ?
 
-Please open an issue or submit a PR, we will be more than happy to help
+Please open an issue or submit a PR, we will be more than happy to help.
 
 ## How to install ?
 
@@ -83,7 +83,7 @@ const App = () => ({
 ### Text
 
 Use the `<Text>` component to translate a string in place.
-See how to about interpolate [here](#interpolate)
+See how to about interpolate [here](#interpolate).
 
 ```javascript
 import { Text } from 'ilenia';
@@ -146,7 +146,7 @@ const App = () => (
 );
 ```
 
-It's possible to add click handlers to the created links as well (eg. a tracking event)
+It's possible to add click handlers to the created links as well (eg. a tracking event):
 
 ```javascript
 import { LinkText } from 'ilenia';
@@ -184,7 +184,7 @@ const App = () => (
 ### HtmlText
 
 Use the `<HtmlText>` component to translate a string with html in it.
-See how to about interpolate [here](#interpolate)
+See how to about interpolate [here](#interpolate).
 
 ```javascript
 import { HtmlText } from 'ilenia';
@@ -274,7 +274,7 @@ import { LocaleTime } from 'ilenia';
 
 ### TimeAgo
 
-Use this component for relative dates (1 year ago, 2 minutes ago etc.)
+Use this component for relative dates (1 year ago, 2 minutes ago etc.):
 
 ```javascript
 import { TimeAgo } from 'ilenia';
