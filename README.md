@@ -55,16 +55,16 @@ The library only builds es modules and has full tree shaking capability.
 1. Wrap your app with the `LocalizationProvider` and pass current `locale` and `translations`. In the example we're merging the default language translations and the active one as selected by the user. That means there's a fallback if a string is missing.
 
 ```javascript
-import { LocalizationProvider, Text } from 'ilenia'
+import { LocalizationProvider, Text } from 'ilenia';
 
-const locale = 'de-DE'
+const locale = 'de-DE';
 const enUS = {
   'header': 'Localized React app',
   'welcomeMessage': 'Welcome to this website!'
-}
+};
 const deDE = {
   'header': 'Übersetzungen machen Spaß!'
-}
+};
 
 const mergedTranslations = { ...enUS, ...deDE, };
 
@@ -75,7 +75,7 @@ const App = () => ({
       <Text id="welcomeMessage"/>
     </div>
   </LocalizationProvider>
-})
+});
 ```
 
 ## Components
