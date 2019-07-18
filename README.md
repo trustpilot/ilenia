@@ -83,7 +83,7 @@ const App = () => ({
 ### Text
 
 Use the `<Text>` component to translate a string in place.
-See how to about interpolate [here](#interpolate).
+See how to interpolate [here](#interpolate).
 
 ```javascript
 import { Text } from 'ilenia';
@@ -184,7 +184,7 @@ const App = () => (
 ### HtmlText
 
 Use the `<HtmlText>` component to translate a string with html in it.
-See how to about interpolate [here](#interpolate).
+See how to interpolate [here](#interpolate).
 
 ```javascript
 import { HtmlText } from 'ilenia';
