@@ -1,7 +1,7 @@
-import React from "react";
-import { parse } from "htmlstring-to-react";
+import React from 'react';
+import { parse } from 'htmlstring-to-react';
 
-import { interpolate, Interpolations, Tag, useTranslations } from ".";
+import { interpolate, Interpolations, Tag, useTranslations } from '.';
 
 interface HtmlTextProps {
   id: string;
@@ -9,7 +9,7 @@ interface HtmlTextProps {
   tag?: Tag;
 }
 
-const DOM_CONFIG = { dom: { ADD_ATTR: ["target"] } };
+const DOM_CONFIG = { dom: { ADD_ATTR: ['target', 'key'] } };
 
 export const HtmlText = ({ id, interpolations, tag }: HtmlTextProps) => {
   const [translations] = useTranslations();
