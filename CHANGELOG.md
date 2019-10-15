@@ -1,3 +1,29 @@
+# [9.1.0](https://github.com/trustpilot/ilenia/compare/v9.0.4...v9.1.0) (2019-10-15)
+
+
+### Build
+
+* Silence false error logs ([395d3ff38512e682d186a8900e3a6340cd724680](https://github.com/trustpilot/ilenia/commit/395d3ff38512e682d186a8900e3a6340cd724680))
+
+### Docs
+
+* Add missing colons and periods ([a4df6f253925555b0277caf8b5703ea8d5dac9a8](https://github.com/trustpilot/ilenia/commit/a4df6f253925555b0277caf8b5703ea8d5dac9a8))
+* Add semicolons to code example ([9df8b922c80985afe75e9e121a7b31140511cf4d](https://github.com/trustpilot/ilenia/commit/9df8b922c80985afe75e9e121a7b31140511cf4d))
+* Fix wording ([4a385b015965c5c6c9500e528e5e297c42d923dc](https://github.com/trustpilot/ilenia/commit/4a385b015965c5c6c9500e528e5e297c42d923dc))
+* Remove redundant period from README ([d07366e6706ed09ec74514d773df4aed833633aa](https://github.com/trustpilot/ilenia/commit/d07366e6706ed09ec74514d773df4aed833633aa))
+
+### Fix
+
+* Add key to allowed props ([3401ef4dec74765b8ac61d92045571eb7595c8bb](https://github.com/trustpilot/ilenia/commit/3401ef4dec74765b8ac61d92045571eb7595c8bb))
+
+### Update
+
+* Add target as an allowed attribute (for links) ([01e9b00524f2f2bf0d39b87df88472d9c1ccb52b](https://github.com/trustpilot/ilenia/commit/01e9b00524f2f2bf0d39b87df88472d9c1ccb52b))
+
+### Upgrade
+
+* Bump eslint-utils from 1.3.1 to 1.4.2 ([da6ceb12d6f833ac34bb2320f67333c2dd93441b](https://github.com/trustpilot/ilenia/commit/da6ceb12d6f833ac34bb2320f67333c2dd93441b))
+
 ## [9.0.4](https://github.com/trustpilot/ilenia/compare/v9.0.3...v9.0.4) (2019-07-16)
 
 
