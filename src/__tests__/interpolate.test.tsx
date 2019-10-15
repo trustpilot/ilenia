@@ -98,8 +98,8 @@ test("Doesn't recursively substitute", () => {
 });
 
 test('Emits error when component has no key prop', () => {
-  const mockedConsole = global.console as jest.Mocked<typeof global.console>;
-  const errorLogger = jest.spyOn(mockedConsole, 'error');
+  const previousConsoleError = console.error;
+  console.error = jest.fn();
 
   const interpolations = {
     number: <span>2</span>,
@@ -107,9 +107,9 @@ test('Emits error when component has no key prop', () => {
 
   interpolate('Hello [number]', interpolations);
 
-  expect(errorLogger).toHaveBeenCalledWith(
+  expect(console.error).toHaveBeenCalledWith(
     'When you define a React component or HTML element as the value of an interpolation, you need to give it a unique `key` prop.'
   );
 
-  mockedConsole.error.mockClear();
+  console.error = previousConsoleError;
 });

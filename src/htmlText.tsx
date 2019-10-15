@@ -9,6 +9,8 @@ interface HtmlTextProps {
   tag?: Tag;
 }
 
+const DOM_CONFIG = { dom: { ADD_ATTR: ['target', 'key'] } };
+
 export const HtmlText = ({ id, interpolations, tag }: HtmlTextProps) => {
   const [translations] = useTranslations();
   const string = translations[id];
@@ -22,7 +24,7 @@ export const HtmlText = ({ id, interpolations, tag }: HtmlTextProps) => {
     <React.Fragment>
       {nodes.reduce<React.ReactNode[]>((acc, node) => {
         if (node) {
-          acc.push(parse(node));
+          acc.push(parse(node, DOM_CONFIG));
         }
 
         return acc;
