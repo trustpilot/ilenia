@@ -1,13 +1,15 @@
-import React from 'react';
-import { parse } from 'htmlstring-to-react';
+import React from "react";
+import { parse } from "htmlstring-to-react";
 
-import { interpolate, Interpolations, Tag, useTranslations } from '.';
+import { interpolate, Interpolations, Tag, useTranslations } from ".";
 
 interface HtmlTextProps {
   id: string;
   interpolations?: Interpolations;
   tag?: Tag;
 }
+
+const DOM_CONFIG = { dom: { ADD_ATTR: ["target"] } };
 
 export const HtmlText = ({ id, interpolations, tag }: HtmlTextProps) => {
   const [translations] = useTranslations();
@@ -22,7 +24,7 @@ export const HtmlText = ({ id, interpolations, tag }: HtmlTextProps) => {
     <React.Fragment>
       {nodes.reduce<React.ReactNode[]>((acc, node) => {
         if (node) {
-          acc.push(parse(node));
+          acc.push(parse(node, DOM_CONFIG));
         }
 
         return acc;
