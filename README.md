@@ -24,7 +24,7 @@ Named after our dear and glorious Localization Coordinator at Trustpilot. But sh
 
 ## How to contribute ?
 
-This repo enforce commit style so the release process is automatic. Commits must look like:
+This repo enforces commit style so the release process is automatic. Commits must look like:
 
     <SUBJECT>: Message starting with an uppercase
 
