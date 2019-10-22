@@ -1,3 +1,14 @@
+# [9.2.0](https://github.com/trustpilot/ilenia/compare/v9.1.0...v9.2.0) (2019-10-22)
+
+
+### Chore
+
+* Critical vulns in htmlstring-to-react ([de096106f7a99787aa0acf33c3dc5ceed6ce05a0](https://github.com/trustpilot/ilenia/commit/de096106f7a99787aa0acf33c3dc5ceed6ce05a0))
+
+### Update
+
+* Trigger a release (and fix a typo) ([1dfab2a2cc7d4060d4af7538d33fd53efd736e00](https://github.com/trustpilot/ilenia/commit/1dfab2a2cc7d4060d4af7538d33fd53efd736e00))
+
 # [9.1.0](https://github.com/trustpilot/ilenia/compare/v9.0.4...v9.1.0) (2019-10-15)
 
 
