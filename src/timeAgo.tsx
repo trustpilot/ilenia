@@ -14,7 +14,6 @@ import sv from 'javascript-time-ago/locale/sv';
 JsTimeAgo.addLocale(da);
 JsTimeAgo.addLocale(de);
 JsTimeAgo.addLocale(en);
-JsTimeAgo.addLocale(en);
 JsTimeAgo.addLocale(es);
 JsTimeAgo.addLocale(fr);
 JsTimeAgo.addLocale(it);
