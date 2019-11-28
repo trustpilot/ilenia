@@ -186,6 +186,8 @@ const App = () => (
 Use the `<HtmlText>` component to translate a string with html in it.
 See how to interpolate [here](#interpolate).
 
+NB. HtmlText doesn't work in node programs (SSR websites for example). In a node program, use something like [DOMPurify](https://www.npmjs.com/package/dompurify) or [sanitize-html](https://www.npmjs.com/package/sanitize-html) directly.
+
 ```javascript
 import { HtmlText } from 'ilenia';
 
