@@ -1,7 +1,4 @@
-# ilenia [![Build Status][travis-image]][travis-url]
-
-[travis-image]: https://travis-ci.com/trustpilot/ilenia.svg?token=MLe2TyKzC4DTigBAm1hb&branch=master
-[travis-url]: https://travis-ci.com/trustpilot/ilenia
+# ilenia
 
 A library for localization in React. Simple, declarative and focused on components.
 
