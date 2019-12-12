@@ -6,19 +6,28 @@ import da from 'javascript-time-ago/locale/da';
 import de from 'javascript-time-ago/locale/de';
 import en from 'javascript-time-ago/locale/en';
 import es from 'javascript-time-ago/locale/es';
+import fi from 'javascript-time-ago/locale/fi';
 import fr from 'javascript-time-ago/locale/fr';
 import it from 'javascript-time-ago/locale/it';
+import ja from 'javascript-time-ago/locale/ja';
 import nl from 'javascript-time-ago/locale/nl';
+import pl from 'javascript-time-ago/locale/pl';
+import pt from 'javascript-time-ago/locale/pt';
+import ru from 'javascript-time-ago/locale/ru';
 import sv from 'javascript-time-ago/locale/sv';
 
 JsTimeAgo.addLocale(da);
 JsTimeAgo.addLocale(de);
 JsTimeAgo.addLocale(en);
-JsTimeAgo.addLocale(en);
 JsTimeAgo.addLocale(es);
+JsTimeAgo.addLocale(fi);
 JsTimeAgo.addLocale(fr);
 JsTimeAgo.addLocale(it);
+JsTimeAgo.addLocale(ja);
 JsTimeAgo.addLocale(nl);
+JsTimeAgo.addLocale(pl);
+JsTimeAgo.addLocale(pt);
+JsTimeAgo.addLocale(ru);
 JsTimeAgo.addLocale(sv);
 
 interface TimeAgoProps {
