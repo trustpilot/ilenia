@@ -1,3 +1,16 @@
+## [9.2.1](https://github.com/trustpilot/ilenia/compare/v9.2.0...v9.2.1) (2019-12-12)
+
+
+### Docs
+
+* Don't use HtmlText on node ([05cdd663bd1f54f99d27101ab4ec2da868125abc](https://github.com/trustpilot/ilenia/commit/05cdd663bd1f54f99d27101ab4ec2da868125abc))
+* Remove broken travis badge ([018c2b93a008cf0d9e9657b68ec3c9f2fee67480](https://github.com/trustpilot/ilenia/commit/018c2b93a008cf0d9e9657b68ec3c9f2fee67480))
+
+### Fix
+
+* Add support for consumer languages ([9d87c7d55b525639467f219463075209342da9fc](https://github.com/trustpilot/ilenia/commit/9d87c7d55b525639467f219463075209342da9fc))
+* Remove repeated en locale ([99f3e81a1f93e9f90c4acb719ed62364eecb548f](https://github.com/trustpilot/ilenia/commit/99f3e81a1f93e9f90c4acb719ed62364eecb548f))
+
 # [9.2.0](https://github.com/trustpilot/ilenia/compare/v9.1.0...v9.2.0) (2019-10-22)
 
 
