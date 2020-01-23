@@ -10,7 +10,7 @@ export interface Interpolations {
   [keyof: string]: React.ReactNode;
 }
 
-interface TextProps {
+export interface TextProps {
   id: string;
   interpolations?: Interpolations;
   tag?: Tag;

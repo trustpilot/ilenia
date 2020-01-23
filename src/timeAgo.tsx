@@ -30,7 +30,7 @@ JsTimeAgo.addLocale(pt);
 JsTimeAgo.addLocale(ru);
 JsTimeAgo.addLocale(sv);
 
-interface TimeAgoProps {
+export interface TimeAgoProps {
   date: Date | string | number;
 }
 

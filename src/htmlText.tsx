@@ -3,7 +3,7 @@ import { parse } from 'htmlstring-to-react';
 
 import { interpolate, Interpolations, Tag, useTranslations } from '.';
 
-interface HtmlTextProps {
+export interface HtmlTextProps {
   id: string;
   interpolations?: Interpolations;
   tag?: Tag;
