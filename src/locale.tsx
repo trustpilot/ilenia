@@ -1,12 +1,12 @@
 import React from 'react';
 import { useTranslations } from '.';
 
-interface LocaleNumberProps {
+export interface LocaleNumberProps {
   number: number;
   maxDecimals?: number | string;
 }
 
-interface LocaleDateProps {
+export interface LocaleDateProps {
   date: string | number | Date;
   format?: {
     weekday?: 'narrow' | 'short' | 'long';

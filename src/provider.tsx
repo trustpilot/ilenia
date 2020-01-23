@@ -2,7 +2,7 @@ import React from 'react';
 
 import { LocalizationContext, Translations } from './context';
 
-interface LocalizationProviderProps {
+export interface LocalizationProviderProps {
   children: React.ReactNode;
   locale: string;
   translations: Translations;
