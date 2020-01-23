@@ -1,3 +1,14 @@
+# [9.3.0](https://github.com/trustpilot/ilenia/compare/v9.2.1...v9.3.0) (2020-01-23)
+
+
+### New
+
+* Export more type definitions ([c11d83a981d13f5eed437e5d31245406ee4e0ad4](https://github.com/trustpilot/ilenia/commit/c11d83a981d13f5eed437e5d31245406ee4e0ad4))
+
+### Upgrade
+
+* Bump npm from 6.10.0 to 6.13.4 ([d58968207291f41b42e09d793ab04017a8f17e06](https://github.com/trustpilot/ilenia/commit/d58968207291f41b42e09d793ab04017a8f17e06))
+
 ## [9.2.1](https://github.com/trustpilot/ilenia/compare/v9.2.0...v9.2.1) (2019-12-12)
 
 
