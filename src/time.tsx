@@ -48,3 +48,14 @@ export const TimeAgo = ({ date }: TimeAgoProps) => {
   const timeAgo = new JsTimeAgo(locale);
   return timeAgo.format(dateWrapper);
 };
+
+export interface HumanizeTimeProps {
+  time: number; // milli seconds
+}
+
+export const HumanizeTime = ({ time }: HumanizeTimeProps) => {
+  const [, locale] = useTranslations();
+
+  const timeAgo = new JsTimeAgo(locale);
+  return timeAgo.format(time, 'time');
+};

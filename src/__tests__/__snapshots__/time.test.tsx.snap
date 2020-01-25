@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Renders a humanized and localized string representing a duration 1`] = `11 hours`;
+
 exports[`Renders a localized date from a date 1`] = `il y a 11 heures`;
 
 exports[`Renders a localized date from a number 1`] = `11 hours ago`;

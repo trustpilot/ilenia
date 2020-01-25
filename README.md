@@ -15,6 +15,7 @@ Named after our dear and glorious Localization Coordinator at Trustpilot. But sh
   - [LocaleDate](#localedate)
   - [LocaleTime](#localetime)
   - [TimeAgo](#timeago)
+  - [HumanizeTime](#humanizetime)
   - [useTranslations](#usetranslations)
   - [withTranslations](#withtranslations)
   - [interpolate](#interpolate)
@@ -280,6 +281,19 @@ import { TimeAgo } from 'ilenia';
 
 const date = new Date(2018, 1, 15)
 <TimeAgo date={date}/> // renders someting like "6 months ago"
+```
+
+### HumanizeTime
+
+Same output as TimeAgo without 'ago'. Transforms milli seconds to humainzed text.
+
+```javascript
+import { HumanizeTime } from 'ilenia';
+
+<HumanizeTime time={700000}/>  // renders "10 minutes"
+
+const yesterday = new Date(new Date(date).setDate(date.getDate() + -1)) //
+<HumanizeTime time={new Date() - yesterday}/> // renders "1 day"
 ```
 
 ### useTranslations
