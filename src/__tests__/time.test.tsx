@@ -65,3 +65,15 @@ test('Renders a humanized representation of a time duration', () => {
 
   expect(getByText('11 hours')).toBeDefined();
 });
+
+test('Renders an incorrect Danish humanized representation of a time duration', () => {
+  const { getByText } = render(
+    <LocalizationProvider locale="da-DK" translations={{}}>
+      <HumanizeTime milliseconds={Date.now() - 11 * 1000 * 60 * 60} />
+    </LocalizationProvider>
+  );
+
+  expect(getByText('for 11 timer siden')).toBeDefined();
+  //should be "11 timer" but da is missing long-time style
+  //https://github.com/catamphetamine/javascript-time-ago/blob/master/locale/da/index.js
+});
