@@ -56,12 +56,12 @@ test('Renders a localized date with an incorrect locale', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
-test('Renders a humanized and localized string representing a duration', () => {
-  const { container } = render(
+test('Renders a humanized representation of a time duration', () => {
+  const { getByText } = render(
     <LocalizationProvider locale="en-US" translations={{}}>
-      <HumanizeTime time={Date.now() - 11 * 1000 * 60 * 60} />
+      <HumanizeTime milliseconds={Date.now() - 11 * 1000 * 60 * 60} />
     </LocalizationProvider>
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  expect(getByText('11 hours')).toBeDefined();
 });

@@ -285,15 +285,15 @@ const date = new Date(2018, 1, 15)
 
 ### HumanizeTime
 
-Same output as TimeAgo without 'ago'. Transforms milli seconds to humainzed text.
+The component accepts a number of milliseconds and renders it to a human readable text. It renders the same as `<TimeAgo>` but without the 'ago' postfix. 
 
 ```javascript
 import { HumanizeTime } from 'ilenia';
 
-<HumanizeTime time={700000}/>  // renders "10 minutes"
+<HumanizeTime milliseconds={600000}/>  // renders "10 minutes"
 
-const yesterday = new Date(new Date(date).setDate(date.getDate() + -1)) //
-<HumanizeTime time={new Date() - yesterday}/> // renders "1 day"
+const yesterday = new Date(new Date(date).setDate(date.getDate() + -1))
+<HumanizeTime milliseconds={new Date() - yesterday}/> // renders "1 day"
 ```
 
 ### useTranslations
