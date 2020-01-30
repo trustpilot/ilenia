@@ -8,6 +8,7 @@ declare module 'javascript-time-ago/locale/fi';
 declare module 'javascript-time-ago/locale/fr';
 declare module 'javascript-time-ago/locale/it';
 declare module 'javascript-time-ago/locale/ja';
+declare module 'javascript-time-ago/locale/nb';
 declare module 'javascript-time-ago/locale/nl';
 declare module 'javascript-time-ago/locale/pl';
 declare module 'javascript-time-ago/locale/pt';
