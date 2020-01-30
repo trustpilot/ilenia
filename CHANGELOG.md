@@ -1,3 +1,10 @@
+# [9.4.0](https://github.com/trustpilot/ilenia/compare/v9.3.0...v9.4.0) (2020-01-30)
+
+
+### New
+
+* Support for Norwegian in TimeAgo component ([6cfc57ce6e46df213ced33282931a0a9472cad33](https://github.com/trustpilot/ilenia/commit/6cfc57ce6e46df213ced33282931a0a9472cad33))
+
 # [9.3.0](https://github.com/trustpilot/ilenia/compare/v9.2.1...v9.3.0) (2020-01-23)
 
 
