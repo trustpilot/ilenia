@@ -73,7 +73,5 @@ test('Renders an incorrect Danish humanized representation of a time duration', 
     </LocalizationProvider>
   );
 
-  expect(getByText('for 11 timer siden')).toBeDefined();
-  //should be "11 timer" but da is missing long-time style
-  //https://github.com/catamphetamine/javascript-time-ago/blob/master/locale/da/index.js
+  expect(getByText('11 timer')).toBeDefined();
 });
