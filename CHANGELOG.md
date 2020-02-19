@@ -1,3 +1,19 @@
+# [9.5.0](https://github.com/trustpilot/ilenia/compare/v9.4.0...v9.5.0) (2020-02-19)
+
+
+### New
+
+* Add HumanizeTime component ([95aebe9afa0ae101b844a1a8050f47e3943cdbb0](https://github.com/trustpilot/ilenia/commit/95aebe9afa0ae101b844a1a8050f47e3943cdbb0))
+
+### Update
+
+* Add test showing that localization isn't complete ([566cd882491207c4ced874c686d77a2798087ccb](https://github.com/trustpilot/ilenia/commit/566cd882491207c4ced874c686d77a2798087ccb))
+* Code review suggestions ([476ffdc77a034cc937973f00a4a14db1aae1ef31](https://github.com/trustpilot/ilenia/commit/476ffdc77a034cc937973f00a4a14db1aae1ef31))
+
+### Upgrade
+
+* Add more language support for long time format ([495b4e695380b562069639a12162ac340d33a1b3](https://github.com/trustpilot/ilenia/commit/495b4e695380b562069639a12162ac340d33a1b3))
+
 # [9.4.0](https://github.com/trustpilot/ilenia/compare/v9.3.0...v9.4.0) (2020-01-30)
 
 
