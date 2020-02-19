@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { LocalizationProvider, TimeAgo } from '..';
+import { LocalizationProvider, TimeAgo, HumanizeTime } from '..';
 
 test('Renders a localized date from a number', () => {
   const { container } = render(
@@ -54,4 +54,24 @@ test('Renders a localized date with an incorrect locale', () => {
   );
 
   expect(container.firstChild).toMatchSnapshot();
+});
+
+test('Renders a humanized representation of a time duration', () => {
+  const { getByText } = render(
+    <LocalizationProvider locale="en-US" translations={{}}>
+      <HumanizeTime milliseconds={Date.now() - 11 * 1000 * 60 * 60} />
+    </LocalizationProvider>
+  );
+
+  expect(getByText('11 hours')).toBeDefined();
+});
+
+test('Renders an incorrect Danish humanized representation of a time duration', () => {
+  const { getByText } = render(
+    <LocalizationProvider locale="da-DK" translations={{}}>
+      <HumanizeTime milliseconds={Date.now() - 11 * 1000 * 60 * 60} />
+    </LocalizationProvider>
+  );
+
+  expect(getByText('11 timer')).toBeDefined();
 });

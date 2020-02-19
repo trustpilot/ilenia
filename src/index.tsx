@@ -5,6 +5,6 @@ export * from './linkText';
 export * from './locale';
 export * from './provider';
 export * from './text';
-export * from './timeAgo';
+export * from './time';
 export * from './useTranslations';
 export * from './withTranslations';
