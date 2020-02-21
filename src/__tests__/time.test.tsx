@@ -59,7 +59,7 @@ test('Renders a localized date with an incorrect locale', () => {
 test('Renders a humanized representation of a time duration', () => {
   const { getByText } = render(
     <LocalizationProvider locale="en-US" translations={{}}>
-      <HumanizeTime milliseconds={Date.now() - 11 * 1000 * 60 * 60} />
+      <HumanizeTime milliseconds={11 * 1000 * 60 * 60} />
     </LocalizationProvider>
   );
 
@@ -69,9 +69,29 @@ test('Renders a humanized representation of a time duration', () => {
 test('Renders an incorrect Danish humanized representation of a time duration', () => {
   const { getByText } = render(
     <LocalizationProvider locale="da-DK" translations={{}}>
-      <HumanizeTime milliseconds={Date.now() - 11 * 1000 * 60 * 60} />
+      <HumanizeTime milliseconds={11 * 1000 * 60 * 60} />
     </LocalizationProvider>
   );
 
   expect(getByText('11 timer')).toBeDefined();
+});
+
+test('Renders an incorrect Danish humanized representation of a time duration', () => {
+  const { getByText } = render(
+    <LocalizationProvider locale="en-US" translations={{}}>
+      <HumanizeTime milliseconds={600000} />
+    </LocalizationProvider>
+  );
+
+  expect(getByText('10 minutes')).toBeDefined();
+});
+
+test('Renders an incorrect Danish humanized representation of a time duration', () => {
+  const { getByText } = render(
+    <LocalizationProvider locale="en-US" translations={{}}>
+      <HumanizeTime milliseconds={Date.now() - new Date().setDate(new Date().getDate() + -1)} />
+    </LocalizationProvider>
+  );
+
+  expect(getByText('1 day')).toBeDefined();
 });

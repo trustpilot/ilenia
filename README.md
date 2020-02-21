@@ -292,8 +292,9 @@ import { HumanizeTime } from 'ilenia';
 
 <HumanizeTime milliseconds={600000}/>  // renders "10 minutes"
 
-const yesterday = new Date(new Date(date).setDate(date.getDate() + -1))
-<HumanizeTime milliseconds={new Date() - yesterday}/> // renders "1 day"
+const yesterday = new Date().setDate(new Date().getDate() + -1); //Returns ms since 1970, 1 day ago
+const oneDayMS = Date.now() - yesterday; // 86400000 ms
+<HumanizeTime milliseconds={yesterday}/> // renders "1 day"
 ```
 
 ### useTranslations
