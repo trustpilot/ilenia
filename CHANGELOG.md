@@ -1,3 +1,10 @@
+## [9.5.1](https://github.com/trustpilot/ilenia/compare/v9.5.0...v9.5.1) (2020-02-24)
+
+
+### Fix
+
+* MS is now actual MS and not MS since 1970 ([b4cb2b768ed3c0516afcd71a9931668aff4258f3](https://github.com/trustpilot/ilenia/commit/b4cb2b768ed3c0516afcd71a9931668aff4258f3))
+
 # [9.5.0](https://github.com/trustpilot/ilenia/compare/v9.4.0...v9.5.0) (2020-02-19)
 
 
