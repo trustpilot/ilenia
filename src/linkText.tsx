@@ -9,7 +9,7 @@ export interface Link {
   start?: string;
   end?: string;
   href?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
   class?: string;
   className?: string;
   target?: string;
