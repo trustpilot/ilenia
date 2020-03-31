@@ -1,3 +1,10 @@
+# [9.6.0](https://github.com/trustpilot/ilenia/compare/v9.5.1...v9.6.0) (2020-03-31)
+
+
+### New
+
+* More precise type for onClick callback ([0e0c1c9cfbd41c06e6e1ede91adb7daf6ab99ca0](https://github.com/trustpilot/ilenia/commit/0e0c1c9cfbd41c06e6e1ede91adb7daf6ab99ca0))
+
 ## [9.5.1](https://github.com/trustpilot/ilenia/compare/v9.5.0...v9.5.1) (2020-02-24)
 
 
