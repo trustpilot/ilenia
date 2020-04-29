@@ -56,6 +56,7 @@ test('Renders a string with a link with arbitrary attributes', () => {
     {
       href: 'http://something1',
       target: '_blank',
+      rel: 'noopener noreferrer',
       class: 'button',
     },
   ];
