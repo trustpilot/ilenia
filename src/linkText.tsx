@@ -13,6 +13,7 @@ export interface Link {
   class?: string;
   className?: string;
   target?: string;
+  rel?: string;
   id?: string;
 }
 
@@ -54,6 +55,7 @@ export const LinkText = ({ id, links, interpolations, tag }: LinkTextProps) => {
       id: link.id,
       key: key,
       target: link.target,
+      rel: link.rel,
       onClick: link.onClick,
     };
 
