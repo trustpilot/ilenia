@@ -1,3 +1,10 @@
+# [9.7.0](https://github.com/trustpilot/ilenia/compare/v9.6.0...v9.7.0) (2020-04-30)
+
+
+### Update
+
+* Add rel prop to LinkText ([311e22343f82d11bafe2fd1ae6a9242b5f87569f](https://github.com/trustpilot/ilenia/commit/311e22343f82d11bafe2fd1ae6a9242b5f87569f))
+
 # [9.6.0](https://github.com/trustpilot/ilenia/compare/v9.5.1...v9.6.0) (2020-03-31)
 
 
