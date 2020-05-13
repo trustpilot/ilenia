@@ -19,26 +19,7 @@ Named after our dear and glorious Localization Coordinator at Trustpilot. But sh
   - [useTranslations](#usetranslations)
   - [withTranslations](#withtranslations)
   - [interpolate](#interpolate)
-
-## How to contribute ?
-
-This repo enforces commit style so the release process is automatic. Commits must look like:
-
-    <SUBJECT>: Message starting with an uppercase
-
-Choose your SUBJECT according to this logic:
-
-- Fix: for a bug fix.
-- Update: for a backwards-compatible enhancement.
-- Breaking: for a backwards-incompatible enhancement.
-- Docs: changes to documentation only.
-- Build: changes to build process only.
-- New: implemented a new feature.
-- Upgrade: for a dependency upgrade.
-
-## Found a problem ?
-
-Please open an issue or submit a PR, we will be more than happy to help.
+- [How to contribute?](#how-to-contribute)
 
 ## How to install ?
 
@@ -375,3 +356,23 @@ The examples above describe <Text> and <HtmlText> as well. The difference is, th
 <Text id="string" interpolations={interpolationsObject} tag={tags}/>
 <HtmlText id="string" interpolations={interpolationsObject} tag={tags}/>
 ```
+
+## How to contribute
+
+This repo enforces commit style so the release process is automatic. Commits must look like:
+
+    <SUBJECT>: Message starting with an uppercase
+
+Choose your SUBJECT according to this logic:
+
+- Fix: for a bug fix.
+- Update: for a backwards-compatible enhancement.
+- Breaking: for a backwards-incompatible enhancement.
+- Docs: changes to documentation only.
+- Build: changes to build process only.
+- New: implemented a new feature.
+- Upgrade: for a dependency upgrade.
+
+## Found a problem ?
+
+Please open an issue or submit a PR, we will be more than happy to help.
