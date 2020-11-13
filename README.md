@@ -171,7 +171,7 @@ NB. HtmlText doesn't work in node programs (SSR websites for example). In a node
 import { HtmlText } from 'ilenia';
 
 const translations = {
-  header: 'This is the {html1}header{html2} of our site',
+  header: 'This is the [html1]header[html2] of our site',
   footer: 'The HTML can also be kept <em>in the string</em>.',
 };
 
@@ -319,10 +319,10 @@ An `interpolate` function is exposed from this library. This function can be use
 ```js
 import { interpolate } from 'ilenia';
 
-let output = interpolate('Value with a {token} in it', { token: 'cookie' });
+let output = interpolate('Value with a [token] in it', { token: 'cookie' });
 <p>{output}</p>;
 
-output = interpolate('Value with a {component} in it', {
+output = interpolate('Value with a [component] in it', {
   component: <LocaleNumber number={123.25} />,
 });
 <p>{output}</p>;
