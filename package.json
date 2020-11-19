@@ -56,6 +56,7 @@
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "babel-eslint": "^10.1.0",
+    "commitlint": "^11.0.0",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-trustpilot": "^4.5.1",
