@@ -1,9 +1,15 @@
+dist: focal
+
 sudo: false
 
 language: node_js
 
 # Keep empty to use version from .nvmrc
 node_js:
+
+before_install:
+  - git clone -b 'v1' --depth 1 https://$GITHUB_TOKEN@github.com/trustpilot/build-scripts.git
+  - build-scripts/travis/init
 
 install:
   - npm ci
@@ -14,10 +20,15 @@ script:
   - npm run build
 
 after_success:
-  - npx semantic-release
+  - npx semantic-release --extends @trustpilot/semanticrelease-config
 
 branches:
   only: master
 
 notifications:
   email: false
+
+# GH-Packages-Key
+env:
+  global:
+    secure: "eHkhBkDsXj2RZEhWNBIR9wiYZ8O3L4PV5p3Ok3CYxTX+0x82n6rvtO/uLs2Y+s1Il/ccJSvB6RbZF8g8Sx62HFruT2R5yn1gUgUQuOs5JtAqd8mvyYZVOn/+rtCETIO1UWncDKaKWatJiRxVOTD53aMMPbyfYfaLnp8NMLizA/71+GNdyeMO3xrgB57iFi3GanyoHjwh88Ina4754hdW9nk279bWSTOBOU2VMJW/VyTmvwQUE/i5I9ro9+Z8X7k8iQjSR6Pdxi/IdYsbrJlLycYi2PYoV2TijwXl4kCvlsfZqAauQeQg8FZOnS94/UKajoUik/Nc183L0aI+mMg+hHWkTKfliBUxoTEI6QKRRYZ44sr+4qYeF+jFgf83ygJ3DSklmgkgBHXeJAeTdCPTowkyYIDYj/w3JorlgxpfQsU1jKbDlkagh+0c0+VvwJZ2Ra2Knss9tCF3LZHBprRZsBVVnT93EvUZQEXMQG1kZ7zG/MG9qrUPj8fVJHtUFHTqYYvzwe3H6AJPXIjfe5TbZsWoUa6OULmbigXtjs0wMlC7wpG0PGOxfDOywBZFN2YtKShA8MUaTlk4gVHdPbN9+vkk6X7ogIJqAT2gOp33YxVhGsicaZKdKgcPwh6SMNX0XiZUXQpe1gwDB7XF2CM/yuhUuXXl3jTeRJO0eyvPRiQ="
