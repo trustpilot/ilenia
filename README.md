@@ -357,21 +357,19 @@ The examples above describe <Text> and <HtmlText> as well. The difference is, th
 <HtmlText id="string" interpolations={interpolationsObject} tag={tags}/>
 ```
 
-## How to contribute
+## How to contribute?
 
-This repo enforces commit style so the release process is automatic. Commits must look like:
+This repo enforces commit style so that the release process is automatic. Commits must look like:
 
-    <SUBJECT>: Message starting with an uppercase
+```
+<type>[optional scope]: <description>
 
-Choose your SUBJECT according to this logic:
+[optional body]
 
-- Fix: for a bug fix.
-- Update: for a backwards-compatible enhancement.
-- Breaking: for a backwards-incompatible enhancement.
-- Docs: changes to documentation only.
-- Build: changes to build process only.
-- New: implemented a new feature.
-- Upgrade: for a dependency upgrade.
+[optional footer(s)]
+```
+
+Check [conventional commits](https://conventionalcommits.org/) for more details.
 
 ## Found a problem ?
 
