@@ -171,7 +171,7 @@ NB. HtmlText doesn't work in node programs (SSR websites for example). In a node
 import { HtmlText } from 'ilenia';
 
 const translations = {
-  header: 'This is the {html1}header{html2} of our site',
+  header: 'This is the [html1]header[html2] of our site',
   footer: 'The HTML can also be kept <em>in the string</em>.',
 };
 
@@ -319,10 +319,10 @@ An `interpolate` function is exposed from this library. This function can be use
 ```js
 import { interpolate } from 'ilenia';
 
-let output = interpolate('Value with a {token} in it', { token: 'cookie' });
+let output = interpolate('Value with a [token] in it', { token: 'cookie' });
 <p>{output}</p>;
 
-output = interpolate('Value with a {component} in it', {
+output = interpolate('Value with a [component] in it', {
   component: <LocaleNumber number={123.25} />,
 });
 <p>{output}</p>;
@@ -357,21 +357,19 @@ The examples above describe <Text> and <HtmlText> as well. The difference is, th
 <HtmlText id="string" interpolations={interpolationsObject} tag={tags}/>
 ```
 
-## How to contribute
+## How to contribute?
 
-This repo enforces commit style so the release process is automatic. Commits must look like:
+This repo enforces commit style so that the release process is automatic. Commits must look like:
 
-    <SUBJECT>: Message starting with an uppercase
+```
+<type>[optional scope]: <description>
 
-Choose your SUBJECT according to this logic:
+[optional body]
 
-- Fix: for a bug fix.
-- Update: for a backwards-compatible enhancement.
-- Breaking: for a backwards-incompatible enhancement.
-- Docs: changes to documentation only.
-- Build: changes to build process only.
-- New: implemented a new feature.
-- Upgrade: for a dependency upgrade.
+[optional footer(s)]
+```
+
+Check [conventional commits](https://conventionalcommits.org/) for more details.
 
 ## Found a problem ?
 
