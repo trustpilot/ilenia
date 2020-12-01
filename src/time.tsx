@@ -51,11 +51,12 @@ export const TimeAgo = ({ date }: TimeAgoProps) => {
 
 export interface HumanizeTimeProps {
   milliseconds: number;
+  type?: string;
 }
 
-export const HumanizeTime = ({ milliseconds }: HumanizeTimeProps) => {
+export const HumanizeTime = ({ milliseconds, type = 'approximate-time' }: HumanizeTimeProps) => {
   const [, locale] = useTranslations();
 
   const timeAgo = new JsTimeAgo(locale);
-  return timeAgo.format(Date.now() - milliseconds, 'time');
+  return timeAgo.format(Date.now() - milliseconds, type);
 };
