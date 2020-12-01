@@ -95,3 +95,13 @@ test('Renders an incorrect Danish humanized representation of a time duration', 
 
   expect(getByText('1 day')).toBeDefined();
 });
+
+test('Renders a short representation of a time duration using a style', () => {
+  const { getByText } = render(
+    <LocalizationProvider locale="en-US" translations={{}}>
+      <HumanizeTime milliseconds={11 * 1000 * 60} type={'mini-minute'} />
+    </LocalizationProvider>
+  );
+
+  expect(getByText('11m')).toBeDefined();
+});
