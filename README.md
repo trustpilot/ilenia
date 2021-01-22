@@ -266,7 +266,9 @@ const date = new Date(2018, 1, 15)
 
 ### HumanizeTime
 
-The component accepts a number of milliseconds and renders it to a human readable text. It renders the same as `<TimeAgo>` but without the 'ago' postfix. 
+The component accepts a number of milliseconds and renders it to a human readable text. It renders the same as `<TimeAgo>` but without the 'ago' postfix.
+
+If needed, the component has an optional `type` prop, which allows for any custom logic for formatting time intervals or setting one of the built-in ones from [javascript-time-ago](https://github.com/catamphetamine/javascript-time-ago/tree/master/source/style).
 
 ```javascript
 import { HumanizeTime } from 'ilenia';
@@ -275,7 +277,8 @@ import { HumanizeTime } from 'ilenia';
 
 const yesterday = new Date().setDate(new Date().getDate() + -1); //Returns ms since 1970, 1 day ago
 const oneDayMS = Date.now() - yesterday; // 86400000 ms
-<HumanizeTime milliseconds={yesterday}/> // renders "1 day"
+<HumanizeTime milliseconds={oneDayMS}/> // renders "1 day"
+<HumanizeTime milliseconds={oneDayMS} type={"mini-minute"} /> // renders "1d"
 ```
 
 ### useTranslations
