@@ -32,6 +32,21 @@ JsTimeAgo.addLocale(pt);
 JsTimeAgo.addLocale(ru);
 JsTimeAgo.addLocale(sv);
 
+type StyleType =
+  | 'approximate'
+  | 'approximate-time'
+  | 'mini'
+  | 'mini-now'
+  | 'mini-minute'
+  | 'mini-minute-now'
+  | 'round'
+  | 'round-minute'
+  | 'twitter'
+  | 'twitter-now'
+  | 'twitter-minute'
+  | 'twitter-minute-now'
+  | 'twitter-first-minute';
+
 export interface TimeAgoProps {
   date: Date | string | number;
 }
@@ -51,7 +66,7 @@ export const TimeAgo = ({ date }: TimeAgoProps) => {
 
 export interface HumanizeTimeProps {
   milliseconds: number;
-  type?: string;
+  type?: StyleType;
 }
 
 export const HumanizeTime = ({ milliseconds, type = 'approximate-time' }: HumanizeTimeProps) => {
