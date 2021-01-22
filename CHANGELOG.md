@@ -1,3 +1,15 @@
+# [9.8.0](https://github.com/trustpilot/ilenia/compare/v9.7.0...v9.8.0) (2021-01-22)
+
+
+### Bug Fixes
+
+* set specific style types for new prop ([360b1d6](https://github.com/trustpilot/ilenia/commit/360b1d63e9b99d0c600dd0cc1dabbf2a800561ea))
+
+
+### Features
+
+* add type value as optional configuration ([ab76061](https://github.com/trustpilot/ilenia/commit/ab76061580438e69de67f2c05d733a820d4d0313))
+
 # [9.7.0](https://github.com/trustpilot/ilenia/compare/v9.6.0...v9.7.0) (2020-04-30)
 
 
