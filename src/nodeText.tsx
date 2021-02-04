@@ -51,20 +51,3 @@ export const NodeText = ({ id, nodes, interpolations, tag = { start: '[', end: '
 
   return <React.Fragment>{interpolate(inputString, { ...nodeInterpolations, ...interpolations }, tag)}</React.Fragment>;
 };
-
-// Example Use, uncomment to check //
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// const Test: React.FC = () => {
-//   return (
-//     <NodeText
-//       id="whatever"
-//       nodes={[
-//         {
-//           start: '[LINK-BEGIN]',
-//           end: '[LINK-END]',
-//           render: translation => `my own ${translation}`,
-//         },
-//       ]}
-//     />
-//   );
-// };
