@@ -281,6 +281,52 @@ const oneDayMS = Date.now() - yesterday; // 86400000 ms
 <HumanizeTime milliseconds={oneDayMS} type={"mini-minute"} /> // renders "1d"
 ```
 
+### NodeText
+
+Use `<NodeText>` to render a string with provided render functions for each couple of node.
+
+```javascript
+import React from 'react';
+import { NodeText } from 'ilenia';
+
+const CustomNode: React.FC = ({ children }) => <b data-custom>{children}</b>
+
+const translations = {
+  footer: 'This text is [NODE-BEGIN]custom bold[NODE-END]',
+};
+
+const nodes = [{
+  render: (match, key) => <CustomNode key={key}>{match}</CustomNode>
+}];
+
+const App = () => <NodeText id="footer" nodes={nodes} />;
+```
+
+Add interpolation to your node text, and custom tokens:
+
+```javascript
+import { LinkText } from 'ilenia';
+
+const translations = {
+  footer: 'This text is {node-begin}custom bold{node-end}. Today is: [date]',
+};
+
+const nodes = [{
+  start: "{node-begin}",
+  end: "{node-end}",
+  render: (match, key) => <CustomNode key={key}>{match}</CustomNode>
+}];
+
+
+const App = () => (
+  <NodeText
+    id="footer"
+    nodes={nodes}
+    interpolations={{ date: new Date() }}
+  />
+);
+```
+
 ### useTranslations
 
 Get access to the raw translations data from the context with the `useTranslations` custom hook:

@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a string with a node and an interpolated value 1`] = `
+<DocumentFragment>
+  A node 
+  <p>
+    in the
+  </p>
+   middle and a date: 2/1/2019
+</DocumentFragment>
+`;
+
+exports[`Renders a string with a node and an interpolated value inside, plus an interpolated value 1`] = `
+<DocumentFragment>
+  From 
+  <p>
+    2/1/2019
+  </p>
+   to 2/28/2019
+</DocumentFragment>
+`;
+
+exports[`Renders a string with a working onClick callback 1`] = `
+<DocumentFragment>
+  A node 
+  <button>
+    in the
+  </button>
+   middle
+</DocumentFragment>
+`;
+
+exports[`Renders a string with multiple nodes in it 1`] = `
+<DocumentFragment>
+  A node 
+  <p>
+    in the
+  </p>
+   middle and one 
+  <span>
+    in the end
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Renders a string with no links in it 1`] = `
+<DocumentFragment>
+  No nodes in the string
+</DocumentFragment>
+`;
+
+exports[`Renders a string with one node and custom tags 1`] = `
+<DocumentFragment>
+  A node 
+  <p>
+    in the
+  </p>
+   middle
+</DocumentFragment>
+`;
+
+exports[`Renders a string with one node in the middle 1`] = `
+<DocumentFragment>
+  A node 
+  <p>
+    in the
+  </p>
+   middle
+</DocumentFragment>
+`;
+
+exports[`Renders nothing when the string is not there 1`] = `<DocumentFragment />`;
