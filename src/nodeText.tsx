@@ -4,6 +4,7 @@ import { interpolate, Interpolations, Tag, useTranslations } from '.';
 export interface Node {
   start?: string;
   end?: string;
+  key?: string;
   render: (match: React.ReactNode, key: string) => React.ReactNode;
 }
 
@@ -34,14 +35,17 @@ export const NodeText = ({ id, nodes, interpolations, tag = { start: '[', end: '
   }
   const nodeInterpolations: { [keyof: string]: React.ReactNode } = {};
 
-  nodes.map(addDefaultValues).forEach(({ start, end, render }, index) => {
+  nodes.map(addDefaultValues).forEach(({ start, end, render, key: customKey }, index) => {
     const regexp = nodeRegex(start, end);
     const key = `text-interpolation-${index}`;
     const matches = regexp.exec(inputString);
     if (matches === null) return;
     const [withTags, nodeChildren] = matches;
 
-    nodeInterpolations[key] = render(interpolations ? interpolate(nodeChildren, interpolations) : nodeChildren, key);
+    nodeInterpolations[key] = render(
+      interpolations ? interpolate(nodeChildren, interpolations) : nodeChildren,
+      customKey ?? key
+    );
     inputString = inputString.replace(withTags, `${tag.start}${key}${tag.end}`);
   });
 
