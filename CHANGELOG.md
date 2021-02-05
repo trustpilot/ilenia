@@ -1,3 +1,11 @@
+# [9.9.0](https://github.com/trustpilot/ilenia/compare/v9.8.0...v9.9.0) (2021-02-05)
+
+
+### Features
+
+* enhance <Text/> component interpolation capabilities ([b128fd6](https://github.com/trustpilot/ilenia/commit/b128fd622dd9c2e0c7a7bba8e18b8d970f2f7d0d))
+* interpolations now case-insensitive ([55472dc](https://github.com/trustpilot/ilenia/commit/55472dc4daaa3566d3104a8a46aadafca4dea2e0))
+
 # [9.8.0](https://github.com/trustpilot/ilenia/compare/v9.7.0...v9.8.0) (2021-01-22)
 
 
