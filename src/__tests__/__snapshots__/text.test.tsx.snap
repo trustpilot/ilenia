@@ -6,6 +6,58 @@ exports[`Renders a string which uses a different placeholder syntax 1`] = `A str
 
 exports[`Renders a string with an interpolations 1`] = `A string but with a huge value in it`;
 
-exports[`Renders components if included as interpolations 1`] = `A string but with a `;
+exports[`Renders components if inclded as interpolations pair -- custom suffixes and tags 1`] = `
+<DocumentFragment>
+  A string with a pair of 
+  <b>
+    tags
+  </b>
+   in it
+</DocumentFragment>
+`;
+
+exports[`Renders components if inclded as interpolations pair 1`] = `
+<DocumentFragment>
+  A string with a pair of 
+  <b>
+    tags
+  </b>
+   in it
+</DocumentFragment>
+`;
+
+exports[`Renders components if included as interpolations 1`] = `
+<DocumentFragment>
+  A string but with a 
+  <strong>
+    strong value
+  </strong>
+   in it
+</DocumentFragment>
+`;
+
+exports[`Renders components with an interpolation inside 1`] = `
+<DocumentFragment>
+  A string with a pair of 
+  <b>
+    sPeCiAl tags
+  </b>
+   in it
+</DocumentFragment>
+`;
+
+exports[`Renders components with two pairs of interpolation 1`] = `
+<DocumentFragment>
+  A string with 
+  <b>
+    a pair
+  </b>
+   of 
+  <i>
+    tags
+  </i>
+   in it
+</DocumentFragment>
+`;
 
 exports[`Renders nothing if the string is not there 1`] = `null`;

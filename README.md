@@ -88,6 +88,33 @@ const Header = () => (
 );
 ```
 
+You can also interpolate pairs of tags to render React components.
+
+```javascript
+import { Text } from 'ilenia';
+
+const translations = {
+  first: 'A string with a [LINK-BEGIN]link[LINK-END] in it.',
+  second: 'A string with a {{LINK-START}}link{{LINK-END}} in it.',
+};
+
+const CustomLink = ({ text }) => <a>{text}</a>
+
+const App = () => (
+  <div>
+    <p><Text id="first" interpolations={{ link: (m) => <CustomLink text={m}/> }}/></p>
+    <p>
+      <Text
+        id="second"
+        interpolations={{ LINK: (m) => <CustomLink text={m}/> }}
+        tag={{ start: '{{', end: '}}' }}
+        suffix={{ begin: '-start', end: '-end' }}
+      />
+    </p>
+  </div>
+)
+```
+
 ### LinkText
 
 Use `<LinkText>` to render a string with links in it. Any properties added to the link object will be added to the link element that is created.
