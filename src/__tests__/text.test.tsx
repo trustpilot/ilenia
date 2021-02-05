@@ -8,7 +8,7 @@ const translations = {
   test1: 'Just a random string',
   test2: 'A string but with a [value] in it',
   test3: 'A string that uses another {{placeholder}}',
-  test4: 'A string with a pair of [tag-begin]tags[tag-end] in it',
+  test4: 'A string with a pair of [TAG-BEGIN]tags[TAG-END] in it',
   test5: 'A string with a pair of [tag-begin][special] tags[tag-end] in it',
   test6: 'A string with [bold-begin]a pair[bold-end] of [tag-begin]tags[tag-end] in it',
   test7: 'A string with a pair of {TAG_START}tags{TAG_END} in it',

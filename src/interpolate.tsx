@@ -1,12 +1,12 @@
 import React from 'react';
 import { Interpolations, Tag } from './text';
 
-function escapeRegex(str: string) {
+export function escapeRegex(str: string) {
   return str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
 }
 
 function replaceRegex(tag: Tag, key: string) {
-  return new RegExp(escapeRegex(`${tag.start}${key}${tag.end}`), 'g');
+  return new RegExp(escapeRegex(`${tag.start}${key}${tag.end}`), 'gi');
 }
 
 function isCastableToString(element: React.ReactNode) {
@@ -47,7 +47,6 @@ export function interpolate(
 
     const [key, ...remaining] = interpolationKeys;
     const pieces = (input || '').split(replaceRegex(tag, key));
-
     yield* replace(remaining, pieces.shift());
     while (pieces.length > 0) {
       checkComponentForKey(interpolations[key]);

@@ -94,7 +94,7 @@ You can also interpolate pairs of tags to render React components.
 import { Text } from 'ilenia';
 
 const translations = {
-  first: 'A string with a [link-begin]link[link-end] in it.',
+  first: 'A string with a [LINK-BEGIN]link[LINK-END] in it.',
   second: 'A string with a {{LINK-START}}link{{LINK-END}} in it.',
 };
 
@@ -108,7 +108,7 @@ const App = () => (
         id="second"
         interpolations={{ LINK: (m) => <CustomLink text={m}/> }}
         tag={{ start: '{{', end: '}}' }}
-        suffix={{ begin: '-START', end: '-END' }}
+        suffix={{ begin: '-start', end: '-end' }}
       />
     </p>
   </div>

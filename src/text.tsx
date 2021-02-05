@@ -1,5 +1,5 @@
 import React from 'react';
-import { interpolate, useTranslations } from '.';
+import { escapeRegex, interpolate, useTranslations } from '.';
 
 export interface Tag {
   start: string;
@@ -36,12 +36,15 @@ function isFunction(val: Interpolations[string]): val is PairInterpolations[stri
 const toTag = (key: string, tag: Tag, suffix: string = '') =>
   `${tag.start}${key}${suffix}${tag.end}`;
 
-const escapeRegex = (str: string) => str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1');
-
 const nodeRegex = (begin: string, end: string) =>
-  new RegExp(`${escapeRegex(begin)}(.*)${escapeRegex(end)}`, 'g');
+  new RegExp(`${escapeRegex(begin)}(.*)${escapeRegex(end)}`, 'gi');
 
 const hasKeys = (obj: Interpolations) => Object.keys(obj).length > 0;
+
+const contains = (input: string, key: string) => {
+  const regexp = new RegExp(escapeRegex(key), 'gi');
+  return !!input.match(regexp);
+}
 
 export const Text = ({
   id,
@@ -64,11 +67,11 @@ export const Text = ({
     } = { single: {}, pair: {} };
 
     const { pair, single } = Object.entries(interpolations).reduce((acc, [key, value]) => {
-      if (string.includes(toTag(key, tag))) {
+      if (contains(string, toTag(key, tag))) {
         acc.single[key] = value;
       } else if (
-        string.includes(toTag(key, tag, suffix.begin)) &&
-        string.includes(toTag(key, tag, suffix.end)) &&
+        contains(string, toTag(key, tag, suffix.begin)) &&
+        contains(string, toTag(key, tag, suffix.end)) &&
         isFunction(value) // very weak check
       ) {
         acc.pair[key] = value;
