@@ -105,3 +105,13 @@ test('Renders a short representation of a time duration using a style', () => {
 
   expect(getByText('11m')).toBeDefined();
 });
+
+test('Renders a short representation of a time duration using mini style', () => {
+  const { getByText } = render(
+    <LocalizationProvider locale="da-DK" translations={{}}>
+      <HumanizeTime milliseconds={55 * 24 * 60 * 60 * 1000} type={'mini'} />
+    </LocalizationProvider>
+  );
+
+  expect(getByText('2 mdr.')).toBeDefined();
+});
