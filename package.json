@@ -26,8 +26,8 @@
     "react": "^16.8"
   },
   "dependencies": {
-    "htmlstring-to-react": "^5.2.0",
-    "javascript-time-ago": "^2.3.3"
+    "htmlstring-to-react": "^5.2.1",
+    "javascript-time-ago": "^2.3.6"
   },
   "scripts": {
     "build": "rimraf dist && tsc",
