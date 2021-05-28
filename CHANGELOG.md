@@ -1,3 +1,10 @@
+# [9.10.0](https://github.com/trustpilot/ilenia/compare/v9.9.0...v9.10.0) (2021-05-28)
+
+
+### Features
+
+* bump js-time-ago & audit fix ([40dcd33](https://github.com/trustpilot/ilenia/commit/40dcd3352839401966ca3f387b45ee657c4a2184))
+
 # [9.9.0](https://github.com/trustpilot/ilenia/compare/v9.8.0...v9.9.0) (2021-02-05)
 
 
